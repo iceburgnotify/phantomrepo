@@ -32,7 +32,7 @@ def lookup_domain_1(action=None, success=None, container=None, results=None, han
 
 def call_api_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
     phantom.debug('call_api_1() called')
-    phantom.debug('test')
+    phantom.debug('testq')
     return
 
 def on_finish(container, summary):
