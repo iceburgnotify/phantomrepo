@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "8f267a5eb93ccb493fbac6651f532a9e949f7f30",
+            "hash": "6140352b138c930a02526ee18f324ceef69f6d50",
             "joint": {
                 "cells": [
                     {
@@ -139,7 +139,6 @@
                             "height": 54,
                             "width": 80
                         },
-                        "state": "start",
                         "status": "",
                         "title": "START",
                         "type": "coa.StartEnd",
@@ -184,7 +183,7 @@
                         "callback_start": 1,
                         "callsback": false,
                         "connected_to_start": true,
-                        "connection_name": "lookup domain",
+                        "connection_name": "get email",
                         "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "",
@@ -202,8 +201,8 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 46,
-                        "line_start": 33,
+                        "line_end": 66,
+                        "line_start": 53,
                         "name": "",
                         "notes": "",
                         "number": 0,
@@ -271,7 +270,6 @@
                             "height": 54,
                             "width": 80
                         },
-                        "state": "end",
                         "status": "",
                         "title": "END",
                         "type": "coa.StartEnd",
@@ -469,7 +467,7 @@
                                 "text": "Investigate"
                             },
                             "g.delete": {
-                                "display": "none"
+                                "display": "block"
                             },
                             "g.error": {
                                 "opacity": 0
@@ -481,7 +479,7 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def lookup_domain_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('lookup_domain_1() called')\n\n    # collect data for 'lookup_domain_1' call\n\n    parameters = []\n    \n    # build parameters list for 'lookup_domain_1' call\n    parameters.append({\n        'domain': \"8.8.8.8\",\n        'type': \"mx\",\n    })\n\n    phantom.act(\"lookup domain\", parameters=parameters, app={ \"name\": 'MxToolbox' }, name=\"lookup_domain_1\")\n\n    return",
+                        "block_code": "def lookup_domain_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('lookup_domain_1() called')\n\n    # collect data for 'lookup_domain_1' call\n\n    parameters = []\n    \n    # build parameters list for 'lookup_domain_1' call\n    parameters.append({\n        'domain': \"8.8.8.8\",\n        'type': \"mx\",\n    })\n\n    phantom.act(\"lookup domain\", parameters=parameters, app={ \"name\": 'MxToolbox' }, callback=get_email_1, name=\"lookup_domain_1\")\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
@@ -587,7 +585,7 @@
                         "status": "",
                         "title": "Investigate",
                         "type": "coa.Action",
-                        "warn": "",
+                        "warn": false,
                         "z": 5
                     },
                     {
@@ -611,7 +609,7 @@
                         "endDirections": [
                             "left"
                         ],
-                        "id": "652495d4-9a71-41f3-8a94-1863a04a65a6",
+                        "id": "d1e5a971-80a7-4b63-a800-55f384052777",
                         "router": {
                             "name": "metro"
                         },
@@ -624,12 +622,368 @@
                             "right"
                         ],
                         "target": {
+                            "id": "2980a59d-17cd-4c54-8bf1-2a55e1829201",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 6
+                    },
+                    {
+                        "action": "get email",
+                        "action_type": "investigate",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {
+                            "container_id": "a",
+                            "id": "a",
+                            "ingest_email": ""
+                        },
+                        "angle": 0,
+                        "app": "IMAP",
+                        "approver": "",
+                        "assets": [
+                            {
+                                "action": "get email",
+                                "active": true,
+                                "app_name": "IMAP",
+                                "app_version": "2.0.9",
+                                "config_type": "app",
+                                "fields": {
+                                    "container_id": "a",
+                                    "id": "a",
+                                    "ingest_email": ""
+                                },
+                                "has_app": true,
+                                "id": 30,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "IMAP",
+                                "output": [
+                                    {
+                                        "data_path": "action_result.data.*.To",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.Date",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.From",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.Subject",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.Received",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.Message-ID",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.References",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.User-Agent",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.In-Reply-To",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "contains": [
+                                            "email"
+                                        ],
+                                        "data_path": "action_result.data.*.Return-Path",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.Content-Type",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.MIME-Version",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.status",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.message",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "contains": [
+                                            "phantom container id"
+                                        ],
+                                        "data_path": "action_result.parameter.container_id",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "contains": [
+                                            "imap email id"
+                                        ],
+                                        "data_path": "action_result.parameter.id",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.ingest_email",
+                                        "data_type": "boolean"
+                                    },
+                                    {
+                                        "contains": [
+                                            "phantom container id"
+                                        ],
+                                        "data_path": "action_result.summary.container_id",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects_successful",
+                                        "data_type": "numeric"
+                                    }
+                                ],
+                                "parameters": {
+                                    "container_id": {
+                                        "allow_list": true,
+                                        "contains": [
+                                            "phantom container id"
+                                        ],
+                                        "data_type": "numeric",
+                                        "default": null,
+                                        "description": "Container ID to get email data from",
+                                        "key": "container_id",
+                                        "order": 1,
+                                        "primary": true,
+                                        "required": false
+                                    },
+                                    "id": {
+                                        "allow_list": true,
+                                        "contains": [
+                                            "imap email id"
+                                        ],
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Message ID to get",
+                                        "key": "id",
+                                        "order": 0,
+                                        "primary": true,
+                                        "required": false
+                                    },
+                                    "ingest_email": {
+                                        "data_type": "boolean",
+                                        "default": false,
+                                        "description": "Create container and artifacts",
+                                        "key": "ingest_email",
+                                        "order": 2,
+                                        "primary": false,
+                                        "required": false
+                                    }
+                                },
+                                "product_name": "IMAP",
+                                "product_vendor": "Generic",
+                                "type": ""
+                            }
+                        ],
+                        "attrs": {
+                            ".action": {
+                                "text": "get email"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "Investigate"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_investigate.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def get_email_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('get_email_1() called')\n    \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'get_email_1' call\n\n    parameters = []\n    \n    # build parameters list for 'get_email_1' call\n    parameters.append({\n        'id': \"a\",\n        'container_id': \"a\",\n        'ingest_email': \"\",\n    })\n\n    phantom.act(\"get email\", parameters=parameters, app={ \"name\": 'IMAP' }, name=\"get_email_1\", parent_action=action)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "lookup domain",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "delay": 0,
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "2980a59d-17cd-4c54-8bf1-2a55e1829201",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 53,
+                        "line_start": 33,
+                        "message": "Configuring now",
+                        "name": "get email",
+                        "notes": "",
+                        "number": 1,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 640,
+                            "y": 200
+                        },
+                        "previous_function": "",
+                        "previous_name": "get_email_1",
+                        "required_params": {},
+                        "reviewer": "",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "app_action_config",
+                        "status": "",
+                        "title": "Investigate",
+                        "type": "coa.Action",
+                        "warn": "",
+                        "z": 8
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#6C7A89",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#6a6c8a",
+                                "stroke": "#6a6c8a"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "1f2353e9-11f1-4168-9d2e-25df6d4a9dc2",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "2980a59d-17cd-4c54-8bf1-2a55e1829201",
+                            "port": null,
+                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
                             "id": "c25c92ce-3db8-4095-9ae6-f970cbffd24e",
                             "port": null,
                             "selector": "g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
                         },
                         "type": "link",
-                        "z": 6
+                        "z": 9
                     }
                 ]
             },
@@ -638,7 +992,7 @@
         "schema": 3,
         "version": "3.5.200"
     },
-    "create_time": "2018-09-20T07:46:33.925163+00:00",
+    "create_time": "2018-09-20T07:52:31.212119+00:00",
     "draft_mode": false,
     "labels": [
         "events"
