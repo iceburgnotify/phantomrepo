@@ -26,26 +26,13 @@ def lookup_domain_1(action=None, success=None, container=None, results=None, han
         'type': "mx",
     })
 
-    phantom.act("lookup domain", parameters=parameters, app={ "name": 'MxToolbox' }, name="lookup_domain_1")
+    phantom.act("lookup domain", parameters=parameters, app={ "name": 'MxToolbox' }, callback=call_api_1, name="lookup_domain_1")
 
     return
 
-def get_email_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
-    phantom.debug('get_email_1() called')
-
-    # collect data for 'get_email_1' call
-
-    parameters = []
-    
-    # build parameters list for 'get_email_1' call
-    parameters.append({
-        'ingest_email': "",
-        'container_id': "a",
-        'id': "a",
-    })
-
-    phantom.act("get email", parameters=parameters, app={ "name": 'IMAP' }, name="get_email_1", parent_action=action)
-
+def call_api_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('call_api_1() called')
+    phantom.debug('test')
     return
 
 def on_finish(container, summary):

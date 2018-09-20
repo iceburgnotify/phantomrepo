@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "945a0914da06a4c42918c948230d813171cc044c",
+            "hash": "ab4355977d6d6737fa2679933fdd38f8399071f6",
             "joint": {
                 "cells": [
                     {
@@ -201,8 +201,8 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 64,
-                        "line_start": 51,
+                        "line_end": 51,
+                        "line_start": 38,
                         "name": "",
                         "notes": "",
                         "number": 0,
@@ -260,8 +260,8 @@
                             }
                         },
                         "position": {
-                            "x": 640,
-                            "y": 100
+                            "x": 1000,
+                            "y": 140
                         },
                         "previous_function": "",
                         "previous_name": "",
@@ -479,7 +479,7 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def lookup_domain_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('lookup_domain_1() called')\n\n    # collect data for 'lookup_domain_1' call\n\n    parameters = []\n    \n    # build parameters list for 'lookup_domain_1' call\n    parameters.append({\n        'domain': \"8.8.8.8\",\n        'type': \"mx\",\n    })\n\n    phantom.act(\"lookup domain\", parameters=parameters, app={ \"name\": 'MxToolbox' }, name=\"lookup_domain_1\")\n\n    return",
+                        "block_code": "def lookup_domain_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('lookup_domain_1() called')\n\n    # collect data for 'lookup_domain_1' call\n\n    parameters = []\n    \n    # build parameters list for 'lookup_domain_1' call\n    parameters.append({\n        'domain': \"8.8.8.8\",\n        'type': \"mx\",\n    })\n\n    phantom.act(\"lookup domain\", parameters=parameters, app={ \"name\": 'MxToolbox' }, callback=call_api_1, name=\"lookup_domain_1\")\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
@@ -589,177 +589,52 @@
                         "z": 5
                     },
                     {
-                        "action": "get email",
-                        "action_type": "investigate",
-                        "active": false,
-                        "active_keys": {},
-                        "active_values": {
-                            "container_id": "a",
-                            "id": "a",
-                            "ingest_email": ""
-                        },
-                        "angle": 0,
-                        "app": "IMAP",
-                        "approver": "",
-                        "assets": [
-                            {
-                                "action": "get email",
-                                "active": true,
-                                "app_name": "IMAP",
-                                "app_version": "2.0.9",
-                                "config_type": "app",
-                                "fields": {
-                                    "container_id": "a",
-                                    "id": "a",
-                                    "ingest_email": ""
-                                },
-                                "has_app": true,
-                                "id": 30,
-                                "loaded": false,
-                                "missing": false,
-                                "name": "IMAP",
-                                "output": [
-                                    {
-                                        "data_path": "action_result.data.*.To",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.Date",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.From",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.Subject",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.Received",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.Message-ID",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.References",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.User-Agent",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.In-Reply-To",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "contains": [
-                                            "email"
-                                        ],
-                                        "data_path": "action_result.data.*.Return-Path",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.Content-Type",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.MIME-Version",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.status",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.message",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "contains": [
-                                            "phantom container id"
-                                        ],
-                                        "data_path": "action_result.parameter.container_id",
-                                        "data_type": "numeric"
-                                    },
-                                    {
-                                        "contains": [
-                                            "imap email id"
-                                        ],
-                                        "data_path": "action_result.parameter.id",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.ingest_email",
-                                        "data_type": "boolean"
-                                    },
-                                    {
-                                        "contains": [
-                                            "phantom container id"
-                                        ],
-                                        "data_path": "action_result.summary.container_id",
-                                        "data_type": "numeric"
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects",
-                                        "data_type": "numeric"
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects_successful",
-                                        "data_type": "numeric"
-                                    }
-                                ],
-                                "parameters": {
-                                    "container_id": {
-                                        "allow_list": true,
-                                        "contains": [
-                                            "phantom container id"
-                                        ],
-                                        "data_type": "numeric",
-                                        "default": null,
-                                        "description": "Container ID to get email data from",
-                                        "key": "container_id",
-                                        "order": 1,
-                                        "primary": true,
-                                        "required": false
-                                    },
-                                    "id": {
-                                        "allow_list": true,
-                                        "contains": [
-                                            "imap email id"
-                                        ],
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "Message ID to get",
-                                        "key": "id",
-                                        "order": 0,
-                                        "primary": true,
-                                        "required": false
-                                    },
-                                    "ingest_email": {
-                                        "data_type": "boolean",
-                                        "default": false,
-                                        "description": "Create container and artifacts",
-                                        "key": "ingest_email",
-                                        "order": 2,
-                                        "primary": false,
-                                        "required": false
-                                    }
-                                },
-                                "product_name": "IMAP",
-                                "product_vendor": "Generic",
-                                "type": ""
-                            }
-                        ],
                         "attrs": {
-                            ".action": {
-                                "text": "get email"
+                            ".connection": {
+                                "stroke": "#6C7A89",
+                                "stroke-width": 2
                             },
-                            ".background": {
-                                "stroke": "#E6984E"
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#6a6c8a",
+                                "stroke": "#6a6c8a"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "a13be200-7494-478a-9847-6e5a4016508f",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "a890a942-d5db-4085-a704-73c4ea32f1b8",
+                            "port": null,
+                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "d6aba822-6953-4052-80ba-6bc8d0a43ea2",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 6
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "api": "call api",
+                        "attrs": {
+                            ".api": {
+                                "text": "call api"
                             },
                             ".inPorts>.port-in": {
                                 "ref": ".background",
@@ -786,53 +661,50 @@
                                 }
                             },
                             ".title": {
-                                "text": "Investigate"
+                                "text": "API"
+                            },
+                            "g.code image": {
+                                "xlink:href": "/inc/coa/img/block_icon_code_on.svg"
                             },
                             "g.delete": {
-                                "display": "none"
+                                "display": "block"
                             },
                             "g.error": {
-                                "opacity": 1
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.icon image": {
-                                "xlink:href": "/inc/coa/img/block_icon_investigate.svg"
+                                "opacity": 0
                             },
                             "g.notes": {
                                 "display": "block"
                             }
                         },
-                        "block_code": "def get_email_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('get_email_1() called')\n\n    # collect data for 'get_email_1' call\n\n    parameters = []\n    \n    # build parameters list for 'get_email_1' call\n    parameters.append({\n        'ingest_email': \"\",\n        'container_id': \"a\",\n        'id': \"a\",\n    })\n\n    phantom.act(\"get email\", parameters=parameters, app={ \"name\": 'IMAP' }, name=\"get_email_1\", parent_action=action)\n\n    return",
+                        "block_code": "# read-only block view not available",
                         "callback_code": "",
                         "callback_start": 1,
-                        "callsback": true,
+                        "callsback": false,
                         "color": "",
+                        "configured": [],
                         "connected_to_start": true,
-                        "connection_name": "",
-                        "connection_type": "",
+                        "connection_name": "lookup domain",
+                        "connection_type": "action",
                         "custom_callback": "",
-                        "custom_code": "",
+                        "custom_code": "def call_api_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('call_api_1() called')\n    phantom.debug('test')\n    return",
                         "custom_join": "",
                         "custom_name": "",
-                        "delay": 0,
                         "description": "",
                         "has_custom": false,
-                        "has_custom_block": false,
+                        "has_custom_block": true,
                         "has_custom_callback": false,
                         "has_custom_join": false,
-                        "id": "2980a59d-17cd-4c54-8bf1-2a55e1829201",
+                        "id": "d6aba822-6953-4052-80ba-6bc8d0a43ea2",
                         "inPorts": [
                             "in"
                         ],
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 51,
+                        "line_end": 38,
                         "line_start": 33,
                         "message": "Configuring now",
-                        "name": "get email",
+                        "name": "call api",
                         "notes": "",
                         "number": 1,
                         "outPorts": [
@@ -891,22 +763,20 @@
                             }
                         },
                         "position": {
-                            "x": 640,
-                            "y": 200
+                            "x": 620,
+                            "y": 140
                         },
                         "previous_function": "",
-                        "previous_name": "get_email_1",
-                        "required_params": {},
-                        "reviewer": "",
+                        "previous_name": "call_api_1",
                         "show_number": false,
                         "size": {
                             "height": 100,
                             "width": 180
                         },
-                        "state": "app_action_config",
-                        "status": "warn",
-                        "title": "Investigate",
-                        "type": "coa.Action",
+                        "state": "api",
+                        "status": "",
+                        "title": "API",
+                        "type": "coa.API",
                         "warn": false,
                         "z": 8
                     },
@@ -931,12 +801,12 @@
                         "endDirections": [
                             "left"
                         ],
-                        "id": "881435f9-a13d-43cd-92ff-fd7bf1d53af4",
+                        "id": "fda18d11-2340-4327-b5e7-f165207bd353",
                         "router": {
                             "name": "metro"
                         },
                         "source": {
-                            "id": "a890a942-d5db-4085-a704-73c4ea32f1b8",
+                            "id": "d6aba822-6953-4052-80ba-6bc8d0a43ea2",
                             "port": null,
                             "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
                         },
@@ -958,7 +828,7 @@
         "schema": 3,
         "version": "3.5.200"
     },
-    "create_time": "2018-09-20T07:54:29.532091+00:00",
+    "create_time": "2018-09-20T08:07:57.883700+00:00",
     "draft_mode": false,
     "labels": [
         "events"
