@@ -26,13 +26,26 @@ def lookup_domain_1(action=None, success=None, container=None, results=None, han
         'type': "mx",
     })
 
-    phantom.act("lookup domain", parameters=parameters, app={ "name": 'MxToolbox' }, callback=call_api_1, name="lookup_domain_1")
+    phantom.act("lookup domain", parameters=parameters, app={ "name": 'MxToolbox' }, callback=check_url_1, name="lookup_domain_1")
 
     return
 
-def call_api_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
-    phantom.debug('call_api_1() called')
-    phantom.debug('testq')
+def check_url_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('check_url_1() called')
+    
+    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
+    
+    # collect data for 'check_url_1' call
+
+    parameters = []
+    
+    # build parameters list for 'check_url_1' call
+    parameters.append({
+        'url': "q",
+    })
+
+    phantom.act("check_url", parameters=parameters, app={ "name": 'NetCraft' }, name="check_url_1", parent_action=action)
+
     return
 
 def on_finish(container, summary):
