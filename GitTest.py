@@ -5,11 +5,36 @@ import phantom.rules as phantom
 import json
 from datetime import datetime, timedelta
 
+##############################
+# Start - Global Code Block
+
+import xmltodict
+
+def xmltojson():
+    json.loads(json.dumps(xmltodict.parse('''
+     <root>
+       <persons city="hyderabad">
+         <person name="abc">
+           <name age="50" mobile="789" />
+         </person>
+       </persons>
+       <persons city="vizag">
+            <username></username>
+         <person name="xyz">
+           <name age="70" mobile="123" />
+         </person>
+       </persons>
+     </root>
+     ''')))
+
+# End - Global Code block
+##############################
+
 def on_start(container):
     phantom.debug('on_start() called')
     
-    # call 'add_1' block
-    add_1(container=container)
+    # call 'call_api_2' block
+    call_api_2(container=container)
 
     return
 
@@ -68,6 +93,12 @@ def add_1(action=None, success=None, container=None, results=None, handle=None, 
 def call_api_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
     phantom.debug('call_api_1() called')
     phantom.debug(results)
+    return
+    return
+
+def call_api_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('call_api_2() called')
+    phantom.debug(xmltojson)
     return
     return
 
