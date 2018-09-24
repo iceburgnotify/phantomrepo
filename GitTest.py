@@ -9,17 +9,19 @@ from datetime import datetime, timedelta
 # Start - Global Code Block
 
 import xmltodict
+import re
 
 def xmltojson():
-    retValue = json.loads(json.dumps(xmltodict.parse('''
-     <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <soap:Body>
-        <AddResponse xmlns="http://tempuri.org/">
-            <AddResult>9</AddResult>
-        </AddResponse>
-    </soap:Body>
-</soap:Envelope>
-     ''')))
+    xmlw = '''<?xml version="1.0" encoding="utf-8"?>
+        <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <soap:Body>
+                <AddResponse xmlns="http://tempuri.org/">
+                <AddResult>9</AddResult>
+                </AddResponse>
+            </soap:Body>
+        </soap:Envelope>'''
+    val = re.sub('<\?xml.*\?>', '', xmlw, count=0, flags=0)
+    retValue = json.loads(json.dumps(xmltodict.parse(val)))
     return retValue
 
 # End - Global Code block
