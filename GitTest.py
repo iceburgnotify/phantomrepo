@@ -8,8 +8,8 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
     
-    # call 'lookup_domain_1' block
-    lookup_domain_1(container=container)
+    # call 'add_1' block
+    add_1(container=container)
 
     return
 
@@ -46,6 +46,29 @@ def check_url_1(action=None, success=None, container=None, results=None, handle=
 
     phantom.act("check_url", parameters=parameters, app={ "name": 'NetCraft' }, name="check_url_1", parent_action=action)
 
+    return
+
+def add_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('add_1() called')
+
+    # collect data for 'add_1' call
+
+    parameters = []
+    
+    # build parameters list for 'add_1' call
+    parameters.append({
+        'first_numb': "1",
+        'second_numb': "2",
+    })
+
+    phantom.act("add", parameters=parameters, app={ "name": 'calculator' }, callback=call_api_1, name="add_1")
+
+    return
+
+def call_api_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('call_api_1() called')
+    phantom.debug(results)
+    return
     return
 
 def on_finish(container, summary):
