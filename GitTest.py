@@ -11,7 +11,7 @@ from datetime import datetime, timedelta
 import xmltodict
 
 def xmltojson():
-    json.loads(json.dumps(xmltodict.parse('''
+    retValue = json.loads(json.dumps(xmltodict.parse('''
      <root>
        <persons city="hyderabad">
          <person name="abc">
@@ -26,6 +26,7 @@ def xmltojson():
        </persons>
      </root>
      ''')))
+    return retValue
 
 # End - Global Code block
 ##############################
@@ -98,7 +99,8 @@ def call_api_1(action=None, success=None, container=None, results=None, handle=N
 
 def call_api_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
     phantom.debug('call_api_2() called')
-    phantom.debug(xmltojson)
+    test = xmltojson()
+    phantom.debug(test)
     return
     return
 
