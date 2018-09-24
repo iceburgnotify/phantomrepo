@@ -12,19 +12,14 @@ import xmltodict
 
 def xmltojson():
     retValue = json.loads(json.dumps(xmltodict.parse('''
-     <root>
-       <persons city="hyderabad">
-         <person name="abc">
-           <name age="50" mobile="789" />
-         </person>
-       </persons>
-       <persons city="vizag">
-            <username></username>
-         <person name="xyz">
-           <name age="70" mobile="123" />
-         </person>
-       </persons>
-     </root>
+     <?xml version="1.0" encoding="utf-8"?>
+    <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <soap:Body>
+        <AddResponse xmlns="http://tempuri.org/">
+            <AddResult>9</AddResult>
+        </AddResponse>
+    </soap:Body>
+</soap:Envelope>
      ''')))
     return retValue
 
