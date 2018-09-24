@@ -30,8 +30,8 @@ def xmltojson():
 def on_start(container):
     phantom.debug('on_start() called')
     
-    # call 'call_api_2' block
-    call_api_2(container=container)
+    # call 'add_1' block
+    add_1(container=container)
 
     return
 

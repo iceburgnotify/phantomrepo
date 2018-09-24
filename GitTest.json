@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "import xmltodict\nimport re\n\ndef xmltojson():\n    xmlw = '''<?xml version=\"1.0\" encoding=\"utf-8\"?>\n        <soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\n            <soap:Body>\n                <AddResponse xmlns=\"http://tempuri.org/\">\n                <AddResult>9</AddResult>\n                </AddResponse>\n            </soap:Body>\n        </soap:Envelope>'''\n    val = re.sub('<\\?xml.*\\?>', '', xmlw, count=0, flags=0)\n    retValue = json.loads(json.dumps(xmltodict.parse(val)))\n    return retValue",
             "description": "",
-            "hash": "298cf9287ff54e93f50921e81974f501298899c2",
+            "hash": "ed2e82c0a2c983bb1800ceae4d168a9c792eb67b",
             "joint": {
                 "cells": [
                     {
@@ -47,7 +47,7 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def on_start(container):\n    phantom.debug('on_start() called')\n    \n    # call 'call_api_2' block\n    call_api_2(container=container)\n\n    return",
+                        "block_code": "def on_start(container):\n    phantom.debug('on_start() called')\n    \n    # call 'add_1' block\n    add_1(container=container)\n\n    return",
                         "callback_code": "# read-only block view not available",
                         "callback_start": 1,
                         "callsback": false,
@@ -918,9 +918,6 @@
                             ".action": {
                                 "text": "add"
                             },
-                            ".background": {
-                                "stroke": "#E6984E"
-                            },
                             ".inPorts>.port-in": {
                                 "ref": ".background",
                                 "ref-x": 0.5
@@ -952,7 +949,7 @@
                                 "display": "none"
                             },
                             "g.error": {
-                                "opacity": 1
+                                "opacity": 0
                             },
                             "g.error image": {
                                 "xlink:href": "/inc/coa/img/block_icon_warn.svg"
@@ -1067,10 +1064,10 @@
                             "width": 180
                         },
                         "state": "app_action_config",
-                        "status": "warn",
+                        "status": "",
                         "title": "Contain",
                         "type": "coa.Action",
-                        "warn": "",
+                        "warn": false,
                         "z": 11
                     },
                     {
@@ -1121,9 +1118,6 @@
                             ".api": {
                                 "text": "call api"
                             },
-                            ".background": {
-                                "stroke": "#E6984E"
-                            },
                             ".inPorts>.port-in": {
                                 "ref": ".background",
                                 "ref-x": 0.5
@@ -1158,7 +1152,7 @@
                                 "display": "none"
                             },
                             "g.error": {
-                                "opacity": 1
+                                "opacity": 0
                             },
                             "g.error image": {
                                 "xlink:href": "/inc/coa/img/block_icon_warn.svg"
@@ -1181,7 +1175,7 @@
                         "custom_join": "",
                         "custom_name": "",
                         "description": "",
-                        "has_custom": false,
+                        "has_custom": true,
                         "has_custom_block": true,
                         "has_custom_callback": false,
                         "has_custom_join": false,
@@ -1265,7 +1259,7 @@
                             "width": 180
                         },
                         "state": "api",
-                        "status": "warn",
+                        "status": "",
                         "title": "API",
                         "type": "coa.API",
                         "warn": false,
@@ -1333,46 +1327,6 @@
                         "endDirections": [
                             "left"
                         ],
-                        "id": "32519da0-ecf3-4247-b13a-0f2090fa00bc",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "99e011e8-9bad-43a7-abcc-f13b72e5a1f8",
-                            "port": null,
-                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "356e4f19-f8c0-42e2-a41c-1dcc9be733a5",
-                            "selector": ".port-body[type=\"input\"]"
-                        },
-                        "type": "link",
-                        "z": 15
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#6C7A89",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#6a6c8a",
-                                "stroke": "#6a6c8a"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
                         "id": "bb02eaae-9f23-45ba-bebb-3a7f15ed1c3c",
                         "router": {
                             "name": "metro"
@@ -1400,6 +1354,9 @@
                         "attrs": {
                             ".api": {
                                 "text": "call api"
+                            },
+                            ".background": {
+                                "stroke": "#E6984E"
                             },
                             ".inPorts>.port-in": {
                                 "ref": ".background",
@@ -1435,7 +1392,7 @@
                                 "display": "none"
                             },
                             "g.error": {
-                                "opacity": 0
+                                "opacity": 1
                             },
                             "g.error image": {
                                 "xlink:href": "/inc/coa/img/block_icon_warn.svg"
@@ -1458,7 +1415,7 @@
                         "custom_join": "",
                         "custom_name": "",
                         "description": "",
-                        "has_custom": false,
+                        "has_custom": true,
                         "has_custom_block": true,
                         "has_custom_callback": false,
                         "has_custom_join": false,
@@ -1542,11 +1499,52 @@
                             "width": 180
                         },
                         "state": "api",
-                        "status": "",
+                        "status": "warn",
                         "title": "API",
                         "type": "coa.API",
                         "warn": false,
                         "z": 21
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#6C7A89",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#6a6c8a",
+                                "stroke": "#6a6c8a"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "44e5c134-3e16-4fc2-82a9-dfd21b6baae8",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "99e011e8-9bad-43a7-abcc-f13b72e5a1f8",
+                            "port": null,
+                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "61c07dcd-b66d-4629-b554-032b0b0d75e0",
+                            "port": null,
+                            "selector": "g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 22
                     }
                 ]
             },
@@ -1555,7 +1553,7 @@
         "schema": 3,
         "version": "3.5.200"
     },
-    "create_time": "2018-09-24T10:48:30.406415+00:00",
+    "create_time": "2018-09-24T11:07:25.912410+00:00",
     "draft_mode": false,
     "labels": [
         "events"
