@@ -89,7 +89,7 @@ def add_1(action=None, success=None, container=None, results=None, handle=None, 
 
 def call_api_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
     phantom.debug('call_api_1() called')
-    phantom.debug(results)
+    phantom.debug(phantom.collect(container,datapath='action_result.parameter.second_numb'))
     return
     return
 
