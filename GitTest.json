@@ -5,9 +5,9 @@
     "coa": {
         "data": {
             "clean": true,
-            "code_block": "import xmltodict\nimport re\n\ndef xmltojson(xmlinput):\n    \"\"\"xmlw = '''<?xml version=\"1.0\" encoding=\"utf-8\"?>\n        <soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\n            <soap:Body>\n                <AddResponse xmlns=\"http://tempuri.org/\">\n                <AddResult>9</AddResult>\n                </AddResponse>\n            </soap:Body>\n        </soap:Envelope>'''\"\"\"\n    val = re.sub('<\\?xml.*\\?>', '', xmlinput, count=0, flags=0)\n    retValue = json.loads(json.dumps(xmltodict.parse(val)))\n    return retValue",
+            "code_block": "import xmltodict\nimport re\nimport requests\n\ndef xmltojson(xmlinput):\n    \"\"\"xmlw = '''<?xml version=\"1.0\" encoding=\"utf-8\"?>\n        <soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\n            <soap:Body>\n                <AddResponse xmlns=\"http://tempuri.org/\">\n                <AddResult>9</AddResult>\n                </AddResponse>\n            </soap:Body>\n        </soap:Envelope>'''\"\"\"\n    val = re.sub('<\\?xml.*\\?>', '', xmlinput, count=0, flags=0)\n    retValue = json.loads(json.dumps(xmltodict.parse(val)))\n    return retValue\ndef calc():\n    url ='http://www.dneonline.com/calculator.asmx?wsdl'\n    payloads = \"\"\"<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n        <soap:Body>\n            <Add xmlns=\"http://tempuri.org/\">\n                <intA>4</intA>\n                <intB>5</intB>\n            </Add>\n        </soap:Body>\n    </soap:Envelope>\"\"\"\n    header = {'Content-Type':'text/xml'}\n    #r = requests.post(url, json=payloads, headers=header)\n    r = requests.post(url, data=payloads, headers=header)\n    #print r.content\n    result = re.sub('<\\?xml.*\\?>', '', r.content, count=0, flags=0)",
             "description": "",
-            "hash": "22110673a115d0ee857ca6586badadc03ad0b884",
+            "hash": "d128a63353c61a75febaf3582b315ac46aeef801",
             "joint": {
                 "cells": [
                     {
@@ -68,8 +68,8 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 38,
-                        "line_start": 30,
+                        "line_end": 54,
+                        "line_start": 46,
                         "name": "",
                         "notes": "",
                         "number": 0,
@@ -201,8 +201,8 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 112,
-                        "line_start": 99,
+                        "line_end": 128,
+                        "line_start": 115,
                         "name": "",
                         "notes": "",
                         "number": 0,
@@ -470,8 +470,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 55,
-                        "line_start": 38,
+                        "line_end": 71,
+                        "line_start": 54,
                         "message": "Configuring now",
                         "name": "lookup domain",
                         "notes": "",
@@ -821,8 +821,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 73,
-                        "line_start": 55,
+                        "line_end": 89,
+                        "line_start": 71,
                         "message": "Configuring now",
                         "name": "check_url",
                         "notes": "",
@@ -944,6 +944,161 @@
                         },
                         "type": "link",
                         "z": 38
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "api": "call api",
+                        "attrs": {
+                            ".api": {
+                                "text": "call api"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "API"
+                            },
+                            "g.code image": {
+                                "xlink:href": "/inc/coa/img/block_icon_code_on.svg"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "# read-only block view not available",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "color": "",
+                        "configured": [],
+                        "connected_to_start": true,
+                        "connection_name": "add",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "def call_api_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('call_api_1() called')\n    # domain = phantom.collect2(container=container,datapath=['action_result.parameter.second_numb'],action_results=results)\n    # test = xmltojson(results)\n    test = results\n    phantom.debug(test)\n    return\n    return",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "description": "",
+                        "has_custom": true,
+                        "has_custom_block": true,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "2a80f145-6bf6-465d-b460-91626d2dd273",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 115,
+                        "line_start": 106,
+                        "message": "Configuring now",
+                        "name": "call api",
+                        "notes": "",
+                        "number": 1,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 780,
+                            "y": 340
+                        },
+                        "previous_function": "",
+                        "previous_name": "call_api_1",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "api",
+                        "status": "",
+                        "title": "API",
+                        "type": "coa.API",
+                        "warn": false,
+                        "z": 44
                     },
                     {
                         "action": "add",
@@ -1108,8 +1263,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 90,
-                        "line_start": 73,
+                        "line_end": 106,
+                        "line_start": 89,
                         "message": "Configuring now",
                         "name": "add",
                         "notes": "",
@@ -1190,162 +1345,7 @@
                         "title": "Contain",
                         "type": "coa.Action",
                         "warn": false,
-                        "z": 42
-                    },
-                    {
-                        "active": false,
-                        "angle": 0,
-                        "api": "call api",
-                        "attrs": {
-                            ".api": {
-                                "text": "call api"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "API"
-                            },
-                            "g.code image": {
-                                "xlink:href": "/inc/coa/img/block_icon_code_on.svg"
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            }
-                        },
-                        "block_code": "# read-only block view not available",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "color": "",
-                        "configured": [],
-                        "connected_to_start": true,
-                        "connection_name": "add",
-                        "connection_type": "action",
-                        "custom_callback": "",
-                        "custom_code": "def call_api_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('call_api_1() called')\n    # domain = phantom.collect2(container=container,datapath=['action_result.parameter.second_numb'],action_results=results)\n    # test = xmltojson(results)\n    test = results\n    phantom.debug(test)\n    return\n    return",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "description": "",
-                        "has_custom": true,
-                        "has_custom_block": true,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "2a80f145-6bf6-465d-b460-91626d2dd273",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 99,
-                        "line_start": 90,
-                        "message": "Configuring now",
-                        "name": "call api",
-                        "notes": "",
-                        "number": 1,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 780,
-                            "y": 340
-                        },
-                        "previous_function": "",
-                        "previous_name": "call_api_1",
-                        "show_number": false,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "api",
-                        "status": "",
-                        "title": "API",
-                        "type": "coa.API",
-                        "warn": false,
-                        "z": 44
+                        "z": 45
                     }
                 ]
             },
@@ -1354,7 +1354,7 @@
         "schema": 3,
         "version": "3.5.200"
     },
-    "create_time": "2018-09-25T09:56:05.221400+00:00",
+    "create_time": "2018-09-25T21:01:30.826304+00:00",
     "draft_mode": false,
     "labels": [
         "events"

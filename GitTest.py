@@ -10,6 +10,7 @@ from datetime import datetime, timedelta
 
 import xmltodict
 import re
+import requests
 
 def xmltojson(xmlinput):
     """xmlw = '''<?xml version="1.0" encoding="utf-8"?>
@@ -23,6 +24,21 @@ def xmltojson(xmlinput):
     val = re.sub('<\?xml.*\?>', '', xmlinput, count=0, flags=0)
     retValue = json.loads(json.dumps(xmltodict.parse(val)))
     return retValue
+def calc():
+    url ='http://www.dneonline.com/calculator.asmx?wsdl'
+    payloads = """<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+        <soap:Body>
+            <Add xmlns="http://tempuri.org/">
+                <intA>4</intA>
+                <intB>5</intB>
+            </Add>
+        </soap:Body>
+    </soap:Envelope>"""
+    header = {'Content-Type':'text/xml'}
+    #r = requests.post(url, json=payloads, headers=header)
+    r = requests.post(url, data=payloads, headers=header)
+    #print r.content
+    result = re.sub('<\?xml.*\?>', '', r.content, count=0, flags=0)
 
 # End - Global Code block
 ##############################
