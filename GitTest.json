@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "import xmltodict\nimport re\n\ndef xmltojson(xmlinput):\n    \"\"\"xmlw = '''<?xml version=\"1.0\" encoding=\"utf-8\"?>\n        <soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\n            <soap:Body>\n                <AddResponse xmlns=\"http://tempuri.org/\">\n                <AddResult>9</AddResult>\n                </AddResponse>\n            </soap:Body>\n        </soap:Envelope>'''\"\"\"\n    val = re.sub('<\\?xml.*\\?>', '', xmlinput, count=0, flags=0)\n    retValue = json.loads(json.dumps(xmltodict.parse(val)))\n    return retValue",
             "description": "",
-            "hash": "cffbe45c7ae004d60fc6f5e5cf590279565dad67",
+            "hash": "bc9ad680be27b2096eacc952488320e163ff9fef",
             "joint": {
                 "cells": [
                     {
@@ -1253,7 +1253,7 @@
                         "connection_name": "add",
                         "connection_type": "action",
                         "custom_callback": "",
-                        "custom_code": "def call_api_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('call_api_1() called')\n    # domain = phantom.collect2(container=container,datapath=['action_result.parameter.second_numb'],action_results=results)\n    test = xmltojson(results)\n    phantom.debug(test)\n    return\n    return",
+                        "custom_code": "def call_api_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('call_api_1() called')\n    # domain = phantom.collect2(container=container,datapath=['action_result.parameter.second_numb'],action_results=results)\n    # test = xmltojson(results)\n    phantom.debug(results)\n    return\n    return",
                         "custom_join": "",
                         "custom_name": "",
                         "description": "",
@@ -1345,7 +1345,7 @@
                         "title": "API",
                         "type": "coa.API",
                         "warn": false,
-                        "z": 40
+                        "z": 41
                     }
                 ]
             },
@@ -1354,7 +1354,7 @@
         "schema": 3,
         "version": "3.5.200"
     },
-    "create_time": "2018-09-25T09:53:18.818508+00:00",
+    "create_time": "2018-09-25T09:54:18.385701+00:00",
     "draft_mode": false,
     "labels": [
         "events"

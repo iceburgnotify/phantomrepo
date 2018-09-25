@@ -90,8 +90,8 @@ def add_1(action=None, success=None, container=None, results=None, handle=None, 
 def call_api_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
     phantom.debug('call_api_1() called')
     # domain = phantom.collect2(container=container,datapath=['action_result.parameter.second_numb'],action_results=results)
-    test = xmltojson(results)
-    phantom.debug(test)
+    # test = xmltojson(results)
+    phantom.debug(results)
     return
     return
 
