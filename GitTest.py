@@ -46,8 +46,8 @@ def calc():
 def on_start(container):
     phantom.debug('on_start() called')
     
-    # call 'add_1' block
-    add_1(container=container)
+    # call 'call_api_2' block
+    call_api_2(container=container)
 
     return
 
@@ -86,6 +86,15 @@ def check_url_1(action=None, success=None, container=None, results=None, handle=
 
     return
 
+def call_api_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('call_api_1() called')
+    # domain = phantom.collect2(container=container,datapath=['action_result.parameter.second_numb'],action_results=results)
+    # test = xmltojson(results)
+    test = results
+    phantom.debug(test)
+    return
+    return
+
 def add_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
     phantom.debug('add_1() called')
 
@@ -103,13 +112,20 @@ def add_1(action=None, success=None, container=None, results=None, handle=None, 
 
     return
 
-def call_api_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
-    phantom.debug('call_api_1() called')
-    # domain = phantom.collect2(container=container,datapath=['action_result.parameter.second_numb'],action_results=results)
-    # test = xmltojson(results)
-    test = results
-    phantom.debug(test)
-    return
+def call_api_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('call_api_2() called')
+    data = ['this is a <a> test','this is a <n> test']
+    text = None
+    for item in data:
+        text = item
+        if text.upper().find('<n>'.upper())>-1:
+            phantom.debug('3')
+            break
+        phantom.debug('1')
+        text = None
+    if not text:
+        phantom.debug('None')
+        
     return
 
 def on_finish(container, summary):
