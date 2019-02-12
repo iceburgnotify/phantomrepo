@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "import requests, bs4",
             "description": "",
-            "hash": "f135272ed87600daa207bc13ec070594c45b562e",
+            "hash": "590dd09b4069d89b13c61b827f9e8afa97fb41c0",
             "joint": {
                 "cells": [
                     {
@@ -202,8 +202,8 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 45,
-                        "line_start": 32,
+                        "line_end": 47,
+                        "line_start": 34,
                         "name": "",
                         "notes": "",
                         "number": 0,
@@ -379,7 +379,7 @@
                         "connection_name": "",
                         "connection_type": "",
                         "custom_callback": "",
-                        "custom_code": "def webscrapping(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('webscrapping() called')\n    \n    response = requests.get(\"https://en.wikipedia.org/wiki/List_of_Olympic_medalists_in_judo\")\t\n    htmlResponse = bs4.BeautifulSoup(response.text)\n    phantom.debug(htmlResponse)\n    return",
+                        "custom_code": "def webscrapping(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('webscrapping() called')\n    response = requests.get(\"https://en.wikipedia.org/wiki/List_of_Olympic_medalists_in_judo\")\t\n    htmlResponse = bs4.BeautifulSoup(response.text)\n    table = htmlResponse.select('table')\n    tbody = table[0].select('tbody')\n    phantom.debug(tbody)\n    \n    return",
                         "custom_join": "",
                         "custom_name": "webscrapping",
                         "description": "",
@@ -394,7 +394,7 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 32,
+                        "line_end": 34,
                         "line_start": 24,
                         "message": "Configuring now",
                         "name": "call api",
@@ -471,7 +471,7 @@
                         "title": "API",
                         "type": "coa.API",
                         "warn": false,
-                        "z": 7
+                        "z": 8
                     }
                 ]
             },
@@ -480,7 +480,7 @@
         "schema": 3,
         "version": "3.5.200"
     },
-    "create_time": "2019-02-12T15:35:00.076777+00:00",
+    "create_time": "2019-02-12T15:36:29.090749+00:00",
     "draft_mode": false,
     "labels": [
         "*"

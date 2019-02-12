@@ -23,10 +23,12 @@ def on_start(container):
 
 def webscrapping(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
     phantom.debug('webscrapping() called')
-    
     response = requests.get("https://en.wikipedia.org/wiki/List_of_Olympic_medalists_in_judo")	
     htmlResponse = bs4.BeautifulSoup(response.text)
-    phantom.debug(htmlResponse)
+    table = htmlResponse.select('table')
+    tbody = table[0].select('tbody')
+    phantom.debug(tbody)
+    
     return
 
 def on_finish(container, summary):
