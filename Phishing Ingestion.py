@@ -43,7 +43,12 @@ aeTo =['Mario.Speedwagon@company1.com',
 'Pete.Sariya@company1.com',
 'Monty.Carlo@company1.com']
 
-aeFrom=['Sal.Monella@company1.com',
+aeFrom=['Jimmy.Changa@company1.com',
+'Barry.Wine@company1.com',
+'Wilma.Mumduya@company1.com',
+'Buster.Hyman@company1.com',
+'Poppa.Cherry@company1.com',]
+aeFrom1=['Sal.Monella@company1.com',
 'Sue.Vaneer@company1.com',
 'Cliff.Hanger@company1.com',
 'Barb.Dwyer@company1.com',
@@ -87,7 +92,7 @@ def add_artifact(action=None, success=None, container=None, results=None, handle
     cef = {}
     eTo = random.choice(aeTo)
     efrom = random.choice(aeFrom)
-    emailHeader = {'Delivered-To': 'company@phishing.com',
+    emailHeader = {'Delivered-To': 'phishing@company1.com',
            'From': efrom,
            'ARC-Seal': '''i=1; a=rsa-sha256; t=1529885666; cv=none; d=google.com; s=arc-20160816; b=CQpzLQywzGbo1pRGG98Ja4x2FTL8ubfppNQg5BFWZLjYkqJOcvJMITXbBt0Jafvb9O
  i5LC/9Yf5jstXwDKHJUYKkuK40+NiAPFmag/G3+CF01Z7EDHMrnsPQ/6EI29jEES6nxg aWGZhbSiISz6OMVpRfUFztR0SAciSaOWCEiD8lQNhCiq6zWHIEJknYhTegsu/Ud8wTI+
