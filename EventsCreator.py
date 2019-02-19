@@ -9,6 +9,7 @@ from datetime import datetime, timedelta
 # Start - Global Code Block
 
 import random
+import datetime
 
 domains = [ "hotmail.com", "gmail.com", "aol.com", "mail.com" , "mail.kz", "yahoo.com"]
 #letters = 'qwertyuiopasdf'.ascii_lowercase[:12]
@@ -40,19 +41,16 @@ def add_artifact(action=None, success=None, container=None, results=None, handle
     eTo = generate_random_emails(2, 7)
     
     for i in range(len(eTo)):
-        phantom.debug(i)
-    
-    """
         raw = {}
         cef = {}
-        emailHeader = {'Delivered-To': ,
-           'From': ,
+        emailHeader = {'Delivered-To': eTo[i],
+           'From': efrom[i],
            'Return-Path': '<bounce+07b9a7.9c403',
            'ARC-Seal': '''i=1; a=rsa-sha256; t=1529885666; cv=none; d=google.com; s=arc-20160816; b=CQpzLQywzGbo1pRGG98Ja4x2FTL8ubfppNQg5BFWZLjYkqJOcvJMITXbBt0Jafvb9O
  i5LC/9Yf5jstXwDKHJUYKkuK40+NiAPFmag/G3+CF01Z7EDHMrnsPQ/6EI29jEES6nxg aWGZhbSiISz6OMVpRfUFztR0SAciSaOWCEiD8lQNhCiq6zWHIEJknYhTegsu/Ud8wTI+
  QW91ixIjMJYpOz+SQhMR0QoWn3n7anF1Ny8HEGOKdxirCKE33otb8BGnJif1eH+tzVVQ Lbv4bfyXgJB7QBJgsDCF7YVWicENGuI04KJkPumDZfAFQ7hcBPcV293Bs/ptSI6NyONu
  +izQ==''',
-            'To': ,
+            'To': eTo[i],
             'X-Mailgun-Sending-Ip': '209.61.151.222',
             'X-Mailgun-Tag': 'summary',
             'X-Received':'by 2002:aca:a94c:: with SMTP id s73-v6mr5539575oie.178.1529885666213; Sun, 24 Jun 2018 17:14:26 -0700 (PDT)',
@@ -64,24 +62,24 @@ def add_artifact(action=None, success=None, container=None, results=None, handle
             'X-Mailgun-Sid':'WyI3MTUwMyIsICJpY2VidXJnbm90aWZ5QGdtYWlsLmNvbSIsICI5YzQwMyJd',
             'Received':'by 2002:ac0:8806:0:0:0:0:0 with SMTP id g6-v6csp3401947img; Sun, 24 Feb 2019, from rs222.mailgun.us (rs222.mailgun.us. [209.61.151.222]) with UTF8SMTPS id d39-v6si4713992otj.152.2018.06.24.17.14.25 (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128); Sun, 24 Jun 2018 17:14:26 -0700 (PDT), by luna.mailgun.net with HTTP; Mon, 25 Jun 2018 00:14:24 +0000',
             'Received-SPF':'pass client-ip=209.61.151.222;',
-            'Sender':'',
+            'Sender':efrom[i],
             'Authentication-Results':'''header.s=mailo header.b=LY45x805; dkim=pass header.i=@mailgun.org header.s=mg header.b=CorTHVEY; spf=pass  smtp.mailfrom="bounce+07b9a7.9c403-iceburgnotify=gmail.com@mxtoolbox.com"; dmarc=pass (p=NONE sp=NONE dis=NONE)', 'DKIM-Signature':'a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailgun.org; q=dns/txt; s=mg; t=1529885665; h=Content-Type: Mime-Version: Subject: From: To: Message-Id: Sender: Date: X-Feedback-Id; bh=To1beBo/++WeZttsCE1s+J+qd8OV0VKh759cYATpGwo=; b=CorTHVEYKdaXjjIua05kaOQ+n90uGMEy+rhlg/5L2W9SmusSRFtLlm4rNdXCub6PQD9PjQhp T3/4NanN9ftDgRlOd1U3l33gN2rJf4x92Ytz/vjLKJOg73JbUJYyRxT9pKP6GBk3XK+MkxPD ZI03CSmfX2Dz3pbNibRcUWvhFH8=''',
             'X-Feedback-Id':'5266b068fea3983e6007cc1a:mailgun',
             'Content-Type':'multipart/alternative; boundary="917d6539ef9143b1b76d94c66a93a3bf"',
             'X-Google-Smtp-Source':'ADUXVKJS4kPPUt/4ky1gQgzF2sD9anlyTDaGRxkf6N9q6KOI3wFA2tzA4GwefhlVxyjO3V/+dPte',
             'Subject':'Phishing'            
            }
-    cef['emailHeader'] = emailHeader
+        cef['emailHeader'] = emailHeader
 
-    success, message, artifact_id = phantom.add_artifact(
-        container=container, raw_data=raw, cef_data=cef, label='netflow',
-        name='test_event', severity='high',
-        identifier=None,
-        artifact_type='network')
-    phantom.debug('artifact added as id:'+str(artifact_id))
+        success, message, artifact_id = phantom.add_artifact(
+            container=container, raw_data=raw, cef_data=cef, label='artifact',
+            name=eTo[i], severity='high',
+            identifier=None,
+            artifact_type='network')
+        phantom.debug('artifact added as id:'+str(artifact_id))
 
-    artifacts = phantom.collect(container, 'artifacts:*', scope='all')
-    phantom.debug(artifacts)"""
+        artifacts = phantom.collect(container, 'artifacts:*', scope='all')
+        phantom.debug(artifacts)
     
     return
 
