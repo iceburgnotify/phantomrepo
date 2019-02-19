@@ -45,14 +45,14 @@ def add_artifact(action=None, success=None, container=None, results=None, handle
     for i in range(len(eTo)):
         raw = {}
         cef = {}
-        emailHeader = {'Delivered-To': eTo[i],
+        emailHeader = {'Delivered-To': 'company@phishing.com',
            'From': efrom[i],
            'Return-Path': '<bounce+07b9a7.9c403',
            'ARC-Seal': '''i=1; a=rsa-sha256; t=1529885666; cv=none; d=google.com; s=arc-20160816; b=CQpzLQywzGbo1pRGG98Ja4x2FTL8ubfppNQg5BFWZLjYkqJOcvJMITXbBt0Jafvb9O
  i5LC/9Yf5jstXwDKHJUYKkuK40+NiAPFmag/G3+CF01Z7EDHMrnsPQ/6EI29jEES6nxg aWGZhbSiISz6OMVpRfUFztR0SAciSaOWCEiD8lQNhCiq6zWHIEJknYhTegsu/Ud8wTI+
  QW91ixIjMJYpOz+SQhMR0QoWn3n7anF1Ny8HEGOKdxirCKE33otb8BGnJif1eH+tzVVQ Lbv4bfyXgJB7QBJgsDCF7YVWicENGuI04KJkPumDZfAFQ7hcBPcV293Bs/ptSI6NyONu
  +izQ==''',
-            'To': 'company@phishing.com',
+            'To': eTo[i],
             'X-Mailgun-Sending-Ip': '209.61.151.222',
             'X-Mailgun-Tag': 'summary',
             'X-Received':'by 2002:aca:a94c:: with SMTP id s73-v6mr5539575oie.178.1529885666213; Sun, 24 Jun 2018 17:14:26 -0700 (PDT)',
