@@ -93,7 +93,7 @@ def add_artifact(action=None, success=None, container=None, results=None, handle
  i5LC/9Yf5jstXwDKHJUYKkuK40+NiAPFmag/G3+CF01Z7EDHMrnsPQ/6EI29jEES6nxg aWGZhbSiISz6OMVpRfUFztR0SAciSaOWCEiD8lQNhCiq6zWHIEJknYhTegsu/Ud8wTI+
  QW91ixIjMJYpOz+SQhMR0QoWn3n7anF1Ny8HEGOKdxirCKE33otb8BGnJif1eH+tzVVQ Lbv4bfyXgJB7QBJgsDCF7YVWicENGuI04KJkPumDZfAFQ7hcBPcV293Bs/ptSI6NyONu
  +izQ==''',
-            'U.R.L.': 'https://paypal.account.myorder-manage.com/signin/',
+            'Detected URL': 'https://paypal.account.myorder-manage.com/signin/',
             'To': eTo,
             'X-Mailgun-Sending-Ip': '209.61.151.222',
             'X-Mailgun-Tag': 'summary',
