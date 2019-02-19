@@ -7,7 +7,6 @@
             "clean": true,
             "code_block": "import random\nimport datetime\n\ndomains = [ \"hotmail.com\", \"gmail.com\", \"aol.com\", \"mail.com\" , \"mail.kz\", \"yahoo.com\"]\n#letters = 'qwertyuiopasdf'.ascii_lowercase[:12]\nletters = [\"a\", \"b\", \"c\", \"d\",\"e\", \"f\", \"g\", \"h\", \"i\", \"j\", \"k\", \"l\"]\ndef get_random_domain(domains):\n    return random.choice(domains)\n\ndef get_random_name(letters, length):\n    return ''.join(random.choice(letters) for i in range(length))\n\ndef generate_random_emails(nb, length):\n    return [get_random_name(letters, length) + '@' + get_random_domain(domains) for i in range(nb)]",
             "description": "",
-            "hash": "ed0956daca159753a38748edc531a93c29a91684",
             "joint": {
                 "cells": [
                     {
