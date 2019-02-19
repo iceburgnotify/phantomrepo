@@ -55,8 +55,7 @@ def add_artifact(action=None, success=None, container=None, results=None, handle
           'www.norton.com',
           'www.avast.com'
           ]
-    return
-    
+
     for i in range(len(eTo)):
         raw = {}
         cef = {}
