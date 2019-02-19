@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "import random\n\ndomains = [ \"hotmail.com\", \"gmail.com\", \"aol.com\", \"mail.com\" , \"mail.kz\", \"yahoo.com\"]\n#letters = 'qwertyuiopasdf'.ascii_lowercase[:12]\nletters = [\"a\", \"b\", \"c\", \"d\",\"e\", \"f\", \"g\", \"h\", \"i\", \"j\", \"k\", \"l\"]\ndef get_random_domain(domains):\n    return random.choice(domains)\n\ndef get_random_name(letters, length):\n    return ''.join(random.choice(letters) for i in range(length))\n\ndef generate_random_emails(nb, length):\n    return [get_random_name(letters, length) + '@' + get_random_domain(domains) for i in range(nb)]",
             "description": "",
-            "hash": "891925c8c1985f83f53ec5ff4e0a5e4dbeb43d37",
+            "hash": "309b9fec6cef9d0c54578354fbe9433041a95611",
             "joint": {
                 "cells": [
                     {
@@ -420,7 +420,7 @@
                         "connection_name": "",
                         "connection_type": "",
                         "custom_callback": "",
-                        "custom_code": "def add_artifact(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('add_artifact() called')\n\n    phantom.debug(generate_random_emails(10, 7))\n    \n    artifacts = phantom.collect(container, 'artifacts:*', scope='all')\n    phantom.debug(artifacts)\n\n    '''raw = {}\n    cef = {}\n    cef['sourceAddress'] = '1.1.1.1'\n\n    success, message, artifact_id = phantom.add_artifact(\n        container=container, raw_data=raw, cef_data=cef, label='netflow',\n        name='test_event', severity='high',\n        identifier=None,\n        artifact_type='network')'''\n\n    return",
+                        "custom_code": "def add_artifact(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('add_artifact() called')\n\n    phantom.debug(generate_random_emails(20, 7))\n    \n    '''artifacts = phantom.collect(container, 'artifacts:*', scope='all')\n    phantom.debug(artifacts)\n\n    raw = {}\n    cef = {}\n    cef['sourceAddress'] = '1.1.1.1'\n\n    success, message, artifact_id = phantom.add_artifact(\n        container=container, raw_data=raw, cef_data=cef, label='netflow',\n        name='test_event', severity='high',\n        identifier=None,\n        artifact_type='network')'''\n\n    return",
                         "custom_join": "",
                         "custom_name": "add artifact",
                         "description": "",
@@ -512,7 +512,7 @@
                         "title": "API",
                         "type": "coa.API",
                         "warn": false,
-                        "z": 12
+                        "z": 13
                     }
                 ]
             },
@@ -521,7 +521,7 @@
         "schema": 3,
         "version": "3.5.200"
     },
-    "create_time": "2019-02-19T09:25:28.814313+00:00",
+    "create_time": "2019-02-19T09:26:16.405097+00:00",
     "draft_mode": false,
     "labels": [
         "*"

@@ -36,12 +36,12 @@ def on_start(container):
 def add_artifact(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
     phantom.debug('add_artifact() called')
 
-    phantom.debug(generate_random_emails(10, 7))
+    phantom.debug(generate_random_emails(20, 7))
     
-    artifacts = phantom.collect(container, 'artifacts:*', scope='all')
+    '''artifacts = phantom.collect(container, 'artifacts:*', scope='all')
     phantom.debug(artifacts)
 
-    '''raw = {}
+    raw = {}
     cef = {}
     cef['sourceAddress'] = '1.1.1.1'
 
