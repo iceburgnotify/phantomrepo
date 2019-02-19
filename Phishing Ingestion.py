@@ -93,7 +93,7 @@ def add_artifact(action=None, success=None, container=None, results=None, handle
  i5LC/9Yf5jstXwDKHJUYKkuK40+NiAPFmag/G3+CF01Z7EDHMrnsPQ/6EI29jEES6nxg aWGZhbSiISz6OMVpRfUFztR0SAciSaOWCEiD8lQNhCiq6zWHIEJknYhTegsu/Ud8wTI+
  QW91ixIjMJYpOz+SQhMR0QoWn3n7anF1Ny8HEGOKdxirCKE33otb8BGnJif1eH+tzVVQ Lbv4bfyXgJB7QBJgsDCF7YVWicENGuI04KJkPumDZfAFQ7hcBPcV293Bs/ptSI6NyONu
  +izQ==''',
-           'X-Mailgun-URL': 'https://paypal.account.myorder-manage.com/signin/',
+            'U.R.L.': 'https://paypal.account.myorder-manage.com/signin/',
             'To': eTo,
             'X-Mailgun-Sending-Ip': '209.61.151.222',
             'X-Mailgun-Tag': 'summary',
@@ -113,6 +113,24 @@ def add_artifact(action=None, success=None, container=None, results=None, handle
             'X-Google-Smtp-Source':'ADUXVKJS4kPPUt/4ky1gQgzF2sD9anlyTDaGRxkf6N9q6KOI3wFA2tzA4GwefhlVxyjO3V/+dPte',
             'Subject':'Phishing'            
            }
+    cef['bodyText']='''Response required.
+
+Dear User,
+
+We emailed you a little while ago to ask for your help in resolving an issue with your PayPal business account.
+Your account is still temporarily limited because we haven’t heard from you.
+
+We noticed some unusual activity with your account. Please check that no one has logged in to your account without your permission.
+
+To help us with this and to see what you can and can’t do with your account until the issue is restored, please click here to log in to your account and go to Resolution Center.
+
+Attached here also is your account’s activity log for reference.
+
+As always, if you need help or have any questions, feel free to contact us. We’re always here to help.
+
+Sincerely,
+PayPal'''
+    
     cef['emailHeader'] = emailHeader
     cef['fromEmail']=efrom
     cef['toEmail']=eTo
