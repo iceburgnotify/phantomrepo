@@ -52,7 +52,7 @@ def add_artifact(action=None, success=None, container=None, results=None, handle
  i5LC/9Yf5jstXwDKHJUYKkuK40+NiAPFmag/G3+CF01Z7EDHMrnsPQ/6EI29jEES6nxg aWGZhbSiISz6OMVpRfUFztR0SAciSaOWCEiD8lQNhCiq6zWHIEJknYhTegsu/Ud8wTI+
  QW91ixIjMJYpOz+SQhMR0QoWn3n7anF1Ny8HEGOKdxirCKE33otb8BGnJif1eH+tzVVQ Lbv4bfyXgJB7QBJgsDCF7YVWicENGuI04KJkPumDZfAFQ7hcBPcV293Bs/ptSI6NyONu
  +izQ==''',
-            'To': eTo[i],
+            'To': 'company@phishing.com',
             'X-Mailgun-Sending-Ip': '209.61.151.222',
             'X-Mailgun-Tag': 'summary',
             'X-Received':'by 2002:aca:a94c:: with SMTP id s73-v6mr5539575oie.178.1529885666213; Sun, 24 Jun 2018 17:14:26 -0700 (PDT)',
@@ -77,7 +77,7 @@ def add_artifact(action=None, success=None, container=None, results=None, handle
         cef['toEmail']=eTo[i]
         success, message, artifact_id = phantom.add_artifact(
             container=container, raw_data=raw, cef_data=cef, label='artifact',
-            name=eTo[i], severity='high',
+            name=efrom[i], severity='high',
             identifier=None,
             artifact_type='network')
         phantom.debug('artifact added as id:'+str(artifact_id))
