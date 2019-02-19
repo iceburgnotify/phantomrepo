@@ -37,23 +37,9 @@ def on_start(container):
 def add_artifact(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
     phantom.debug('add_artifact() called')
 
-    efrom = generate_random_emails(2, 7)
-    eTo = generate_random_emails(2, 7)
-    url = ['www.badlink.com',
-          'www.phishing.com',
-          'www.spyware.com',
-          'www.utorrent.com',
-          'www.xvd.bit',
-          'www.malwarebyte.tz',
-          'www.corplink.to',
-          'www.zool.tv',
-          'www.google.com',
-          'www.yahoo.com',
-          'www.yuno.com',
-          'www.zero.com',
-          'www.mozilla.com',
-          'www.norton.com',
-          'www.avast.com'
+    efrom = generate_random_emails(20, 7)
+    eTo = generate_random_emails(20, 7)
+    url = ['www.badlink.com'
           ]
 
     for i in range(len(eTo)):
