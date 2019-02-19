@@ -39,6 +39,24 @@ def add_artifact(action=None, success=None, container=None, results=None, handle
 
     efrom = generate_random_emails(2, 7)
     eTo = generate_random_emails(2, 7)
+    url = ['www.badlink.com',
+          'www.phishing.com',
+          'www.spyware.com',
+          'www.utorrent.com',
+          'www.xvd.bit',
+          'www.malwarebyte.tz',
+          'www.corplink.to',
+          'www.zool.tv',
+          'www.google.com',
+          'www.yahoo.com',
+          'www.yuno.com',
+          'www.zero.com',
+          'www.mozilla.com',
+          'www.norton.com',
+          'www.avast.com'
+          ]
+    phantom.debug(random.choice(url))
+    return
     
     for i in range(len(eTo)):
         raw = {}
@@ -57,6 +75,7 @@ def add_artifact(action=None, success=None, container=None, results=None, handle
             'ARC-Authentication-Results': 'i=1; mx.google.com; dkim=pass header.i=@mxtoolbox.com header.s=mailo header.b=LY45x805; dkim=pass header.i=@mailgun.org header.s=mg header.b=CorTHVEY; spf=pass (google.com: domain of bounce+07b9a7.9c403-iceburgnotify=gmail.com@mxtoolbox.com designates 209.61.151.222 as permitted sender) smtp.mailfrom="bounce+07b9a7.9c403-iceburgnotify=gmail.com@mxtoolbox.com"; dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=mxtoolbox.com',
             'ARC-Message-Signature':'i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816; h=mime-version:subject:from:to:message-id:sender:date:dkim-signature :dkim-signature:arc-authentication-results; bh=To1beBo/++WeZttsCE1s+J+qd8OV0VKh759cYATpGwo=; b=ad0TyCFyaVF2pIjMSD8yO6FCH5ZAT+Cxy8NVYshD0wwUCwaXwt7wIjE1IbzhA18Fz1 sgs8fKHQUMyXOmI6CNShzFyhFwzvk/bsetZTtoHxF0W9P72gu5ufSDRmiCovvrGA181N 0csKaQRemuCml+fxIVjtxui/eG0YKycCAr/J937yLZMNuvXyEJqUbhzo1E2jLMEdAIiN jyx3UYjdaO4hRgAn0IUDUMUhNdhVA8MQwi9uTBSHX63Q7m5ke5fPkfakd1sigpI0s63a 3hk1wjVRv84fn9te/Wf7EaFQVrgJ7T7mn4vPGdujLU9iduzklYlzXlPNw3WBSlZGVKJ2 AazA==',
             'Date':'',
+            'Detected-URL':url[i],
             'Message-Id': '<20180625001424.1.3D7FC1E792BF8A72>',
             'Mime-Version':'1.0',
             'X-Mailgun-Sid':'WyI3MTUwMyIsICJpY2VidXJnbm90aWZ5QGdtYWlsLmNvbSIsICI5YzQwMyJd',
