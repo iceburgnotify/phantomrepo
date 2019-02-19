@@ -37,6 +37,19 @@ def add_artifact(action=None, success=None, container=None, results=None, handle
     phantom.debug('add_artifact() called')
 
     phantom.debug(generate_random_emails(10, 7))
+    
+    artifacts = phantom.collect(container, 'artifacts:*', scope='all')
+    phantom.debug(artifacts)
+
+    '''raw = {}
+    cef = {}
+    cef['sourceAddress'] = '1.1.1.1'
+
+    success, message, artifact_id = phantom.add_artifact(
+        container=container, raw_data=raw, cef_data=cef, label='netflow',
+        name='test_event', severity='high',
+        identifier=None,
+        artifact_type='network')'''
 
     return
 
