@@ -113,6 +113,10 @@ def add_artifact(action=None, success=None, container=None, results=None, handle
             'X-Google-Smtp-Source':'ADUXVKJS4kPPUt/4ky1gQgzF2sD9anlyTDaGRxkf6N9q6KOI3wFA2tzA4GwefhlVxyjO3V/+dPte',
             'Subject':'Phishing'            
            }
+
+    cef['emailHeader'] = emailHeader
+    cef['fromEmail']=efrom
+    cef['toEmail']=eTo
     cef['bodyText']='''Response required.
 
 Dear User,
@@ -130,10 +134,6 @@ As always, if you need help or have any questions, feel free to contact us. Weâ€
 
 Sincerely,
 PayPal'''
-    
-    cef['emailHeader'] = emailHeader
-    cef['fromEmail']=efrom
-    cef['toEmail']=eTo
     success, message, artifact_id = phantom.add_artifact(
     container=container, raw_data=raw, cef_data=cef, label='artifact',
             name= 'Reported by: ' + efrom, severity='high',
