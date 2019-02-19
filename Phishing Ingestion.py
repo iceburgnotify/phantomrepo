@@ -83,18 +83,17 @@ def add_artifact(action=None, success=None, container=None, results=None, handle
     url = ['www.badlink.com'
           ]
 
-    for i in range(len(aeTo)):
-        raw = {}
-        cef = {}
-        eTo = random.choice(aeTo)
-        efrom = random.choice(aeFrom)
-        emailHeader = {'Delivered-To': 'company@phishing.com',
+    raw = {}
+    cef = {}
+    eTo = random.choice(aeTo)
+    efrom = random.choice(aeFrom)
+    emailHeader = {'Delivered-To': 'company@phishing.com',
            'From': efrom,
-           'Detected-URL': 'https://paypal.account.myorder-manage.com/signin/',
            'ARC-Seal': '''i=1; a=rsa-sha256; t=1529885666; cv=none; d=google.com; s=arc-20160816; b=CQpzLQywzGbo1pRGG98Ja4x2FTL8ubfppNQg5BFWZLjYkqJOcvJMITXbBt0Jafvb9O
  i5LC/9Yf5jstXwDKHJUYKkuK40+NiAPFmag/G3+CF01Z7EDHMrnsPQ/6EI29jEES6nxg aWGZhbSiISz6OMVpRfUFztR0SAciSaOWCEiD8lQNhCiq6zWHIEJknYhTegsu/Ud8wTI+
  QW91ixIjMJYpOz+SQhMR0QoWn3n7anF1Ny8HEGOKdxirCKE33otb8BGnJif1eH+tzVVQ Lbv4bfyXgJB7QBJgsDCF7YVWicENGuI04KJkPumDZfAFQ7hcBPcV293Bs/ptSI6NyONu
  +izQ==''',
+           'DetectedURL': 'https://paypal.account.myorder-manage.com/signin/',
             'To': eTo,
             'X-Mailgun-Sending-Ip': '209.61.151.222',
             'X-Mailgun-Tag': 'summary',
@@ -114,19 +113,15 @@ def add_artifact(action=None, success=None, container=None, results=None, handle
             'X-Google-Smtp-Source':'ADUXVKJS4kPPUt/4ky1gQgzF2sD9anlyTDaGRxkf6N9q6KOI3wFA2tzA4GwefhlVxyjO3V/+dPte',
             'Subject':'Phishing'            
            }
-        cef['emailHeader'] = emailHeader
-        cef['fromEmail']=efrom
-        cef['toEmail']=eTo
-        success, message, artifact_id = phantom.add_artifact(
-            container=container, raw_data=raw, cef_data=cef, label='artifact',
+    cef['emailHeader'] = emailHeader
+    cef['fromEmail']=efrom
+    cef['toEmail']=eTo
+    success, message, artifact_id = phantom.add_artifact(
+    container=container, raw_data=raw, cef_data=cef, label='artifact',
             name= 'Reported by: ' + efrom, severity='high',
             identifier=None,
             artifact_type='network')
-        phantom.debug('artifact added as id:'+str(artifact_id))
 
-        artifacts = phantom.collect(container, 'artifacts:*', scope='all')
-        phantom.debug(artifacts)
-    
     return
 
 def on_finish(container, summary):
