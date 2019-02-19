@@ -77,7 +77,7 @@ def add_artifact(action=None, success=None, container=None, results=None, handle
         cef['toEmail']=eTo[i]
         success, message, artifact_id = phantom.add_artifact(
             container=container, raw_data=raw, cef_data=cef, label='artifact',
-            name=efrom[i], severity='high',
+            name= 'Reported by: ' + efrom[i], severity='high',
             identifier=None,
             artifact_type='network')
         phantom.debug('artifact added as id:'+str(artifact_id))
