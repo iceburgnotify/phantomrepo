@@ -47,7 +47,7 @@ def add_artifact(action=None, success=None, container=None, results=None, handle
         cef = {}
         emailHeader = {'Delivered-To': 'company@phishing.com',
            'From': efrom[i],
-            'Detected-URL':random.choice(url),
+           'Detected-URL':random.choice(url),
            'Return-Path': '<bounce+07b9a7.9c403',
            'ARC-Seal': '''i=1; a=rsa-sha256; t=1529885666; cv=none; d=google.com; s=arc-20160816; b=CQpzLQywzGbo1pRGG98Ja4x2FTL8ubfppNQg5BFWZLjYkqJOcvJMITXbBt0Jafvb9O
  i5LC/9Yf5jstXwDKHJUYKkuK40+NiAPFmag/G3+CF01Z7EDHMrnsPQ/6EI29jEES6nxg aWGZhbSiISz6OMVpRfUFztR0SAciSaOWCEiD8lQNhCiq6zWHIEJknYhTegsu/Ud8wTI+
