@@ -39,7 +39,7 @@ def add_artifact(action=None, success=None, container=None, results=None, handle
     efrom = generate_random_emails(2, 7)
     eTo = generate_random_emails(2, 7)
     
-    for i in range(len(generate_random_emails)):
+    for i in range(len(eTo)):
         phantom.debug(i)
     
     """
