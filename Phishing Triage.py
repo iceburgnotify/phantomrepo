@@ -50,7 +50,6 @@ def details(action=None, success=None, container=None, results=None, handle=None
 def pt_url_reputation(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
     phantom.debug('pt_url_reputation() called')
     if not success:
-        phantom.debug(results)
         phantom.debug('Error in url reputation of VirusTotal')
         return
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
@@ -70,10 +69,7 @@ def pt_url_reputation(action=None, success=None, container=None, results=None, h
 
 def vt_url_reputation(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
     phantom.debug('vt_url_reputation() called')
-    if not success:
-        phantom.debug('Error in url reputation of VirusTotal')
-        return
-    phantom.debug(results)
+    
     # collect data for 'vt_url_reputation' call
 
     parameters = []

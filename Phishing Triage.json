@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "url = 'https://paypal.account.myorder-manage.com/signin/'\ndomain ='paypal.account.myorder-manage.com/signin/'",
             "description": "",
-            "hash": "76b4386b96f359adaa11640c35a90a92bcd0ddf5",
+            "hash": "cff19d80b90678df5e69855b8f4f97fdf530b710",
             "joint": {
                 "cells": [
                     {
@@ -66,8 +66,8 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 142,
-                        "line_start": 129,
+                        "line_end": 138,
+                        "line_start": 125,
                         "name": "",
                         "notes": "",
                         "number": 0,
@@ -1237,8 +1237,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 111,
-                        "line_start": 90,
+                        "line_end": 107,
+                        "line_start": 86,
                         "message": "Configuring now",
                         "name": "get screenshot",
                         "notes": "",
@@ -1684,8 +1684,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 129,
-                        "line_start": 111,
+                        "line_end": 125,
+                        "line_start": 107,
                         "message": "Configuring now",
                         "name": "whois domain",
                         "notes": "",
@@ -1766,6 +1766,291 @@
                         "type": "coa.Action",
                         "warn": false,
                         "z": 97
+                    },
+                    {
+                        "action": "url reputation",
+                        "action_type": "investigate",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {
+                            "url": ""
+                        },
+                        "angle": 0,
+                        "app": "PhishTank",
+                        "approver": "",
+                        "assets": [
+                            {
+                                "action": "url reputation",
+                                "active": true,
+                                "app_name": "PhishTank",
+                                "app_version": "1.0.15",
+                                "asset_name": "phishtank",
+                                "config_type": "asset",
+                                "count": 0,
+                                "fields": {
+                                    "url": ""
+                                },
+                                "has_app": true,
+                                "id": 108,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "phishtank",
+                                "output": [
+                                    {
+                                        "column_name": "URL",
+                                        "column_order": 0,
+                                        "contains": [
+                                            "url"
+                                        ],
+                                        "data_path": "action_result.data.*.url",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "VALID",
+                                        "column_order": 1,
+                                        "data_path": "action_result.data.*.valid",
+                                        "data_type": "boolean"
+                                    },
+                                    {
+                                        "column_name": "phish_id",
+                                        "column_order": 2,
+                                        "data_path": "action_result.data.*.phish_id",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Verified at",
+                                        "column_order": 4,
+                                        "data_path": "action_result.data.*.verified",
+                                        "data_type": "boolean"
+                                    },
+                                    {
+                                        "column_name": "In Database",
+                                        "column_order": 3,
+                                        "data_path": "action_result.data.*.in_database",
+                                        "data_type": "boolean"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.verified_at",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Detail URL",
+                                        "column_order": 5,
+                                        "data_path": "action_result.data.*.phish_detail_page",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.status",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.message",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.summary.Valid",
+                                        "data_type": "boolean"
+                                    },
+                                    {
+                                        "data_path": "action_result.summary.Verified",
+                                        "data_type": "boolean"
+                                    },
+                                    {
+                                        "data_path": "action_result.summary.In Database",
+                                        "data_type": "boolean"
+                                    },
+                                    {
+                                        "contains": [
+                                            "url"
+                                        ],
+                                        "data_path": "action_result.parameter.url",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects_successful",
+                                        "data_type": "numeric"
+                                    }
+                                ],
+                                "parameters": {
+                                    "url": {
+                                        "contains": [
+                                            "url"
+                                        ],
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "URL to query for Phishing information",
+                                        "key": "url",
+                                        "primary": true,
+                                        "required": true
+                                    }
+                                },
+                                "product_name": "PhishTank",
+                                "product_vendor": "OpenDNS",
+                                "targets": "90",
+                                "type": ""
+                            }
+                        ],
+                        "attrs": {
+                            ".action": {
+                                "text": "pt url reputation"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "Investigate"
+                            },
+                            "g.code image": {
+                                "xlink:href": "/inc/coa/img/block_icon_code_on.svg"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_investigate.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def pt_url_reputation(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('pt_url_reputation() called')\n    \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n\n    parameters = []\n\n    phantom.act(\"url reputation\", parameters=parameters, app={ \"name\": 'PhishTank' }, name=\"pt_url_reputation\", parent_action=action)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "vt url reputation",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "def pt_url_reputation(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('pt_url_reputation() called')\n    if not success:\n        phantom.debug('Error in url reputation of VirusTotal')\n        return\n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    phantom.debug(results)\n    # collect data for 'pt_url_reputation' call\n\n    parameters = []\n    \n    # build parameters list for 'pt_url_reputation' call\n    parameters.append({\n        'url': url,\n    })\n\n    phantom.act(\"url reputation\", parameters=parameters, assets=['phishtank'], callback=geolocate_ip, name=\"pt_url_reputation\", parent_action=action)\n\n    return",
+                        "custom_join": "",
+                        "custom_name": "pt url reputation",
+                        "delay": 0,
+                        "description": "",
+                        "has_custom": true,
+                        "has_custom_block": true,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "0efd2146-561d-4eae-8d7e-2f6fa7d38f47",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 70,
+                        "line_start": 50,
+                        "message": "Configuring now",
+                        "name": "url reputation",
+                        "notes": "",
+                        "number": 2,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 480,
+                            "y": 220
+                        },
+                        "previous_function": "",
+                        "previous_name": "pt_url_reputation",
+                        "required_params": {
+                            "url": true
+                        },
+                        "reviewer": "",
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "app_action_assets",
+                        "status": "",
+                        "title": "Investigate",
+                        "type": "coa.Action",
+                        "warn": false,
+                        "z": 101
                     },
                     {
                         "action": "url reputation",
@@ -1975,7 +2260,7 @@
                         "connection_name": "",
                         "connection_type": "",
                         "custom_callback": "",
-                        "custom_code": "def vt_url_reputation(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('vt_url_reputation() called')\n    if not success:\n        phantom.debug('Error in url reputation of VirusTotal')\n        return\n    phantom.debug(results)\n    # collect data for 'vt_url_reputation' call\n\n    parameters = []\n    \n    # build parameters list for 'vt_url_reputation' call\n    parameters.append({\n        'url': url\n    })\n\n    phantom.act(\"url reputation\", parameters=parameters, assets=['virustest'], callback=pt_url_reputation, name=\"vt_url_reputation\")\n\n    return",
+                        "custom_code": "def vt_url_reputation(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('vt_url_reputation() called')\n    \n    # collect data for 'vt_url_reputation' call\n\n    parameters = []\n    \n    # build parameters list for 'vt_url_reputation' call\n    parameters.append({\n        'url': url\n    })\n\n    phantom.act(\"url reputation\", parameters=parameters, assets=['virustest'], callback=pt_url_reputation, name=\"vt_url_reputation\")\n\n    return",
                         "custom_join": "",
                         "custom_name": "vt url reputation",
                         "delay": 0,
@@ -1991,8 +2276,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 90,
-                        "line_start": 71,
+                        "line_end": 86,
+                        "line_start": 70,
                         "message": "Configuring now",
                         "name": "url reputation",
                         "notes": "",
@@ -2072,292 +2357,7 @@
                         "title": "Investigate",
                         "type": "coa.Action",
                         "warn": false,
-                        "z": 98
-                    },
-                    {
-                        "action": "url reputation",
-                        "action_type": "investigate",
-                        "active": false,
-                        "active_keys": {},
-                        "active_values": {
-                            "url": ""
-                        },
-                        "angle": 0,
-                        "app": "PhishTank",
-                        "approver": "",
-                        "assets": [
-                            {
-                                "action": "url reputation",
-                                "active": true,
-                                "app_name": "PhishTank",
-                                "app_version": "1.0.15",
-                                "asset_name": "phishtank",
-                                "config_type": "asset",
-                                "count": 0,
-                                "fields": {
-                                    "url": ""
-                                },
-                                "has_app": true,
-                                "id": 108,
-                                "loaded": false,
-                                "missing": false,
-                                "name": "phishtank",
-                                "output": [
-                                    {
-                                        "column_name": "URL",
-                                        "column_order": 0,
-                                        "contains": [
-                                            "url"
-                                        ],
-                                        "data_path": "action_result.data.*.url",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "VALID",
-                                        "column_order": 1,
-                                        "data_path": "action_result.data.*.valid",
-                                        "data_type": "boolean"
-                                    },
-                                    {
-                                        "column_name": "phish_id",
-                                        "column_order": 2,
-                                        "data_path": "action_result.data.*.phish_id",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "Verified at",
-                                        "column_order": 4,
-                                        "data_path": "action_result.data.*.verified",
-                                        "data_type": "boolean"
-                                    },
-                                    {
-                                        "column_name": "In Database",
-                                        "column_order": 3,
-                                        "data_path": "action_result.data.*.in_database",
-                                        "data_type": "boolean"
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.verified_at",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "Detail URL",
-                                        "column_order": 5,
-                                        "data_path": "action_result.data.*.phish_detail_page",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.status",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.message",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.summary.Valid",
-                                        "data_type": "boolean"
-                                    },
-                                    {
-                                        "data_path": "action_result.summary.Verified",
-                                        "data_type": "boolean"
-                                    },
-                                    {
-                                        "data_path": "action_result.summary.In Database",
-                                        "data_type": "boolean"
-                                    },
-                                    {
-                                        "contains": [
-                                            "url"
-                                        ],
-                                        "data_path": "action_result.parameter.url",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects",
-                                        "data_type": "numeric"
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects_successful",
-                                        "data_type": "numeric"
-                                    }
-                                ],
-                                "parameters": {
-                                    "url": {
-                                        "contains": [
-                                            "url"
-                                        ],
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "URL to query for Phishing information",
-                                        "key": "url",
-                                        "primary": true,
-                                        "required": true
-                                    }
-                                },
-                                "product_name": "PhishTank",
-                                "product_vendor": "OpenDNS",
-                                "targets": "90",
-                                "type": ""
-                            }
-                        ],
-                        "attrs": {
-                            ".action": {
-                                "text": "pt url reputation"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "Investigate"
-                            },
-                            "g.code image": {
-                                "xlink:href": "/inc/coa/img/block_icon_code_on.svg"
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.icon image": {
-                                "xlink:href": "/inc/coa/img/block_icon_investigate.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            }
-                        },
-                        "block_code": "def pt_url_reputation(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('pt_url_reputation() called')\n    \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n\n    parameters = []\n\n    phantom.act(\"url reputation\", parameters=parameters, app={ \"name\": 'PhishTank' }, name=\"pt_url_reputation\", parent_action=action)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": true,
-                        "color": "",
-                        "connected_to_start": true,
-                        "connection_name": "vt url reputation",
-                        "connection_type": "action",
-                        "custom_callback": "",
-                        "custom_code": "def pt_url_reputation(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('pt_url_reputation() called')\n    if not success:\n        phantom.debug(results)\n        phantom.debug('Error in url reputation of VirusTotal')\n        return\n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    phantom.debug(results)\n    # collect data for 'pt_url_reputation' call\n\n    parameters = []\n    \n    # build parameters list for 'pt_url_reputation' call\n    parameters.append({\n        'url': url,\n    })\n\n    phantom.act(\"url reputation\", parameters=parameters, assets=['phishtank'], callback=geolocate_ip, name=\"pt_url_reputation\", parent_action=action)\n\n    return",
-                        "custom_join": "",
-                        "custom_name": "pt url reputation",
-                        "delay": 0,
-                        "description": "",
-                        "has_custom": true,
-                        "has_custom_block": true,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "0efd2146-561d-4eae-8d7e-2f6fa7d38f47",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 71,
-                        "line_start": 50,
-                        "message": "Configuring now",
-                        "name": "url reputation",
-                        "notes": "",
-                        "number": 2,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 480,
-                            "y": 220
-                        },
-                        "previous_function": "",
-                        "previous_name": "pt_url_reputation",
-                        "required_params": {
-                            "url": true
-                        },
-                        "reviewer": "",
-                        "show_number": true,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "app_action_assets",
-                        "status": "",
-                        "title": "Investigate",
-                        "type": "coa.Action",
-                        "warn": false,
-                        "z": 99
+                        "z": 102
                     }
                 ]
             },
@@ -2366,7 +2366,7 @@
         "schema": 3,
         "version": "3.5.200"
     },
-    "create_time": "2019-02-20T06:43:36.447719+00:00",
+    "create_time": "2019-02-20T06:44:29.832973+00:00",
     "draft_mode": false,
     "labels": [
         "*"
