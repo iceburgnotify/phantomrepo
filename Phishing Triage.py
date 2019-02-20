@@ -88,7 +88,7 @@ def lookup_domain_1(action=None, success=None, container=None, results=None, han
     # build parameters list for 'lookup_domain_1' call
     parameters.append({
         'domain': url,
-        'type': "",
+        'type': "mx",
     })
 
     phantom.act("lookup domain", parameters=parameters, assets=['mxtoolbox'], callback=call_api_1, name="lookup_domain_1")

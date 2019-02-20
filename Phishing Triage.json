@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "url = 'https://paypal.account.myorder-manage.com/signin/'",
             "description": "",
-            "hash": "f52aa36bc2ae508709ce5503e6d5566ad3834bcc",
+            "hash": "758374150b6a4f71cf499a7deface7687eeed788",
             "joint": {
                 "cells": [
                     {
@@ -1826,7 +1826,7 @@
                         "connection_name": "",
                         "connection_type": "",
                         "custom_callback": "",
-                        "custom_code": "def lookup_domain_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('lookup_domain_1() called')\n\n    # collect data for 'lookup_domain_1' call\n\n    parameters = []\n    \n    # build parameters list for 'lookup_domain_1' call\n    parameters.append({\n        'domain': url,\n        'type': \"\",\n    })\n\n    phantom.act(\"lookup domain\", parameters=parameters, assets=['mxtoolbox'], callback=call_api_1, name=\"lookup_domain_1\")\n\n    return",
+                        "custom_code": "def lookup_domain_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('lookup_domain_1() called')\n\n    # collect data for 'lookup_domain_1' call\n\n    parameters = []\n    \n    # build parameters list for 'lookup_domain_1' call\n    parameters.append({\n        'domain': url,\n        'type': \"mx\",\n    })\n\n    phantom.act(\"lookup domain\", parameters=parameters, assets=['mxtoolbox'], callback=call_api_1, name=\"lookup_domain_1\")\n\n    return",
                         "custom_join": "",
                         "custom_name": "",
                         "delay": 0,
@@ -1924,7 +1924,7 @@
                         "title": "Investigate",
                         "type": "coa.Action",
                         "warn": false,
-                        "z": 29
+                        "z": 30
                     }
                 ]
             },
@@ -1933,7 +1933,7 @@
         "schema": 3,
         "version": "3.5.200"
     },
-    "create_time": "2019-02-20T06:14:15.707889+00:00",
+    "create_time": "2019-02-20T06:15:07.164215+00:00",
     "draft_mode": false,
     "labels": [
         "*"
