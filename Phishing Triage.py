@@ -45,8 +45,10 @@ def geolocate_ip(action=None, success=None, container=None, results=None, handle
 def details(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
     phantom.debug('details() called')
     vt_result = phantom.collect2(container=container,datapath=['vt_url_reputation:action_result.data.*.positives'],action_results=results)
-    #phantom.debug(results)
-    phantom.debug(vt_result)
+    if vt_result:
+        positive = vt_result[0][0]
+        phantom.debug(positive)
+        
     return
 
 def pt_url_reputation(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
@@ -121,6 +123,13 @@ def whois_domain_1(action=None, success=None, container=None, results=None, hand
     })
 
     phantom.act("whois domain", parameters=parameters, assets=['whois'], callback=get_screenshot_1, name="whois_domain_1", parent_action=action)
+
+    return
+
+def promote_to_case(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('promote_to_case() called')
+
+    phantom.promote(container=container, template="Incident Response Template")
 
     return
 
