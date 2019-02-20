@@ -22,44 +22,6 @@ def on_start(container):
 
     return
 
-def pt_url_reputation(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
-    phantom.debug('pt_url_reputation() called')
-    if not success:
-        phantom.debug('Error in url reputation of VirusTotal')
-        return
-    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
-    phantom.debug(results)
-    # collect data for 'pt_url_reputation' call
-
-    parameters = []
-    
-    # build parameters list for 'pt_url_reputation' call
-    parameters.append({
-        'url': url,
-    })
-
-    phantom.act("url reputation", parameters=parameters, assets=['phishtank'], callback=geolocate_ip, name="pt_url_reputation", parent_action=action)
-
-    return
-
-def whois_domain_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
-    phantom.debug('whois_domain_1() called')
-    if not success:
-        phantom.debug('Error in geolocate ip of MaxMind')
-        return
-    # collect data for 'whois_domain_1' call
-    phantom.debug(results)
-    parameters = []
-    
-    # build parameters list for 'whois_domain_1' call
-    parameters.append({
-        'domain': domain,
-    })
-
-    phantom.act("whois domain", parameters=parameters, assets=['whois'], callback=get_screenshot_1, name="whois_domain_1", parent_action=action)
-
-    return
-
 def geolocate_ip(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
     phantom.debug('geolocate_ip() called')
     if not success:
@@ -77,6 +39,51 @@ def geolocate_ip(action=None, success=None, container=None, results=None, handle
     })
 
     phantom.act("geolocate ip", parameters=parameters, assets=['maxmind'], callback=whois_domain_1, name="geolocate_ip", parent_action=action)
+
+    return
+
+def details(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('details() called')
+    phantom.debug(results)
+    return
+
+def pt_url_reputation(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('pt_url_reputation() called')
+    if not success:
+        phantom.debug(results)
+        phantom.debug('Error in url reputation of VirusTotal')
+        return
+    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
+    phantom.debug(results)
+    # collect data for 'pt_url_reputation' call
+
+    parameters = []
+    
+    # build parameters list for 'pt_url_reputation' call
+    parameters.append({
+        'url': url,
+    })
+
+    phantom.act("url reputation", parameters=parameters, assets=['phishtank'], callback=geolocate_ip, name="pt_url_reputation", parent_action=action)
+
+    return
+
+def vt_url_reputation(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('vt_url_reputation() called')
+    if not success:
+        phantom.debug('Error in url reputation of VirusTotal')
+        return
+    phantom.debug(results)
+    # collect data for 'vt_url_reputation' call
+
+    parameters = []
+    
+    # build parameters list for 'vt_url_reputation' call
+    parameters.append({
+        'url': url
+    })
+
+    phantom.act("url reputation", parameters=parameters, assets=['virustest'], callback=pt_url_reputation, name="vt_url_reputation")
 
     return
 
@@ -101,27 +108,21 @@ def get_screenshot_1(action=None, success=None, container=None, results=None, ha
 
     return
 
-def details(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
-    phantom.debug('details() called')
-    phantom.debug(results)
-    return
-
-def vt_url_reputation(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
-    phantom.debug('vt_url_reputation() called')
+def whois_domain_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('whois_domain_1() called')
     if not success:
-        phantom.debug('Error in url reputation of VirusTotal')
+        phantom.debug('Error in geolocate ip of MaxMind')
         return
+    # collect data for 'whois_domain_1' call
     phantom.debug(results)
-    # collect data for 'vt_url_reputation' call
-
     parameters = []
     
-    # build parameters list for 'vt_url_reputation' call
+    # build parameters list for 'whois_domain_1' call
     parameters.append({
-        'url': url
+        'domain': domain,
     })
 
-    phantom.act("url reputation", parameters=parameters, assets=['virustest'], callback=pt_url_reputation, name="vt_url_reputation")
+    phantom.act("whois domain", parameters=parameters, assets=['whois'], callback=get_screenshot_1, name="whois_domain_1", parent_action=action)
 
     return
 
