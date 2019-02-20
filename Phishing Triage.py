@@ -9,6 +9,7 @@ from datetime import datetime, timedelta
 # Start - Global Code Block
 
 url = 'https://paypal.account.myorder-manage.com/signin/'
+domain ='paypal.account.myorder-manage.com/signin/'
 
 # End - Global Code block
 ##############################
@@ -16,8 +17,8 @@ url = 'https://paypal.account.myorder-manage.com/signin/'
 def on_start(container):
     phantom.debug('on_start() called')
     
-    # call 'lookup_domain_1' block
-    lookup_domain_1(container=container)
+    # call 'whois_domain_1' block
+    whois_domain_1(container=container)
 
     return
 
@@ -57,7 +58,7 @@ def whois_domain_1(action=None, success=None, container=None, results=None, hand
     
     # build parameters list for 'whois_domain_1' call
     parameters.append({
-        'domain': url,
+        'domain': domain,
     })
 
     phantom.act("whois domain", parameters=parameters, assets=['whois'], callback=call_api_1, name="whois_domain_1", parent_action=action)
