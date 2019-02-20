@@ -96,7 +96,7 @@ def get_screenshot_1(action=None, success=None, container=None, results=None, ha
     
     # build parameters list for 'get_screenshot_1' call
     parameters.append({
-        'url': "",
+        'url': url,
         'size': "",
     })
 
