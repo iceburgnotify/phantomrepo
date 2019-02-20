@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "url = 'https://paypal.account.myorder-manage.com/signin/'\ndomain ='paypal.account.myorder-manage.com/signin/'",
             "description": "",
-            "hash": "178f3c6be2d99d2529c9282f5c3ab4e8413f40fd",
+            "hash": "6d5a7cb671c3691752bd0c8b3cda33d63cf95537",
             "joint": {
                 "cells": [
                     {
@@ -1867,7 +1867,13 @@
                             "selector": "g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
                         },
                         "type": "link",
-                        "z": 106
+                        "vertices": [
+                            {
+                                "x": 640,
+                                "y": 540
+                            }
+                        ],
+                        "z": 113
                     },
                     {
                         "action": "url reputation",
@@ -2174,7 +2180,7 @@
                         "title": "Investigate",
                         "type": "coa.Action",
                         "warn": false,
-                        "z": 109
+                        "z": 114
                     },
                     {
                         "active": false,
@@ -2237,7 +2243,7 @@
                         "connection_name": "vt url reputation",
                         "connection_type": "action",
                         "custom_callback": "",
-                        "custom_code": "def details(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('details() called')\n    vt_result = phantom.collect2(container=container,datapath=['action_result.data.*.positives'])\n    #phantom.debug(results)\n    phantom.debug(vt_result)\n    return",
+                        "custom_code": "def details(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('details() called')\n    vt_result = phantom.collect2(container=container,datapath=['vt_url_reputation:action_result.data.*.positives'],action_results=results)\n    #phantom.debug(results)\n    phantom.debug(vt_result)\n    return",
                         "custom_join": "",
                         "custom_name": "details",
                         "description": "",
@@ -2314,8 +2320,8 @@
                             }
                         },
                         "position": {
-                            "x": 1420,
-                            "y": 520
+                            "x": 900,
+                            "y": 380
                         },
                         "previous_function": "",
                         "previous_name": "details",
@@ -2329,7 +2335,7 @@
                         "title": "API",
                         "type": "coa.API",
                         "warn": false,
-                        "z": 111
+                        "z": 115
                     }
                 ]
             },
@@ -2338,7 +2344,7 @@
         "schema": 3,
         "version": "3.5.200"
     },
-    "create_time": "2019-02-20T06:55:23.673695+00:00",
+    "create_time": "2019-02-20T06:58:08.161119+00:00",
     "draft_mode": false,
     "labels": [
         "*"

@@ -44,7 +44,7 @@ def geolocate_ip(action=None, success=None, container=None, results=None, handle
 
 def details(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
     phantom.debug('details() called')
-    vt_result = phantom.collect2(container=container,datapath=['action_result.data.*.positives'])
+    vt_result = phantom.collect2(container=container,datapath=['vt_url_reputation:action_result.data.*.positives'],action_results=results)
     #phantom.debug(results)
     phantom.debug(vt_result)
     return
