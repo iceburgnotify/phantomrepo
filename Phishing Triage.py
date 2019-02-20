@@ -42,16 +42,6 @@ def geolocate_ip(action=None, success=None, container=None, results=None, handle
 
     return
 
-def details(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
-    phantom.debug('details() called')
-    vt_result = phantom.collect2(container=container,datapath=['vt_url_reputation:action_result.data.*.positives'],action_results=results)
-    if vt_result:
-        positive = vt_result[0][0]
-        if positive>0:
-            phantom.debug('more than 0')
-        
-    return
-
 def pt_url_reputation(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
     phantom.debug('pt_url_reputation() called')
     if not success:
@@ -84,7 +74,7 @@ def vt_url_reputation(action=None, success=None, container=None, results=None, h
         'url': url
     })
 
-    phantom.act("url reputation", parameters=parameters, assets=['virustest'], callback=promote_to_case, name="vt_url_reputation")
+    phantom.act("url reputation", parameters=parameters, assets=['virustest'], callback=pt_url_reputation, name="vt_url_reputation")
 
     return
 
@@ -105,7 +95,7 @@ def get_screenshot_1(action=None, success=None, container=None, results=None, ha
         'size': "",
     })
 
-    phantom.act("get screenshot", parameters=parameters, assets=['test ss'], callback=details, name="get_screenshot_1", parent_action=action)
+    phantom.act("get screenshot", parameters=parameters, assets=['test ss'], callback=promote_to_case, name="get_screenshot_1", parent_action=action)
 
     return
 
