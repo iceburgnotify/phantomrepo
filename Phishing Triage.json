@@ -7,9 +7,870 @@
             "clean": true,
             "code_block": "url = 'https://paypal.account.myorder-manage.com/signin/'\ndomain ='paypal.account.myorder-manage.com/signin/'",
             "description": "",
-            "hash": "52f2797497c6082764d70e715110c895fefc36e1",
+            "hash": "d4646349ba4579d61168b2d425efd3f07691eb16",
             "joint": {
                 "cells": [
+                    {
+                        "0": "E",
+                        "1": "N",
+                        "2": "D",
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".title": {
+                                "text": "END"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_end.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def on_finish(container, summary):\n    phantom.debug('on_finish() called')\n    # This function is called after all actions are completed.\n    # summary of all the action and/or all detals of actions \n    # can be collected here.\n\n    # summary_json = phantom.get_summary()\n    # if 'result' in summary_json:\n        # for action_result in summary_json['result']:\n            # if 'action_run_id' in action_result:\n                # action_results = phantom.get_action_results(action_run_id=action_result['action_run_id'], result_data=False, flatten=False)\n                # phantom.debug(action_results)\n\n    return",
+                        "callback_code": "# read-only block view not available",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "get screenshot",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "f5008f0a-5f1b-41b6-a749-677c8156fc78",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "# read-only block view not available",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 141,
+                        "line_start": 128,
+                        "name": "",
+                        "notes": "",
+                        "number": 0,
+                        "outPorts": [],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 1740,
+                            "y": 240
+                        },
+                        "previous_function": "",
+                        "previous_name": "",
+                        "show_number": true,
+                        "size": {
+                            "height": 54,
+                            "width": 80
+                        },
+                        "status": "",
+                        "title": "END",
+                        "type": "coa.StartEnd",
+                        "warn": false,
+                        "z": 2
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#6C7A89",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#6a6c8a",
+                                "stroke": "#6a6c8a"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "a4cd59b0-f107-44ff-b38c-08076521a527",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "0efd2146-561d-4eae-8d7e-2f6fa7d38f47",
+                            "port": null,
+                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "0cfdcfe2-c2e1-4853-ac3d-5c03d45c8d63",
+                            "port": null,
+                            "selector": "g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 34
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#6C7A89",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#6a6c8a",
+                                "stroke": "#6a6c8a"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "96132fde-c0e9-4280-a578-a5b3365386ae",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "0cfdcfe2-c2e1-4853-ac3d-5c03d45c8d63",
+                            "port": null,
+                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "55577e7a-505d-4972-976a-5b8ccdd3c5e4",
+                            "port": null,
+                            "selector": "g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 35
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#6C7A89",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#6a6c8a",
+                                "stroke": "#6a6c8a"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "72e69684-b6d4-4295-bc36-eafa82a500b3",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "55577e7a-505d-4972-976a-5b8ccdd3c5e4",
+                            "port": null,
+                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "3b3fb5d9-ac52-449a-951c-1657b3ac82e3",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 36
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#6C7A89",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#6a6c8a",
+                                "stroke": "#6a6c8a"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "5cfe04db-47d8-41b1-a329-0f469e14e514",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "3b3fb5d9-ac52-449a-951c-1657b3ac82e3",
+                            "port": null,
+                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "07bf4c95-5d1a-4dc3-bf58-b9c856898dbb",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 51
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#6C7A89",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#6a6c8a",
+                                "stroke": "#6a6c8a"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "aaa8b2e3-f7a1-4dfb-a66a-d1795149ac0e",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "07bf4c95-5d1a-4dc3-bf58-b9c856898dbb",
+                            "port": null,
+                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "f5008f0a-5f1b-41b6-a749-677c8156fc78",
+                            "port": null,
+                            "selector": "g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 54
+                    },
+                    {
+                        "action": "geolocate ip",
+                        "action_type": "investigate",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {
+                            "ip": "68.66.243.38"
+                        },
+                        "angle": 0,
+                        "app": "MaxMind",
+                        "approver": "",
+                        "assets": [
+                            {
+                                "action": "geolocate ip",
+                                "active": true,
+                                "app_name": "MaxMind",
+                                "app_version": "1.2.22",
+                                "asset_name": "maxmind",
+                                "config_type": "asset",
+                                "count": 0,
+                                "fields": {
+                                    "ip": "68.66.243.38"
+                                },
+                                "has_app": true,
+                                "id": 87,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "maxmind",
+                                "output": [
+                                    {
+                                        "data_path": "action_result.status",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.message",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.continent_name",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.country_iso_code",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.country_name",
+                                        "data_type": "string",
+                                        "map_info": "Country"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.latitude",
+                                        "data_type": "numeric",
+                                        "map_info": "latitude"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.longitude",
+                                        "data_type": "numeric",
+                                        "map_info": "longitude"
+                                    },
+                                    {
+                                        "contains": [
+                                            "ip"
+                                        ],
+                                        "data_path": "action_result.parameter.ip",
+                                        "data_type": "string",
+                                        "map_info": "IP Address"
+                                    },
+                                    {
+                                        "contains": [
+                                            "ip"
+                                        ],
+                                        "data_path": "action_result.parameter.ip",
+                                        "data_type": "string",
+                                        "map_info": "name"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.city_name",
+                                        "data_type": "string",
+                                        "map_info": "City"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.postal_code",
+                                        "data_type": "string",
+                                        "map_info": "Postal Code"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.as_org",
+                                        "data_type": "string",
+                                        "map_info": "Organization"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.state_iso_code",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.state_name",
+                                        "data_type": "string",
+                                        "map_info": "State/Province"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.time_zone",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects_successful",
+                                        "data_type": "numeric"
+                                    }
+                                ],
+                                "parameters": {
+                                    "ip": {
+                                        "allow_list": true,
+                                        "contains": [
+                                            "ip"
+                                        ],
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "IP to geolocate",
+                                        "key": "ip",
+                                        "primary": true,
+                                        "required": true
+                                    }
+                                },
+                                "product_name": "GeoIP2",
+                                "product_vendor": "MaxMind",
+                                "targets": "2",
+                                "type": ""
+                            }
+                        ],
+                        "attrs": {
+                            ".action": {
+                                "text": "geolocate ip"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "Investigate"
+                            },
+                            "g.code image": {
+                                "xlink:href": "/inc/coa/img/block_icon_code_on.svg"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_investigate.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def geolocate_ip_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('geolocate_ip_1() called')\n\n    parameters = []\n\n    phantom.act(\"geolocate ip\", parameters=parameters, app={ \"name\": 'MaxMind' }, name=\"geolocate_ip_1\", parent_action=action)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "pt url reputation",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "def geolocate_ip(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('geolocate_ip() called')\n    if not success:\n        phantom.debug('Error in url reputation of PhishTank')\n        return\n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    phantom.debug(results)\n    # collect data for 'geolocate_ip' call\n\n    parameters = []\n    \n    # build parameters list for 'geolocate_ip' call\n    parameters.append({\n        'ip': \"68.66.243.38\",\n    })\n\n    phantom.act(\"geolocate ip\", parameters=parameters, assets=['maxmind'], callback=whois_domain_1, name=\"geolocate_ip\", parent_action=action)\n\n    return",
+                        "custom_join": "",
+                        "custom_name": "geolocate ip",
+                        "delay": 0,
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": true,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "0cfdcfe2-c2e1-4853-ac3d-5c03d45c8d63",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 83,
+                        "line_start": 63,
+                        "message": "Configuring now",
+                        "name": "geolocate ip",
+                        "notes": "",
+                        "number": 1,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 720,
+                            "y": 220
+                        },
+                        "previous_function": "",
+                        "previous_name": "geolocate_ip",
+                        "required_params": {
+                            "ip": true
+                        },
+                        "reviewer": "",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "app_action_assets",
+                        "status": "",
+                        "title": "Investigate",
+                        "type": "coa.Action",
+                        "warn": false,
+                        "z": 78
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "api": "call api",
+                        "attrs": {
+                            ".api": {
+                                "text": "details"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "API"
+                            },
+                            "g.code image": {
+                                "xlink:href": "/inc/coa/img/block_icon_code_on.svg"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "# read-only block view not available",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "color": "",
+                        "configured": [],
+                        "connected_to_start": true,
+                        "connection_name": "get screenshot",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "def details(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('details() called')\n    phantom.debug(results)\n    return",
+                        "custom_join": "",
+                        "custom_name": "details",
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": true,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "07bf4c95-5d1a-4dc3-bf58-b9c856898dbb",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 109,
+                        "line_start": 104,
+                        "message": "Configuring now",
+                        "name": "call api",
+                        "notes": "",
+                        "number": 2,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 1460,
+                            "y": 220
+                        },
+                        "previous_function": "",
+                        "previous_name": "details",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "api",
+                        "status": "",
+                        "title": "API",
+                        "type": "coa.API",
+                        "warn": false,
+                        "z": 81
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#6C7A89",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#6a6c8a",
+                                "stroke": "#6a6c8a"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "7998ac17-7807-4ee6-86b7-1f69c8ebce36",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "04cb3b21-4874-4aec-972e-b68647eec4d7",
+                            "port": null,
+                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "faded284-db5d-4310-80fc-8ba9ce78104f",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 86
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#6C7A89",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#6a6c8a",
+                                "stroke": "#6a6c8a"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "39225ea6-c8c5-4915-9a02-2eb7c3aea870",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "faded284-db5d-4310-80fc-8ba9ce78104f",
+                            "port": null,
+                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "0efd2146-561d-4eae-8d7e-2f6fa7d38f47",
+                            "port": null,
+                            "selector": "g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 89
+                    },
                     {
                         "0": "S",
                         "1": "T",
@@ -39,6 +900,9 @@
                             "g.error": {
                                 "opacity": 0
                             },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_error.svg"
+                            },
                             "g.icon image": {
                                 "ref-x": 13,
                                 "xlink:href": "/inc/coa/img/block_icon_start.svg"
@@ -47,11 +911,11 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def on_start(container):\n    phantom.debug('on_start() called')\n    \n    # call 'whois_domain_1' block\n    whois_domain_1(container=container)\n\n    return",
+                        "block_code": "def on_start(container):\n    phantom.debug('on_start() called')\n    \n    # call 'vt_url_reputation' block\n    vt_url_reputation(container=container)\n\n    return",
                         "callback_code": "# read-only block view not available",
                         "callback_start": 1,
                         "callsback": false,
-                        "connected_to_start": true,
+                        "connected_to_start": false,
                         "connection_name": "",
                         "connection_type": "",
                         "custom_callback": "",
@@ -130,7 +994,7 @@
                         },
                         "position": {
                             "x": 100,
-                            "y": 100
+                            "y": 240
                         },
                         "previous_function": "",
                         "previous_name": "",
@@ -143,15 +1007,139 @@
                         "title": "START",
                         "type": "coa.StartEnd",
                         "warn": false,
-                        "z": 1
+                        "z": 90
                     },
                     {
-                        "0": "E",
-                        "1": "N",
-                        "2": "D",
+                        "action": "url reputation",
+                        "action_type": "investigate",
                         "active": false,
+                        "active_keys": {},
+                        "active_values": {
+                            "url": ""
+                        },
                         "angle": 0,
+                        "app": "PhishTank",
+                        "approver": "",
+                        "assets": [
+                            {
+                                "action": "url reputation",
+                                "active": true,
+                                "app_name": "PhishTank",
+                                "app_version": "1.0.15",
+                                "asset_name": "phishtank",
+                                "config_type": "asset",
+                                "count": 0,
+                                "fields": {
+                                    "url": ""
+                                },
+                                "has_app": true,
+                                "id": 108,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "phishtank",
+                                "output": [
+                                    {
+                                        "column_name": "URL",
+                                        "column_order": 0,
+                                        "contains": [
+                                            "url"
+                                        ],
+                                        "data_path": "action_result.data.*.url",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "VALID",
+                                        "column_order": 1,
+                                        "data_path": "action_result.data.*.valid",
+                                        "data_type": "boolean"
+                                    },
+                                    {
+                                        "column_name": "phish_id",
+                                        "column_order": 2,
+                                        "data_path": "action_result.data.*.phish_id",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Verified at",
+                                        "column_order": 4,
+                                        "data_path": "action_result.data.*.verified",
+                                        "data_type": "boolean"
+                                    },
+                                    {
+                                        "column_name": "In Database",
+                                        "column_order": 3,
+                                        "data_path": "action_result.data.*.in_database",
+                                        "data_type": "boolean"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.verified_at",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Detail URL",
+                                        "column_order": 5,
+                                        "data_path": "action_result.data.*.phish_detail_page",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.status",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.message",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.summary.Valid",
+                                        "data_type": "boolean"
+                                    },
+                                    {
+                                        "data_path": "action_result.summary.Verified",
+                                        "data_type": "boolean"
+                                    },
+                                    {
+                                        "data_path": "action_result.summary.In Database",
+                                        "data_type": "boolean"
+                                    },
+                                    {
+                                        "contains": [
+                                            "url"
+                                        ],
+                                        "data_path": "action_result.parameter.url",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects_successful",
+                                        "data_type": "numeric"
+                                    }
+                                ],
+                                "parameters": {
+                                    "url": {
+                                        "contains": [
+                                            "url"
+                                        ],
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "URL to query for Phishing information",
+                                        "key": "url",
+                                        "primary": true,
+                                        "required": true
+                                    }
+                                },
+                                "product_name": "PhishTank",
+                                "product_vendor": "OpenDNS",
+                                "targets": "90",
+                                "type": ""
+                            }
+                        ],
                         "attrs": {
+                            ".action": {
+                                "text": "pt url reputation"
+                            },
                             ".inPorts>.port-in": {
                                 "ref": ".background",
                                 "ref-x": 0.5
@@ -162,8 +1150,25 @@
                                     "type": "in"
                                 }
                             },
+                            ".message": {
+                                "opacity": 0,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
                             ".title": {
-                                "text": "END"
+                                "text": "Investigate"
+                            },
+                            "g.code image": {
+                                "xlink:href": "/inc/coa/img/block_icon_code_on.svg"
                             },
                             "g.delete": {
                                 "display": "none"
@@ -171,42 +1176,50 @@
                             "g.error": {
                                 "opacity": 0
                             },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
                             "g.icon image": {
-                                "xlink:href": "/inc/coa/img/block_icon_end.svg"
+                                "xlink:href": "/inc/coa/img/block_icon_investigate.svg"
                             },
                             "g.notes": {
                                 "display": "block"
                             }
                         },
-                        "block_code": "def on_finish(container, summary):\n    phantom.debug('on_finish() called')\n    # This function is called after all actions are completed.\n    # summary of all the action and/or all detals of actions \n    # can be collected here.\n\n    # summary_json = phantom.get_summary()\n    # if 'result' in summary_json:\n        # for action_result in summary_json['result']:\n            # if 'action_run_id' in action_result:\n                # action_results = phantom.get_action_results(action_run_id=action_result['action_run_id'], result_data=False, flatten=False)\n                # phantom.debug(action_results)\n\n    return",
-                        "callback_code": "# read-only block view not available",
+                        "block_code": "def pt_url_reputation(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('pt_url_reputation() called')\n    \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n\n    parameters = []\n\n    phantom.act(\"url reputation\", parameters=parameters, app={ \"name\": 'PhishTank' }, name=\"pt_url_reputation\", parent_action=action)\n\n    return",
+                        "callback_code": "",
                         "callback_start": 1,
-                        "callsback": false,
+                        "callsback": true,
+                        "color": "",
                         "connected_to_start": true,
-                        "connection_name": "",
-                        "connection_type": "",
+                        "connection_name": "vt url reputation",
+                        "connection_type": "action",
                         "custom_callback": "",
-                        "custom_code": "",
+                        "custom_code": "def pt_url_reputation(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('pt_url_reputation() called')\n    if not success:\n        phantom.debug('Error in url reputation of VirusTotal')\n        return\n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    phantom.debug(results)\n    # collect data for 'pt_url_reputation' call\n\n    parameters = []\n    \n    # build parameters list for 'pt_url_reputation' call\n    parameters.append({\n        'url': url,\n    })\n\n    phantom.act(\"url reputation\", parameters=parameters, assets=['phishtank'], callback=geolocate_ip, name=\"pt_url_reputation\", parent_action=action)\n\n    return",
                         "custom_join": "",
-                        "custom_name": "",
+                        "custom_name": "pt url reputation",
+                        "delay": 0,
                         "description": "",
                         "has_custom": false,
-                        "has_custom_block": false,
+                        "has_custom_block": true,
                         "has_custom_callback": false,
                         "has_custom_join": false,
-                        "id": "f5008f0a-5f1b-41b6-a749-677c8156fc78",
+                        "id": "0efd2146-561d-4eae-8d7e-2f6fa7d38f47",
                         "inPorts": [
                             "in"
                         ],
-                        "join_code": "# read-only block view not available",
+                        "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 112,
-                        "line_start": 99,
-                        "name": "",
+                        "line_end": 45,
+                        "line_start": 25,
+                        "message": "Configuring now",
+                        "name": "url reputation",
                         "notes": "",
-                        "number": 0,
-                        "outPorts": [],
+                        "number": 2,
+                        "outPorts": [
+                            "out"
+                        ],
                         "ports": {
                             "groups": {
                                 "in": {
@@ -260,61 +1273,26 @@
                             }
                         },
                         "position": {
-                            "x": 1340,
-                            "y": 180
+                            "x": 480,
+                            "y": 220
                         },
                         "previous_function": "",
-                        "previous_name": "",
+                        "previous_name": "pt_url_reputation",
+                        "required_params": {
+                            "url": true
+                        },
+                        "reviewer": "",
                         "show_number": true,
                         "size": {
-                            "height": 54,
-                            "width": 80
+                            "height": 100,
+                            "width": 180
                         },
+                        "state": "app_action_assets",
                         "status": "",
-                        "title": "END",
-                        "type": "coa.StartEnd",
+                        "title": "Investigate",
+                        "type": "coa.Action",
                         "warn": false,
-                        "z": 2
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#6C7A89",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#6a6c8a",
-                                "stroke": "#6a6c8a"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "db5c0dba-ad6d-4719-8ba8-b0ff9c544941",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "28c9fd32-132c-46e2-9bc2-9eb86012bd28",
-                            "port": null,
-                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "0efd2146-561d-4eae-8d7e-2f6fa7d38f47",
-                            "selector": ".port-body[type=\"input\"]"
-                        },
-                        "type": "link",
-                        "z": 9
+                        "z": 93
                     },
                     {
                         "action": "url reputation",
@@ -333,7 +1311,7 @@
                                 "active": true,
                                 "app_name": "VirusTotal",
                                 "app_version": "1.2.40",
-                                "asset_name": "virustotal",
+                                "asset_name": "virustest",
                                 "config_type": "asset",
                                 "count": 0,
                                 "fields": {
@@ -343,7 +1321,7 @@
                                 "id": 143,
                                 "loaded": false,
                                 "missing": false,
-                                "name": "virustotal",
+                                "name": "virustest",
                                 "output": [
                                     {
                                         "data_path": "action_result.data.*.permalink",
@@ -464,16 +1442,13 @@
                                 },
                                 "product_name": "VirusTotal",
                                 "product_vendor": "VirusTotal",
-                                "targets": "44",
+                                "targets": "8",
                                 "type": ""
                             }
                         ],
                         "attrs": {
                             ".action": {
                                 "text": "vt url reputation"
-                            },
-                            ".background": {
-                                "stroke": "#E6984E"
                             },
                             ".inPorts>.port-in": {
                                 "ref": ".background",
@@ -502,14 +1477,14 @@
                             ".title": {
                                 "text": "Investigate"
                             },
+                            "g.code image": {
+                                "xlink:href": "/inc/coa/img/block_icon_code_on.svg"
+                            },
                             "g.delete": {
                                 "display": "none"
                             },
                             "g.error": {
-                                "opacity": 1
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                                "opacity": 0
                             },
                             "g.icon image": {
                                 "xlink:href": "/inc/coa/img/block_icon_investigate.svg"
@@ -518,7 +1493,7 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def vt_url_reputation(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('vt_url_reputation() called')\n\n    # collect data for 'vt_url_reputation' call\n\n    parameters = []\n    \n    # build parameters list for 'vt_url_reputation' call\n    parameters.append({\n        'url': \"\",\n    })\n\n    phantom.act(\"url reputation\", parameters=parameters, assets=['virustotal'], callback=pt_url_reputation, name=\"vt_url_reputation\")\n\n    return",
+                        "block_code": "# read-only block view not available",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
@@ -527,28 +1502,28 @@
                         "connection_name": "",
                         "connection_type": "",
                         "custom_callback": "",
-                        "custom_code": "",
+                        "custom_code": "def vt_url_reputation(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('vt_url_reputation() called')\n    if not success:\n        phantom.debug('Error in url reputation of VirusTotal')\n        return\n    phantom.debug(results)\n    # collect data for 'vt_url_reputation' call\n\n    parameters = []\n    \n    # build parameters list for 'vt_url_reputation' call\n    parameters.append({\n        'url': url\n    })\n\n    phantom.act(\"url reputation\", parameters=parameters, assets=['virustest'], callback=pt_url_reputation, name=\"vt_url_reputation\")\n\n    return",
                         "custom_join": "",
                         "custom_name": "vt url reputation",
                         "delay": 0,
                         "description": "",
                         "has_custom": false,
-                        "has_custom_block": false,
+                        "has_custom_block": true,
                         "has_custom_callback": false,
                         "has_custom_join": false,
-                        "id": "28c9fd32-132c-46e2-9bc2-9eb86012bd28",
+                        "id": "faded284-db5d-4310-80fc-8ba9ce78104f",
                         "inPorts": [
                             "in"
                         ],
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 41,
-                        "line_start": 25,
+                        "line_end": 128,
+                        "line_start": 109,
                         "message": "Configuring now",
                         "name": "url reputation",
                         "notes": "",
-                        "number": 1,
+                        "number": 3,
                         "outPorts": [
                             "out"
                         ],
@@ -605,8 +1580,8 @@
                             }
                         },
                         "position": {
-                            "x": 300,
-                            "y": 80
+                            "x": 240,
+                            "y": 220
                         },
                         "previous_function": "",
                         "previous_name": "vt_url_reputation",
@@ -620,28 +1595,171 @@
                             "width": 180
                         },
                         "state": "app_action_assets",
-                        "status": "warn",
+                        "status": "",
                         "title": "Investigate",
                         "type": "coa.Action",
                         "warn": false,
-                        "z": 12
+                        "z": 94
                     },
                     {
-                        "action": "url reputation",
+                        "action": "get screenshot",
                         "action_type": "investigate",
                         "active": false,
                         "active_keys": {},
-                        "active_values": {},
+                        "active_values": {
+                            "size": "",
+                            "url": ""
+                        },
                         "angle": 0,
-                        "app": "PhishTank",
+                        "app": "Screenshot Machine",
                         "approver": "",
-                        "assets": [],
+                        "assets": [
+                            {
+                                "action": "get screenshot",
+                                "active": true,
+                                "app_name": "Screenshot Machine",
+                                "app_version": "1.4.24",
+                                "asset_name": "test ss",
+                                "config_type": "asset",
+                                "count": 0,
+                                "fields": {
+                                    "size": "",
+                                    "url": ""
+                                },
+                                "has_app": true,
+                                "id": 90,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "test ss",
+                                "output": [
+                                    {
+                                        "data_path": "action_result.status",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "success"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.message",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "Downloaded screenshot"
+                                        ]
+                                    },
+                                    {
+                                        "contains": [
+                                            "url"
+                                        ],
+                                        "data_path": "action_result.summary.name",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "https://www.google.com_screenshot.jpg"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.summary.size",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            48692
+                                        ]
+                                    },
+                                    {
+                                        "contains": [
+                                            "vault id",
+                                            "sha1"
+                                        ],
+                                        "data_path": "action_result.summary.vault_id",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "025a0aed68c79a9dc14fa11654ed9a21d521f79e"
+                                        ]
+                                    },
+                                    {
+                                        "contains": [
+                                            "url"
+                                        ],
+                                        "data_path": "action_result.summary.permalink",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "contains": [
+                                            "url",
+                                            "domain"
+                                        ],
+                                        "data_path": "action_result.parameter.url",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "https://www.google.com"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.size",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects_successful",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.summary.vault_file_path",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "/opt/phantom/vault/02/5a/025a0aed68c79a9dc14fa11654ed9a21d521f79e"
+                                        ]
+                                    }
+                                ],
+                                "parameters": {
+                                    "size": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "size of the screenshot",
+                                        "key": "size",
+                                        "required": false,
+                                        "value_list": [
+                                            "Full Page",
+                                            "Small",
+                                            "Normal",
+                                            "Medium",
+                                            "Large",
+                                            "Tiny"
+                                        ]
+                                    },
+                                    "url": {
+                                        "contains": [
+                                            "url",
+                                            "domain"
+                                        ],
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "url to screenshot",
+                                        "key": "url",
+                                        "primary": true,
+                                        "required": true
+                                    }
+                                },
+                                "product_name": "Screenshot Machine",
+                                "product_vendor": "Screenshot Machine",
+                                "targets": "68",
+                                "type": ""
+                            }
+                        ],
                         "attrs": {
                             ".action": {
-                                "text": "pt url reputation"
-                            },
-                            ".background": {
-                                "stroke": "#E6984E"
+                                "text": "get screenshot"
                             },
                             ".inPorts>.port-in": {
                                 "ref": ".background",
@@ -669,163 +1787,6 @@
                             },
                             ".title": {
                                 "text": "Investigate"
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 1
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.icon image": {
-                                "xlink:href": "/inc/coa/img/block_icon_investigate.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            }
-                        },
-                        "block_code": "def pt_url_reputation(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('pt_url_reputation() called')\n    \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n\n    parameters = []\n\n    phantom.act(\"url reputation\", parameters=parameters, app={ \"name\": 'PhishTank' }, name=\"pt_url_reputation\", parent_action=action)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": true,
-                        "color": "",
-                        "connected_to_start": true,
-                        "connection_name": "vt url reputation",
-                        "connection_type": "action",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "pt url reputation",
-                        "delay": 0,
-                        "description": "",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "0efd2146-561d-4eae-8d7e-2f6fa7d38f47",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 52,
-                        "line_start": 41,
-                        "message": "Configuring now",
-                        "name": "url reputation",
-                        "notes": "",
-                        "number": 2,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 600,
-                            "y": 80
-                        },
-                        "previous_function": "",
-                        "previous_name": "pt_url_reputation",
-                        "required_params": {},
-                        "reviewer": "",
-                        "show_number": true,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "app_action_config",
-                        "status": "warn",
-                        "title": "Investigate",
-                        "type": "coa.Action",
-                        "warn": false,
-                        "z": 13
-                    },
-                    {
-                        "active": false,
-                        "angle": 0,
-                        "api": "call api",
-                        "attrs": {
-                            ".api": {
-                                "text": "call api"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "API"
                             },
                             "g.code image": {
                                 "xlink:href": "/inc/coa/img/block_icon_code_on.svg"
@@ -839,6 +1800,9 @@
                             "g.error image": {
                                 "xlink:href": "/inc/coa/img/block_icon_warn.svg"
                             },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_investigate.svg"
+                            },
                             "g.notes": {
                                 "display": "block"
                             }
@@ -846,458 +1810,13 @@
                         "block_code": "# read-only block view not available",
                         "callback_code": "",
                         "callback_start": 1,
-                        "callsback": false,
+                        "callsback": true,
                         "color": "",
-                        "configured": [],
                         "connected_to_start": true,
                         "connection_name": "whois domain",
                         "connection_type": "action",
                         "custom_callback": "",
-                        "custom_code": "def call_api_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('call_api_1() called')\n    phantom.debug(results)\n    return",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "description": "",
-                        "has_custom": false,
-                        "has_custom_block": true,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "cfdf1edd-3268-4f3d-9054-317d256a8eab",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 73,
-                        "line_start": 68,
-                        "message": "Configuring now",
-                        "name": "call api",
-                        "notes": "",
-                        "number": 1,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 1120,
-                            "y": 320
-                        },
-                        "previous_function": "",
-                        "previous_name": "call_api_1",
-                        "show_number": false,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "api",
-                        "status": "",
-                        "title": "API",
-                        "type": "coa.API",
-                        "warn": false,
-                        "z": 18
-                    },
-                    {
-                        "action": "geolocate ip",
-                        "action_type": "investigate",
-                        "active": false,
-                        "active_keys": {},
-                        "active_values": {},
-                        "angle": 0,
-                        "app": "MaxMind",
-                        "approver": "",
-                        "assets": [],
-                        "attrs": {
-                            ".action": {
-                                "text": "geolocate ip"
-                            },
-                            ".background": {
-                                "stroke": "#E6984E"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "Investigate"
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 1
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.icon image": {
-                                "xlink:href": "/inc/coa/img/block_icon_investigate.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            }
-                        },
-                        "block_code": "def geolocate_ip_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('geolocate_ip_1() called')\n\n    parameters = []\n\n    phantom.act(\"geolocate ip\", parameters=parameters, app={ \"name\": 'MaxMind' }, name=\"geolocate_ip_1\", parent_action=action)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": true,
-                        "color": "",
-                        "connected_to_start": false,
-                        "connection_name": "",
-                        "connection_type": "",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "delay": 0,
-                        "description": "",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "0cfdcfe2-c2e1-4853-ac3d-5c03d45c8d63",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 82,
-                        "line_start": 73,
-                        "message": "Configuring now",
-                        "name": "geolocate ip",
-                        "notes": "",
-                        "number": 1,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 880,
-                            "y": 80
-                        },
-                        "previous_function": "",
-                        "previous_name": "geolocate_ip_1",
-                        "required_params": {},
-                        "reviewer": "",
-                        "show_number": false,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "app_action_config",
-                        "status": "warn",
-                        "title": "Investigate",
-                        "type": "coa.Action",
-                        "warn": false,
-                        "z": 21
-                    },
-                    {
-                        "action": "lookup domain",
-                        "action_type": "investigate",
-                        "active": false,
-                        "active_keys": {},
-                        "active_values": {
-                            "domain": "",
-                            "type": ""
-                        },
-                        "angle": 0,
-                        "app": "MxToolbox",
-                        "approver": "",
-                        "assets": [
-                            {
-                                "action": "lookup domain",
-                                "active": true,
-                                "app_name": "MxToolbox",
-                                "app_version": "1.0.17",
-                                "asset_name": "mxtoolbox",
-                                "config_type": "asset",
-                                "count": 0,
-                                "fields": {
-                                    "domain": "",
-                                    "type": ""
-                                },
-                                "has_app": true,
-                                "id": 33,
-                                "loaded": false,
-                                "missing": false,
-                                "name": "mxtoolbox",
-                                "output": [
-                                    {
-                                        "data_path": "action_result.data.*.TTL",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.Status",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "contains": [
-                                            "ip"
-                                        ],
-                                        "data_path": "action_result.data.*.IP_Address",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "contains": [
-                                            "domain"
-                                        ],
-                                        "data_path": "action_result.data.*.Domain_Name",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.status",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.message",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.summary.total_objects",
-                                        "data_type": "numeric"
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.type",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "contains": [
-                                            "domain"
-                                        ],
-                                        "data_path": "action_result.parameter.domain",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects",
-                                        "data_type": "numeric"
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects_successful",
-                                        "data_type": "numeric"
-                                    }
-                                ],
-                                "parameters": {
-                                    "domain": {
-                                        "contains": [
-                                            "domain"
-                                        ],
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "Domain to query",
-                                        "key": "domain",
-                                        "order": 0,
-                                        "primary": true,
-                                        "required": true
-                                    },
-                                    "type": {
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "Type of domain lookup",
-                                        "key": "type",
-                                        "order": 1,
-                                        "primary": true,
-                                        "required": true,
-                                        "value_list": [
-                                            "mx",
-                                            "a",
-                                            "dns",
-                                            "spf",
-                                            "txt",
-                                            "soa"
-                                        ]
-                                    }
-                                },
-                                "product_name": "MxToolbox",
-                                "product_vendor": "MxToolbox",
-                                "targets": "58",
-                                "type": ""
-                            }
-                        ],
-                        "attrs": {
-                            ".action": {
-                                "text": "lookup domain"
-                            },
-                            ".background": {
-                                "stroke": "#E6984E"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "Investigate"
-                            },
-                            "g.code image": {
-                                "xlink:href": "/inc/coa/img/block_icon_code_on.svg"
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 1
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.icon image": {
-                                "xlink:href": "/inc/coa/img/block_icon_investigate.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            }
-                        },
-                        "block_code": "# read-only block view not available",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": true,
-                        "color": "",
-                        "connected_to_start": true,
-                        "connection_name": "",
-                        "connection_type": "",
-                        "custom_callback": "",
-                        "custom_code": "def lookup_domain_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('lookup_domain_1() called')\n\n    # collect data for 'lookup_domain_1' call\n\n    parameters = []\n    \n    # build parameters list for 'lookup_domain_1' call\n    parameters.append({\n        'domain': url,\n        'type': \"mx\",\n    })\n\n    phantom.act(\"lookup domain\", parameters=parameters, assets=['mxtoolbox'], callback=call_api_1, name=\"lookup_domain_1\")\n\n    return",
+                        "custom_code": "def get_screenshot_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('get_screenshot_1() called')\n    if not success:\n        phantom.debug('Error in checking domain of whois')\n        return\n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    phantom.debug(results)\n    # collect data for 'get_screenshot_1' call\n\n    parameters = []\n    \n    # build parameters list for 'get_screenshot_1' call\n    parameters.append({\n        'url': \"\",\n        'size': \"\",\n    })\n\n    phantom.act(\"get screenshot\", parameters=parameters, assets=['test ss'], callback=details, name=\"get_screenshot_1\", parent_action=action)\n\n    return",
                         "custom_join": "",
                         "custom_name": "",
                         "delay": 0,
@@ -1306,17 +1825,17 @@
                         "has_custom_block": true,
                         "has_custom_callback": false,
                         "has_custom_join": false,
-                        "id": "c01b114e-5787-4b67-bc61-a2edeb33922a",
+                        "id": "3b3fb5d9-ac52-449a-951c-1657b3ac82e3",
                         "inPorts": [
                             "in"
                         ],
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 99,
-                        "line_start": 82,
+                        "line_end": 104,
+                        "line_start": 83,
                         "message": "Configuring now",
-                        "name": "lookup domain",
+                        "name": "get screenshot",
                         "notes": "",
                         "number": 1,
                         "outPorts": [
@@ -1375,14 +1894,13 @@
                             }
                         },
                         "position": {
-                            "x": 340,
-                            "y": 240
+                            "x": 1200,
+                            "y": 220
                         },
                         "previous_function": "",
-                        "previous_name": "lookup_domain_1",
+                        "previous_name": "get_screenshot_1",
                         "required_params": {
-                            "domain": true,
-                            "type": true
+                            "url": true
                         },
                         "reviewer": "",
                         "show_number": false,
@@ -1391,93 +1909,11 @@
                             "width": 180
                         },
                         "state": "app_action_assets",
-                        "status": "warn",
+                        "status": "",
                         "title": "Investigate",
                         "type": "coa.Action",
                         "warn": false,
-                        "z": 30
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#6C7A89",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#6a6c8a",
-                                "stroke": "#6a6c8a"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "9dde5976-bc1d-4a80-9eca-cb8bf7409577",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "04cb3b21-4874-4aec-972e-b68647eec4d7",
-                            "port": null,
-                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "55577e7a-505d-4972-976a-5b8ccdd3c5e4",
-                            "port": null,
-                            "selector": "g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "type": "link",
-                        "z": 31
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#6C7A89",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#6a6c8a",
-                                "stroke": "#6a6c8a"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "7ff37b81-3290-4473-8ede-92a0b8e1322e",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "55577e7a-505d-4972-976a-5b8ccdd3c5e4",
-                            "port": null,
-                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "cfdf1edd-3268-4f3d-9054-317d256a8eab",
-                            "port": null,
-                            "selector": "g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "type": "link",
-                        "z": 32
+                        "z": 96
                     },
                     {
                         "action": "whois domain",
@@ -1809,7 +2245,7 @@
                                 "opacity": 0
                             },
                             "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                                "xlink:href": "/inc/coa/img/block_icon_error.svg"
                             },
                             "g.icon image": {
                                 "xlink:href": "/inc/coa/img/block_icon_investigate.svg"
@@ -1824,10 +2260,10 @@
                         "callsback": true,
                         "color": "",
                         "connected_to_start": true,
-                        "connection_name": "",
-                        "connection_type": "",
+                        "connection_name": "geolocate ip",
+                        "connection_type": "action",
                         "custom_callback": "",
-                        "custom_code": "def whois_domain_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('whois_domain_1() called')\n\n    # collect data for 'whois_domain_1' call\n\n    parameters = []\n    \n    # build parameters list for 'whois_domain_1' call\n    parameters.append({\n        'domain': domain,\n    })\n\n    phantom.act(\"whois domain\", parameters=parameters, assets=['whois'], callback=call_api_1, name=\"whois_domain_1\", parent_action=action)\n\n    return",
+                        "custom_code": "def whois_domain_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('whois_domain_1() called')\n    if not success:\n        phantom.debug('Error in geolocate ip of MaxMind')\n        return\n    # collect data for 'whois_domain_1' call\n    phantom.debug(results)\n    parameters = []\n    \n    # build parameters list for 'whois_domain_1' call\n    parameters.append({\n        'domain': domain,\n    })\n\n    phantom.act(\"whois domain\", parameters=parameters, assets=['whois'], callback=get_screenshot_1, name=\"whois_domain_1\", parent_action=action)\n\n    return",
                         "custom_join": "",
                         "custom_name": "",
                         "delay": 0,
@@ -1843,8 +2279,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 68,
-                        "line_start": 52,
+                        "line_end": 63,
+                        "line_start": 45,
                         "message": "Configuring now",
                         "name": "whois domain",
                         "notes": "",
@@ -1905,8 +2341,8 @@
                             }
                         },
                         "position": {
-                            "x": 840,
-                            "y": 300
+                            "x": 960,
+                            "y": 220
                         },
                         "previous_function": "",
                         "previous_name": "whois_domain_1",
@@ -1924,7 +2360,7 @@
                         "title": "Investigate",
                         "type": "coa.Action",
                         "warn": false,
-                        "z": 33
+                        "z": 97
                     }
                 ]
             },
@@ -1933,7 +2369,7 @@
         "schema": 3,
         "version": "3.5.200"
     },
-    "create_time": "2019-02-20T06:17:26.008171+00:00",
+    "create_time": "2019-02-20T06:42:22.214965+00:00",
     "draft_mode": false,
     "labels": [
         "*"
