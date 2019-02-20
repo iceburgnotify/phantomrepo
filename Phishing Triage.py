@@ -84,7 +84,7 @@ def vt_url_reputation(action=None, success=None, container=None, results=None, h
         'url': url
     })
 
-    phantom.act("url reputation", parameters=parameters, assets=['virustest'], callback=details, name="vt_url_reputation")
+    phantom.act("url reputation", parameters=parameters, assets=['virustest'], callback=promote_to_case, name="vt_url_reputation")
 
     return
 
