@@ -44,7 +44,9 @@ def geolocate_ip(action=None, success=None, container=None, results=None, handle
 
 def details(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
     phantom.debug('details() called')
-    phantom.debug(results)
+    vt_result = phantom.collect2(container=container,datapath=['action_result.data.*.positives'])
+    #phantom.debug(results)
+    phantom.debug(vt_result)
     return
 
 def pt_url_reputation(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
@@ -79,7 +81,7 @@ def vt_url_reputation(action=None, success=None, container=None, results=None, h
         'url': url
     })
 
-    phantom.act("url reputation", parameters=parameters, assets=['virustest'], callback=pt_url_reputation, name="vt_url_reputation")
+    phantom.act("url reputation", parameters=parameters, assets=['virustest'], callback=details, name="vt_url_reputation")
 
     return
 
