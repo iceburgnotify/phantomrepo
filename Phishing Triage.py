@@ -16,8 +16,8 @@ url = 'https://paypal.account.myorder-manage.com/signin/'
 def on_start(container):
     phantom.debug('on_start() called')
     
-    # call 'whois_domain_1' block
-    whois_domain_1(container=container)
+    # call 'lookup_domain_1' block
+    lookup_domain_1(container=container)
 
     return
 
@@ -67,6 +67,32 @@ def whois_domain_1(action=None, success=None, container=None, results=None, hand
 def call_api_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
     phantom.debug('call_api_1() called')
     phantom.debug(results)
+    return
+
+def geolocate_ip_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('geolocate_ip_1() called')
+
+    parameters = []
+
+    phantom.act("geolocate ip", parameters=parameters, app={ "name": 'MaxMind' }, name="geolocate_ip_1", parent_action=action)
+
+    return
+
+def lookup_domain_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('lookup_domain_1() called')
+
+    # collect data for 'lookup_domain_1' call
+
+    parameters = []
+    
+    # build parameters list for 'lookup_domain_1' call
+    parameters.append({
+        'domain': url,
+        'type': "",
+    })
+
+    phantom.act("lookup domain", parameters=parameters, assets=['mxtoolbox'], callback=call_api_1, name="lookup_domain_1")
+
     return
 
 def on_finish(container, summary):
