@@ -16,25 +16,57 @@ url = 'https://paypal.account.myorder-manage.com/signin/'
 def on_start(container):
     phantom.debug('on_start() called')
     
-    # call 'url_reputation' block
-    url_reputation(container=container)
+    # call 'whois_domain_1' block
+    whois_domain_1(container=container)
 
     return
 
-def url_reputation(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
-    phantom.debug('url_reputation() called')
+def vt_url_reputation(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('vt_url_reputation() called')
 
-    # collect data for 'url_reputation' call
+    # collect data for 'vt_url_reputation' call
 
     parameters = []
     
-    # build parameters list for 'url_reputation' call
+    # build parameters list for 'vt_url_reputation' call
     parameters.append({
         'url': "",
     })
 
-    phantom.act("url reputation", parameters=parameters, assets=['virustotal'], name="url_reputation")
+    phantom.act("url reputation", parameters=parameters, assets=['virustotal'], callback=pt_url_reputation, name="vt_url_reputation")
 
+    return
+
+def pt_url_reputation(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('pt_url_reputation() called')
+    
+    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
+
+    parameters = []
+
+    phantom.act("url reputation", parameters=parameters, app={ "name": 'PhishTank' }, name="pt_url_reputation", parent_action=action)
+
+    return
+
+def whois_domain_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('whois_domain_1() called')
+
+    # collect data for 'whois_domain_1' call
+
+    parameters = []
+    
+    # build parameters list for 'whois_domain_1' call
+    parameters.append({
+        'domain': url,
+    })
+
+    phantom.act("whois domain", parameters=parameters, assets=['whois'], callback=call_api_1, name="whois_domain_1", parent_action=action)
+
+    return
+
+def call_api_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('call_api_1() called')
+    phantom.debug(results)
     return
 
 def on_finish(container, summary):

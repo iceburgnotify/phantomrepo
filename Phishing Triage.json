@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "url = 'https://paypal.account.myorder-manage.com/signin/'",
             "description": "",
-            "hash": "91d026f5dc6dd34178c90f552365df948e3faa2c",
+            "hash": "e7b89f9e7a942dce18570dcf71ae6f1a81418bf6",
             "joint": {
                 "cells": [
                     {
@@ -47,7 +47,7 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def on_start(container):\n    phantom.debug('on_start() called')\n    \n    # call 'url_reputation' block\n    url_reputation(container=container)\n\n    return",
+                        "block_code": "def on_start(container):\n    phantom.debug('on_start() called')\n    \n    # call 'whois_domain_1' block\n    whois_domain_1(container=container)\n\n    return",
                         "callback_code": "# read-only block view not available",
                         "callback_start": 1,
                         "callsback": false,
@@ -139,7 +139,6 @@
                             "height": 54,
                             "width": 80
                         },
-                        "state": "start",
                         "status": "",
                         "title": "START",
                         "type": "coa.StartEnd",
@@ -202,8 +201,8 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 53,
-                        "line_start": 40,
+                        "line_end": 85,
+                        "line_start": 72,
                         "name": "",
                         "notes": "",
                         "number": 0,
@@ -261,8 +260,8 @@
                             }
                         },
                         "position": {
-                            "x": 840,
-                            "y": 120
+                            "x": 1340,
+                            "y": 180
                         },
                         "previous_function": "",
                         "previous_name": "",
@@ -271,7 +270,6 @@
                             "height": 54,
                             "width": 80
                         },
-                        "state": "end",
                         "status": "",
                         "title": "END",
                         "type": "coa.StartEnd",
@@ -299,12 +297,12 @@
                         "endDirections": [
                             "left"
                         ],
-                        "id": "25149781-878d-472e-a835-4effe4dca759",
+                        "id": "db5c0dba-ad6d-4719-8ba8-b0ff9c544941",
                         "router": {
                             "name": "metro"
                         },
                         "source": {
-                            "id": "04cb3b21-4874-4aec-972e-b68647eec4d7",
+                            "id": "28c9fd32-132c-46e2-9bc2-9eb86012bd28",
                             "port": null,
                             "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
                         },
@@ -312,11 +310,11 @@
                             "right"
                         ],
                         "target": {
-                            "id": "28c9fd32-132c-46e2-9bc2-9eb86012bd28",
+                            "id": "0efd2146-561d-4eae-8d7e-2f6fa7d38f47",
                             "selector": ".port-body[type=\"input\"]"
                         },
                         "type": "link",
-                        "z": 3
+                        "z": 9
                     },
                     {
                         "action": "url reputation",
@@ -472,7 +470,10 @@
                         ],
                         "attrs": {
                             ".action": {
-                                "text": "url reputation"
+                                "text": "vt url reputation"
+                            },
+                            ".background": {
+                                "stroke": "#E6984E"
                             },
                             ".inPorts>.port-in": {
                                 "ref": ".background",
@@ -505,7 +506,7 @@
                                 "display": "none"
                             },
                             "g.error": {
-                                "opacity": 0
+                                "opacity": 1
                             },
                             "g.error image": {
                                 "xlink:href": "/inc/coa/img/block_icon_warn.svg"
@@ -517,7 +518,7 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def url_reputation(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('url_reputation() called')\n\n    # collect data for 'url_reputation' call\n\n    parameters = []\n    \n    # build parameters list for 'url_reputation' call\n    parameters.append({\n        'url': \"\",\n    })\n\n    phantom.act(\"url reputation\", parameters=parameters, assets=['virustotal'], name=\"url_reputation\")\n\n    return",
+                        "block_code": "def vt_url_reputation(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('vt_url_reputation() called')\n\n    # collect data for 'vt_url_reputation' call\n\n    parameters = []\n    \n    # build parameters list for 'vt_url_reputation' call\n    parameters.append({\n        'url': \"\",\n    })\n\n    phantom.act(\"url reputation\", parameters=parameters, assets=['virustotal'], callback=pt_url_reputation, name=\"vt_url_reputation\")\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
@@ -528,7 +529,7 @@
                         "custom_callback": "",
                         "custom_code": "",
                         "custom_join": "",
-                        "custom_name": "url reputation",
+                        "custom_name": "vt url reputation",
                         "delay": 0,
                         "description": "",
                         "has_custom": false,
@@ -608,9 +609,855 @@
                             "y": 80
                         },
                         "previous_function": "",
-                        "previous_name": "url_reputation",
+                        "previous_name": "vt_url_reputation",
                         "required_params": {
                             "url": true
+                        },
+                        "reviewer": "",
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "app_action_assets",
+                        "status": "warn",
+                        "title": "Investigate",
+                        "type": "coa.Action",
+                        "warn": false,
+                        "z": 12
+                    },
+                    {
+                        "action": "url reputation",
+                        "action_type": "investigate",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {},
+                        "angle": 0,
+                        "app": "PhishTank",
+                        "approver": "",
+                        "assets": [],
+                        "attrs": {
+                            ".action": {
+                                "text": "pt url reputation"
+                            },
+                            ".background": {
+                                "stroke": "#E6984E"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "Investigate"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 1
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_investigate.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def pt_url_reputation(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('pt_url_reputation() called')\n    \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n\n    parameters = []\n\n    phantom.act(\"url reputation\", parameters=parameters, app={ \"name\": 'PhishTank' }, name=\"pt_url_reputation\", parent_action=action)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "vt url reputation",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "pt url reputation",
+                        "delay": 0,
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "0efd2146-561d-4eae-8d7e-2f6fa7d38f47",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 51,
+                        "line_start": 40,
+                        "message": "Configuring now",
+                        "name": "url reputation",
+                        "notes": "",
+                        "number": 2,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 600,
+                            "y": 80
+                        },
+                        "previous_function": "",
+                        "previous_name": "pt_url_reputation",
+                        "required_params": {},
+                        "reviewer": "",
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "app_action_config",
+                        "status": "warn",
+                        "title": "Investigate",
+                        "type": "coa.Action",
+                        "warn": false,
+                        "z": 13
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#6C7A89",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#6a6c8a",
+                                "stroke": "#6a6c8a"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "e6414322-758f-48bd-abec-9e47fcc7bbee",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "04cb3b21-4874-4aec-972e-b68647eec4d7",
+                            "port": null,
+                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "55577e7a-505d-4972-976a-5b8ccdd3c5e4",
+                            "port": null,
+                            "selector": "g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 16
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#6C7A89",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#6a6c8a",
+                                "stroke": "#6a6c8a"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "bae4b8d7-fdc5-41b8-bbd4-492b1af7d380",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "55577e7a-505d-4972-976a-5b8ccdd3c5e4",
+                            "port": null,
+                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "cfdf1edd-3268-4f3d-9054-317d256a8eab",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 17
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "api": "call api",
+                        "attrs": {
+                            ".api": {
+                                "text": "call api"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "API"
+                            },
+                            "g.code image": {
+                                "xlink:href": "/inc/coa/img/block_icon_code_on.svg"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "# read-only block view not available",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "color": "",
+                        "configured": [],
+                        "connected_to_start": true,
+                        "connection_name": "whois domain",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "def call_api_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('call_api_1() called')\n    phantom.debug(results)\n    return",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": true,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "cfdf1edd-3268-4f3d-9054-317d256a8eab",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 72,
+                        "line_start": 67,
+                        "message": "Configuring now",
+                        "name": "call api",
+                        "notes": "",
+                        "number": 1,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 1120,
+                            "y": 320
+                        },
+                        "previous_function": "",
+                        "previous_name": "call_api_1",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "api",
+                        "status": "",
+                        "title": "API",
+                        "type": "coa.API",
+                        "warn": false,
+                        "z": 18
+                    },
+                    {
+                        "action": "whois domain",
+                        "action_type": "investigate",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {
+                            "domain": ""
+                        },
+                        "angle": 0,
+                        "app": "WHOIS",
+                        "approver": "",
+                        "assets": [
+                            {
+                                "action": "whois domain",
+                                "active": true,
+                                "app_name": "WHOIS",
+                                "app_version": "1.2.31",
+                                "asset_name": "whois",
+                                "config_type": "asset",
+                                "count": 0,
+                                "fields": {
+                                    "domain": ""
+                                },
+                                "has_app": true,
+                                "id": 43,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "whois",
+                                "output": [
+                                    {
+                                        "contains": [
+                                            "domain",
+                                            "url"
+                                        ],
+                                        "data_path": "action_result.parameter.domain",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.id",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Admin City",
+                                        "column_order": 3,
+                                        "data_path": "action_result.data.*.contacts.admin.city",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Admin Country",
+                                        "column_order": 4,
+                                        "data_path": "action_result.data.*.contacts.admin.country",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Admin Email",
+                                        "column_order": 5,
+                                        "contains": [
+                                            "email"
+                                        ],
+                                        "data_path": "action_result.data.*.contacts.admin.email",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Admin Name",
+                                        "column_order": 6,
+                                        "data_path": "action_result.data.*.contacts.admin.name",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Admin Organization",
+                                        "column_order": 7,
+                                        "data_path": "action_result.data.*.contacts.admin.organization",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.contacts.admin.phone",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.contacts.admin.postalcode",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.contacts.admin.state",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.contacts.admin.street",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.contacts.admin.fax",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Registrant City",
+                                        "column_order": 8,
+                                        "data_path": "action_result.data.*.contacts.registrant.city",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Registrant Country",
+                                        "column_order": 9,
+                                        "data_path": "action_result.data.*.contacts.registrant.country",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Registrant Email",
+                                        "column_order": 10,
+                                        "contains": [
+                                            "email"
+                                        ],
+                                        "data_path": "action_result.data.*.contacts.registrant.email",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Registrant Name",
+                                        "column_order": 11,
+                                        "data_path": "action_result.data.*.contacts.registrant.name",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Registrant Organization",
+                                        "column_order": 12,
+                                        "data_path": "action_result.data.*.contacts.registrant.organization",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Registrant Phone",
+                                        "column_order": 13,
+                                        "data_path": "action_result.data.*.contacts.registrant.phone",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.contacts.registrant.fax",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.contacts.registrant.postalcode",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.contacts.registrant.state",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.contacts.registrant.street",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.contacts.tech.city",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.contacts.tech.country",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "contains": [
+                                            "email"
+                                        ],
+                                        "data_path": "action_result.data.*.contacts.tech.email",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.contacts.tech.fax",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.contacts.tech.name",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.contacts.tech.organization",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.contacts.tech.phone",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.contacts.tech.postalcode",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.contacts.tech.state",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.contacts.tech.street",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.creation_date",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "contains": [
+                                            "email"
+                                        ],
+                                        "data_path": "action_result.data.*.emails",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.expiration_date",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.nameservers",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.raw",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.registrar",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.status",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.updated_date",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.whois_server",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.summary.city",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.summary.organization",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.summary.country",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "domain",
+                                        "column_order": 0,
+                                        "data_path": "action_result.summary.domain",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.status",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "status message",
+                                        "column_order": 1,
+                                        "data_path": "action_result.message",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects_successful",
+                                        "data_type": "numeric"
+                                    }
+                                ],
+                                "parameters": {
+                                    "domain": {
+                                        "contains": [
+                                            "domain",
+                                            "url"
+                                        ],
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Domain to query",
+                                        "key": "domain",
+                                        "order": 0,
+                                        "primary": true,
+                                        "required": true
+                                    }
+                                },
+                                "product_name": "Whois",
+                                "product_vendor": "Generic",
+                                "targets": "3",
+                                "type": ""
+                            }
+                        ],
+                        "attrs": {
+                            ".action": {
+                                "text": "whois domain"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "Investigate"
+                            },
+                            "g.code image": {
+                                "xlink:href": "/inc/coa/img/block_icon_code_on.svg"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_investigate.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "# read-only block view not available",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "def whois_domain_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('whois_domain_1() called')\n\n    # collect data for 'whois_domain_1' call\n\n    parameters = []\n    \n    # build parameters list for 'whois_domain_1' call\n    parameters.append({\n        'domain': url,\n    })\n\n    phantom.act(\"whois domain\", parameters=parameters, assets=['whois'], callback=call_api_1, name=\"whois_domain_1\", parent_action=action)\n\n    return",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "delay": 0,
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": true,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "55577e7a-505d-4972-976a-5b8ccdd3c5e4",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 67,
+                        "line_start": 51,
+                        "message": "Configuring now",
+                        "name": "whois domain",
+                        "notes": "",
+                        "number": 1,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 840,
+                            "y": 300
+                        },
+                        "previous_function": "",
+                        "previous_name": "whois_domain_1",
+                        "required_params": {
+                            "domain": true
                         },
                         "reviewer": "",
                         "show_number": false,
@@ -622,8 +1469,8 @@
                         "status": "",
                         "title": "Investigate",
                         "type": "coa.Action",
-                        "warn": "",
-                        "z": 8
+                        "warn": false,
+                        "z": 19
                     }
                 ]
             },
@@ -632,7 +1479,7 @@
         "schema": 3,
         "version": "3.5.200"
     },
-    "create_time": "2019-02-20T06:03:50.601444+00:00",
+    "create_time": "2019-02-20T06:07:58.569406+00:00",
     "draft_mode": false,
     "labels": [
         "*"
