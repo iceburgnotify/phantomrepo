@@ -47,7 +47,8 @@ def details(action=None, success=None, container=None, results=None, handle=None
     vt_result = phantom.collect2(container=container,datapath=['vt_url_reputation:action_result.data.*.positives'],action_results=results)
     if vt_result:
         positive = vt_result[0][0]
-        phantom.debug(positive)
+        if positive>0:
+            phantom.debug('more than 0')
         
     return
 
