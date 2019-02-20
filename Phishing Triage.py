@@ -129,8 +129,11 @@ def whois_domain_1(action=None, success=None, container=None, results=None, hand
 
 def promote_to_case(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
     phantom.debug('promote_to_case() called')
-
-    phantom.promote(container=container, template="Incident Response Template")
+    vt_result = phantom.collect2(container=container,datapath=['vt_url_reputation:action_result.data.*.positives'],action_results=results)
+    if vt_result:
+        positive = vt_result[0][0]
+        if positive>0:
+            phantom.promote(container=container, template="Incident Response Template")
 
     return
 
