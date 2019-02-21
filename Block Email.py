@@ -22,7 +22,7 @@ def whois_domain_1(action=None, success=None, container=None, results=None, hand
     
     # build parameters list for 'whois_domain_1' call
     parameters.append({
-        'domain': "paypal.account.myorder-manage.com/signin/",
+        'domain': "paypal.account.myorder-manage.com",
     })
 
     phantom.act("whois domain", parameters=parameters, assets=['passivetotal'], callback=call_api_1, name="whois_domain_1")
