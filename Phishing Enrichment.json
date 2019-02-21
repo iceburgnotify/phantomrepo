@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "url = 'https://paypal.account.myorder-manage.com/signin/'\ndomain ='paypal.account.myorder-manage.com'",
             "description": "",
-            "hash": "daae7cce5a7e7a0dae64a2152ecb6d981ae8bca3",
+            "hash": "3f9e757d959c8cb261251a7d35507cc6f18b53ca",
             "joint": {
                 "cells": [
                     {
@@ -66,8 +66,8 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 143,
-                        "line_start": 130,
+                        "line_end": 161,
+                        "line_start": 148,
                         "name": "",
                         "notes": "",
                         "number": 0,
@@ -459,47 +459,6 @@
                         "endDirections": [
                             "left"
                         ],
-                        "id": "2703dfd9-e518-42c5-ab94-70563a313ccd",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "faded284-db5d-4310-80fc-8ba9ce78104f",
-                            "port": null,
-                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "0efd2146-561d-4eae-8d7e-2f6fa7d38f47",
-                            "port": null,
-                            "selector": "g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "type": "link",
-                        "z": 130
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#6C7A89",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#6a6c8a",
-                                "stroke": "#6a6c8a"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
                         "id": "c65d5ee9-b38e-421e-b6d2-24cc5675f5dd",
                         "router": {
                             "name": "metro"
@@ -704,7 +663,7 @@
                             }
                         },
                         "position": {
-                            "x": 1440,
+                            "x": 1520,
                             "y": 220
                         },
                         "previous_function": "",
@@ -904,7 +863,7 @@
                         "callsback": true,
                         "color": "",
                         "connected_to_start": true,
-                        "connection_name": "vt url reputation",
+                        "connection_name": "whois ip",
                         "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "def pt_url_reputation(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('pt_url_reputation() called')\n    if not success:\n        phantom.debug('Error in url reputation of VirusTotal')\n        return\n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    phantom.debug(results)\n    # collect data for 'pt_url_reputation' call\n\n    parameters = []\n    \n    # build parameters list for 'pt_url_reputation' call\n    parameters.append({\n        'url': url,\n    })\n\n    phantom.act(\"url reputation\", parameters=parameters, assets=['phishtank'], callback=geolocate_ip, name=\"pt_url_reputation\", parent_action=action)\n\n    return",
@@ -922,7 +881,7 @@
                         ],
                         "join_code": "",
                         "join_optional": [],
-                        "join_start": 1,
+                        "join_start": 75,
                         "line_end": 75,
                         "line_start": 55,
                         "message": "Configuring now",
@@ -985,7 +944,7 @@
                             }
                         },
                         "position": {
-                            "x": 480,
+                            "x": 660,
                             "y": 220
                         },
                         "previous_function": "",
@@ -1198,6 +1157,9 @@
                             "g.error": {
                                 "opacity": 0
                             },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
                             "g.icon image": {
                                 "xlink:href": "/inc/coa/img/block_icon_investigate.svg"
                             },
@@ -1207,7 +1169,7 @@
                         },
                         "block_code": "# read-only block view not available",
                         "callback_code": "",
-                        "callback_start": 1,
+                        "callback_start": 102,
                         "callsback": true,
                         "color": "",
                         "connected_to_start": true,
@@ -1606,7 +1568,7 @@
                             }
                         },
                         "position": {
-                            "x": 1200,
+                            "x": 1320,
                             "y": 220
                         },
                         "previous_function": "",
@@ -2053,7 +2015,7 @@
                             }
                         },
                         "position": {
-                            "x": 960,
+                            "x": 1080,
                             "y": 220
                         },
                         "previous_function": "",
@@ -2344,7 +2306,7 @@
                             }
                         },
                         "position": {
-                            "x": 720,
+                            "x": 860,
                             "y": 220
                         },
                         "previous_function": "",
@@ -2364,6 +2326,443 @@
                         "type": "coa.Action",
                         "warn": false,
                         "z": 151
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#6C7A89",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#6a6c8a",
+                                "stroke": "#6a6c8a"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "f73f51ff-f816-4ca4-b6b5-bb6421b68d1f",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "faded284-db5d-4310-80fc-8ba9ce78104f",
+                            "port": null,
+                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "11718ad0-df7d-4e5a-a996-11e2edbcd845",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 152
+                    },
+                    {
+                        "action": "whois ip",
+                        "action_type": "investigate",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {
+                            "ip": "146.112.251.231"
+                        },
+                        "angle": 0,
+                        "app": "PassiveTotal",
+                        "approver": "",
+                        "assets": [
+                            {
+                                "action": "whois ip",
+                                "active": true,
+                                "app_name": "PassiveTotal",
+                                "app_version": "1.2.28",
+                                "config_type": "app",
+                                "fields": {
+                                    "ip": "146.112.251.231"
+                                },
+                                "has_app": true,
+                                "id": 144,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "PassiveTotal",
+                                "output": [
+                                    {
+                                        "contains": [
+                                            "email"
+                                        ],
+                                        "data_path": "action_result.data.*.tech.email",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.tech.telephone",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.tech.organization",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "contains": [
+                                            "email"
+                                        ],
+                                        "data_path": "action_result.data.*.zone.email",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.zone.telephone",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.zone.organization",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "contains": [
+                                            "email"
+                                        ],
+                                        "data_path": "action_result.data.*.admin.email",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.admin.telephone",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.admin.organization",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "contains": [
+                                            "domain"
+                                        ],
+                                        "data_path": "action_result.data.*.domain",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.expiresAt",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.registrar",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.registered",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.registrant.city",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.registrant.name",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.registrant.state",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.registrant.street",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.registrant.country",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.registrant.postalCode",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.registrant.organization",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "contains": [
+                                            "domain"
+                                        ],
+                                        "data_path": "action_result.data.*.whoisServer",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Contact Email",
+                                        "column_order": 1,
+                                        "contains": [
+                                            "email"
+                                        ],
+                                        "data_path": "action_result.data.*.contactEmail",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.lastLoadedAt",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.registryUpdatedAt",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.status",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.message",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "City",
+                                        "column_order": 2,
+                                        "data_path": "action_result.summary.city",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Country",
+                                        "column_order": 3,
+                                        "data_path": "action_result.summary.country",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Organization",
+                                        "column_order": 0,
+                                        "data_path": "action_result.summary.organization",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "contains": [
+                                            "ip"
+                                        ],
+                                        "data_path": "action_result.parameter.ip",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects_successful",
+                                        "data_type": "numeric"
+                                    }
+                                ],
+                                "parameters": {
+                                    "ip": {
+                                        "contains": [
+                                            "ip"
+                                        ],
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "IP to query",
+                                        "key": "ip",
+                                        "order": 0,
+                                        "primary": true,
+                                        "required": true
+                                    }
+                                },
+                                "product_name": "PassiveTotal",
+                                "product_vendor": "PassiveTotal",
+                                "type": ""
+                            }
+                        ],
+                        "attrs": {
+                            ".action": {
+                                "text": "whois ip"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "Investigate"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_investigate.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def whois_ip_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('whois_ip_1() called')\n    \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'whois_ip_1' call\n\n    parameters = []\n    \n    # build parameters list for 'whois_ip_1' call\n    parameters.append({\n        'ip': \"146.112.251.231\",\n    })\n\n    phantom.act(\"whois ip\", parameters=parameters, app={ \"name\": 'PassiveTotal' }, callback=pt_url_reputation, name=\"whois_ip_1\", parent_action=action)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "vt url reputation",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "delay": 0,
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "11718ad0-df7d-4e5a-a996-11e2edbcd845",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 148,
+                        "line_start": 130,
+                        "message": "Configuring now",
+                        "name": "whois ip",
+                        "notes": "",
+                        "number": 1,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 460,
+                            "y": 220
+                        },
+                        "previous_function": "",
+                        "previous_name": "whois_ip_1",
+                        "required_params": {
+                            "ip": true
+                        },
+                        "reviewer": "",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "app_action_config",
+                        "status": "",
+                        "title": "Investigate",
+                        "type": "coa.Action",
+                        "warn": "",
+                        "z": 154
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#6C7A89",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#6a6c8a",
+                                "stroke": "#6a6c8a"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "94ecf5cd-0a0b-4870-8b45-815c6cadb56a",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "11718ad0-df7d-4e5a-a996-11e2edbcd845",
+                            "port": null,
+                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "0efd2146-561d-4eae-8d7e-2f6fa7d38f47",
+                            "port": null,
+                            "selector": "g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 155
                     }
                 ]
             },
@@ -2372,7 +2771,7 @@
         "schema": 3,
         "version": "3.5.200"
     },
-    "create_time": "2019-02-21T06:00:09.901293+00:00",
+    "create_time": "2019-02-21T06:01:16.248048+00:00",
     "draft_mode": false,
     "labels": [
         "*"

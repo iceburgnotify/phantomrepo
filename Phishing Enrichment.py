@@ -127,6 +127,24 @@ def whois_domain_1(action=None, success=None, container=None, results=None, hand
 
     return
 
+def whois_ip_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('whois_ip_1() called')
+    
+    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
+    
+    # collect data for 'whois_ip_1' call
+
+    parameters = []
+    
+    # build parameters list for 'whois_ip_1' call
+    parameters.append({
+        'ip': "146.112.251.231",
+    })
+
+    phantom.act("whois ip", parameters=parameters, app={ "name": 'PassiveTotal' }, callback=pt_url_reputation, name="whois_ip_1", parent_action=action)
+
+    return
+
 def on_finish(container, summary):
     phantom.debug('on_finish() called')
     # This function is called after all actions are completed.
