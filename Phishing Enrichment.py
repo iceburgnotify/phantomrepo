@@ -9,7 +9,7 @@ from datetime import datetime, timedelta
 # Start - Global Code Block
 
 url = 'https://paypal.account.myorder-manage.com/signin/'
-domain ='paypal.account.myorder-manage.com/signin/'
+domain ='paypal.account.myorder-manage.com'
 
 # End - Global Code block
 ##############################
