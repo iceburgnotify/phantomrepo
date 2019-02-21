@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "c7b052d20881a3946b19d97f663d8f3bf38690b5",
+            "hash": "81a7fb89f0abb0cdf04d06000c31addd2acafcd1",
             "joint": {
                 "cells": [
                     {
@@ -47,7 +47,7 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def on_start(container):\n    phantom.debug('on_start() called')\n    \n    # call 'block_sender_1' block\n    block_sender_1(container=container)\n\n    return",
+                        "block_code": "def on_start(container):\n    phantom.debug('on_start() called')\n    \n    # call 'get_screenshot_1' block\n    get_screenshot_1(container=container)\n\n    return",
                         "callback_code": "# read-only block view not available",
                         "callback_start": 1,
                         "callsback": false,
@@ -139,7 +139,6 @@
                             "height": 54,
                             "width": 80
                         },
-                        "state": "start",
                         "status": "",
                         "title": "START",
                         "type": "coa.StartEnd",
@@ -202,8 +201,8 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 73,
-                        "line_start": 60,
+                        "line_end": 90,
+                        "line_start": 77,
                         "name": "",
                         "notes": "",
                         "number": 0,
@@ -271,7 +270,6 @@
                             "height": 54,
                             "width": 80
                         },
-                        "state": "end",
                         "status": "",
                         "title": "END",
                         "type": "coa.StartEnd",
@@ -386,7 +384,7 @@
                         "custom_join": "",
                         "custom_name": "",
                         "description": "",
-                        "has_custom": false,
+                        "has_custom": true,
                         "has_custom_block": true,
                         "has_custom_callback": false,
                         "has_custom_join": false,
@@ -397,8 +395,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 37,
-                        "line_start": 32,
+                        "line_end": 21,
+                        "line_start": 16,
                         "message": "Configuring now",
                         "name": "call api",
                         "notes": "",
@@ -781,7 +779,7 @@
                                 "text": "Investigate"
                             },
                             "g.delete": {
-                                "display": "block"
+                                "display": "none"
                             },
                             "g.error": {
                                 "opacity": 1
@@ -821,8 +819,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 32,
-                        "line_start": 16,
+                        "line_end": 37,
+                        "line_start": 21,
                         "message": "Configuring now",
                         "name": "whois domain",
                         "notes": "",
@@ -901,48 +899,8 @@
                         "status": "warn",
                         "title": "Investigate",
                         "type": "coa.Action",
-                        "warn": "",
+                        "warn": false,
                         "z": 8
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#6C7A89",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#6a6c8a",
-                                "stroke": "#6a6c8a"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "f2cc1368-cc03-4a2b-b16c-e890f4431564",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "fccef927-3404-42bc-ae37-99f6c141531a",
-                            "port": null,
-                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "b99959e8-7935-4637-9302-06074ee6e239",
-                            "selector": ".port-body[type=\"input\"]"
-                        },
-                        "type": "link",
-                        "z": 9
                     },
                     {
                         "attrs": {
@@ -992,6 +950,9 @@
                             ".api": {
                                 "text": "call api"
                             },
+                            ".background": {
+                                "stroke": "#E6984E"
+                            },
                             ".inPorts>.port-in": {
                                 "ref": ".background",
                                 "ref-x": 0.5
@@ -1026,7 +987,10 @@
                                 "display": "none"
                             },
                             "g.error": {
-                                "opacity": 0
+                                "opacity": 1
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
                             },
                             "g.notes": {
                                 "display": "block"
@@ -1046,7 +1010,7 @@
                         "custom_join": "",
                         "custom_name": "",
                         "description": "",
-                        "has_custom": false,
+                        "has_custom": true,
                         "has_custom_block": true,
                         "has_custom_callback": false,
                         "has_custom_join": false,
@@ -1057,8 +1021,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 60,
-                        "line_start": 55,
+                        "line_end": 42,
+                        "line_start": 37,
                         "message": "Configuring now",
                         "name": "call api",
                         "notes": "",
@@ -1130,7 +1094,7 @@
                             "width": 180
                         },
                         "state": "api",
-                        "status": "",
+                        "status": "warn",
                         "title": "API",
                         "type": "coa.API",
                         "warn": false,
@@ -1333,6 +1297,9 @@
                             ".action": {
                                 "text": "block sender"
                             },
+                            ".background": {
+                                "stroke": "#E6984E"
+                            },
                             ".inPorts>.port-in": {
                                 "ref": ".background",
                                 "ref-x": 0.5
@@ -1364,7 +1331,10 @@
                                 "display": "none"
                             },
                             "g.error": {
-                                "opacity": 0
+                                "opacity": 1
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
                             },
                             "g.icon image": {
                                 "xlink:href": "/inc/coa/img/block_icon_contain.svg"
@@ -1398,8 +1368,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 55,
-                        "line_start": 37,
+                        "line_end": 60,
+                        "line_start": 42,
                         "message": "Configuring now",
                         "name": "block sender",
                         "notes": "",
@@ -1475,11 +1445,359 @@
                             "width": 180
                         },
                         "state": "app_action_assets",
-                        "status": "",
+                        "status": "warn",
                         "title": "Contain",
                         "type": "coa.Action",
-                        "warn": "",
+                        "warn": false,
                         "z": 14
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#6C7A89",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#6a6c8a",
+                                "stroke": "#6a6c8a"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "1910d0ad-ce9d-4c63-ac79-0bbd572ed6be",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "fccef927-3404-42bc-ae37-99f6c141531a",
+                            "port": null,
+                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "b91ce990-53b0-4b34-87fa-41ebc1b145df",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 15
+                    },
+                    {
+                        "action": "get screenshot",
+                        "action_type": "investigate",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {
+                            "size": "",
+                            "url": "https://paypal.account.myorder-manage.com/signin/"
+                        },
+                        "angle": 0,
+                        "app": "Screenshot Machine",
+                        "approver": "",
+                        "assets": [
+                            {
+                                "action": "get screenshot",
+                                "active": true,
+                                "app_name": "Screenshot Machine",
+                                "app_version": "1.4.24",
+                                "asset_name": "test ss",
+                                "config_type": "asset",
+                                "count": 0,
+                                "fields": {
+                                    "size": "",
+                                    "url": "https://paypal.account.myorder-manage.com/signin/"
+                                },
+                                "has_app": true,
+                                "id": 90,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "test ss",
+                                "output": [
+                                    {
+                                        "data_path": "action_result.status",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "success"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.message",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "Downloaded screenshot"
+                                        ]
+                                    },
+                                    {
+                                        "contains": [
+                                            "url"
+                                        ],
+                                        "data_path": "action_result.summary.name",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "https://www.google.com_screenshot.jpg"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.summary.size",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            48692
+                                        ]
+                                    },
+                                    {
+                                        "contains": [
+                                            "vault id",
+                                            "sha1"
+                                        ],
+                                        "data_path": "action_result.summary.vault_id",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "025a0aed68c79a9dc14fa11654ed9a21d521f79e"
+                                        ]
+                                    },
+                                    {
+                                        "contains": [
+                                            "url"
+                                        ],
+                                        "data_path": "action_result.summary.permalink",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "contains": [
+                                            "url",
+                                            "domain"
+                                        ],
+                                        "data_path": "action_result.parameter.url",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "https://www.google.com"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.size",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects_successful",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.summary.vault_file_path",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "/opt/phantom/vault/02/5a/025a0aed68c79a9dc14fa11654ed9a21d521f79e"
+                                        ]
+                                    }
+                                ],
+                                "parameters": {
+                                    "size": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "size of the screenshot",
+                                        "key": "size",
+                                        "required": false,
+                                        "value_list": [
+                                            "Full Page",
+                                            "Small",
+                                            "Normal",
+                                            "Medium",
+                                            "Large",
+                                            "Tiny"
+                                        ]
+                                    },
+                                    "url": {
+                                        "contains": [
+                                            "url",
+                                            "domain"
+                                        ],
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "url to screenshot",
+                                        "key": "url",
+                                        "primary": true,
+                                        "required": true
+                                    }
+                                },
+                                "product_name": "Screenshot Machine",
+                                "product_vendor": "Screenshot Machine",
+                                "targets": "68",
+                                "type": ""
+                            }
+                        ],
+                        "attrs": {
+                            ".action": {
+                                "text": "get screenshot"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "Investigate"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_investigate.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def get_screenshot_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('get_screenshot_1() called')\n\n    # collect data for 'get_screenshot_1' call\n\n    parameters = []\n    \n    # build parameters list for 'get_screenshot_1' call\n    parameters.append({\n        'url': \"https://paypal.account.myorder-manage.com/signin/\",\n        'size': \"\",\n    })\n\n    phantom.act(\"get screenshot\", parameters=parameters, assets=['test ss'], name=\"get_screenshot_1\")\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "delay": 0,
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "b91ce990-53b0-4b34-87fa-41ebc1b145df",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 77,
+                        "line_start": 60,
+                        "message": "Configuring now",
+                        "name": "get screenshot",
+                        "notes": "",
+                        "number": 1,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 440,
+                            "y": 240
+                        },
+                        "previous_function": "",
+                        "previous_name": "get_screenshot_1",
+                        "required_params": {
+                            "url": true
+                        },
+                        "reviewer": "",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "app_action_assets",
+                        "status": "",
+                        "title": "Investigate",
+                        "type": "coa.Action",
+                        "warn": "",
+                        "z": 17
                     }
                 ]
             },
@@ -1488,7 +1806,7 @@
         "schema": 3,
         "version": "3.5.200"
     },
-    "create_time": "2019-02-21T05:25:04.033260+00:00",
+    "create_time": "2019-02-21T05:54:15.159386+00:00",
     "draft_mode": false,
     "labels": [
         "*"

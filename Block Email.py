@@ -8,9 +8,14 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
     
-    # call 'block_sender_1' block
-    block_sender_1(container=container)
+    # call 'get_screenshot_1' block
+    get_screenshot_1(container=container)
 
+    return
+
+def call_api_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('call_api_1() called')
+    phantom.debug(results)
     return
 
 def whois_domain_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
@@ -29,8 +34,8 @@ def whois_domain_1(action=None, success=None, container=None, results=None, hand
 
     return
 
-def call_api_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
-    phantom.debug('call_api_1() called')
+def call_api_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('call_api_2() called')
     phantom.debug(results)
     return
 
@@ -52,9 +57,21 @@ def block_sender_1(action=None, success=None, container=None, results=None, hand
 
     return
 
-def call_api_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
-    phantom.debug('call_api_2() called')
-    phantom.debug(results)
+def get_screenshot_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('get_screenshot_1() called')
+
+    # collect data for 'get_screenshot_1' call
+
+    parameters = []
+    
+    # build parameters list for 'get_screenshot_1' call
+    parameters.append({
+        'url': "https://paypal.account.myorder-manage.com/signin/",
+        'size': "",
+    })
+
+    phantom.act("get screenshot", parameters=parameters, assets=['test ss'], name="get_screenshot_1")
+
     return
 
 def on_finish(container, summary):
