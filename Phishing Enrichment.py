@@ -32,6 +32,40 @@ def promote_to_case(action=None, success=None, container=None, results=None, han
 
     return
 
+def vt_url_reputation(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('vt_url_reputation() called')
+    
+    # collect data for 'vt_url_reputation' call
+
+    parameters = []
+    
+    # build parameters list for 'vt_url_reputation' call
+    parameters.append({
+        'url': url
+    })
+
+    phantom.act("url reputation", parameters=parameters, assets=['virustest'], callback=pt_url_reputation, name="vt_url_reputation")
+
+    return
+
+def whois_ip_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('whois_ip_1() called')
+    
+    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
+    
+    # collect data for 'whois_ip_1' call
+
+    parameters = []
+    
+    # build parameters list for 'whois_ip_1' call
+    parameters.append({
+        'ip': "146.112.251.231",
+    })
+
+    phantom.act("whois ip", parameters=parameters, app={ "name": 'PassiveTotal' }, callback=pt_url_reputation, name="whois_ip_1", parent_action=action)
+
+    return
+
 def pt_url_reputation(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
     phantom.debug('pt_url_reputation() called')
     if not success:
@@ -49,43 +83,6 @@ def pt_url_reputation(action=None, success=None, container=None, results=None, h
     })
 
     phantom.act("url reputation", parameters=parameters, assets=['phishtank'], callback=geolocate_ip, name="pt_url_reputation", parent_action=action)
-
-    return
-
-def vt_url_reputation(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
-    phantom.debug('vt_url_reputation() called')
-    
-    # collect data for 'vt_url_reputation' call
-
-    parameters = []
-    
-    # build parameters list for 'vt_url_reputation' call
-    parameters.append({
-        'url': url
-    })
-
-    phantom.act("url reputation", parameters=parameters, assets=['virustest'], callback=pt_url_reputation, name="vt_url_reputation")
-
-    return
-
-def get_screenshot_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
-    phantom.debug('get_screenshot_1() called')
-    if not success:
-        phantom.debug('Error in checking domain of whois')
-        return
-    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
-    phantom.debug(results)
-    # collect data for 'get_screenshot_1' call
-
-    parameters = []
-    
-    # build parameters list for 'get_screenshot_1' call
-    parameters.append({
-        'url': url,
-        'size': "",
-    })
-
-    phantom.act("get screenshot", parameters=parameters, assets=['test ss'], callback=promote_to_case, name="get_screenshot_1", parent_action=action)
 
     return
 
@@ -107,6 +104,27 @@ def whois_domain_1(action=None, success=None, container=None, results=None, hand
 
     return
 
+def get_screenshot_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('get_screenshot_1() called')
+    if not success:
+        phantom.debug('Error in checking domain of whois')
+        return
+    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
+    phantom.debug(results)
+    # collect data for 'get_screenshot_1' call
+
+    parameters = []
+    
+    # build parameters list for 'get_screenshot_1' call
+    parameters.append({
+        'url': "http://eden.it-guys.net.nz/wp-content/languages/plugins/ugh/Entrar/Login",
+        'size': "",
+    })
+
+    phantom.act("get screenshot", parameters=parameters, assets=['test ss'], callback=promote_to_case, name="get_screenshot_1", parent_action=action)
+
+    return
+
 def geolocate_ip(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
     phantom.debug('geolocate_ip() called')
     if not success:
@@ -124,24 +142,6 @@ def geolocate_ip(action=None, success=None, container=None, results=None, handle
     })
 
     phantom.act("geolocate ip", parameters=parameters, assets=['maxmind'], callback=whois_domain_1, name="geolocate_ip", parent_action=action)
-
-    return
-
-def whois_ip_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
-    phantom.debug('whois_ip_1() called')
-    
-    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
-    
-    # collect data for 'whois_ip_1' call
-
-    parameters = []
-    
-    # build parameters list for 'whois_ip_1' call
-    parameters.append({
-        'ip': "146.112.251.231",
-    })
-
-    phantom.act("whois ip", parameters=parameters, app={ "name": 'PassiveTotal' }, callback=pt_url_reputation, name="whois_ip_1", parent_action=action)
 
     return
 
