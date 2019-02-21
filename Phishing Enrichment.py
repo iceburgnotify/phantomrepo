@@ -28,7 +28,7 @@ def promote_to_case(action=None, success=None, container=None, results=None, han
     if vt_result:
         positive = vt_result[0][0]
         if positive>0:
-            phantom.promote(container=container, template="Phishing")
+            phantom.promote(container=container, template="Phishing Playbook")
 
     return
 
@@ -104,6 +104,26 @@ def whois_domain_1(action=None, success=None, container=None, results=None, hand
 
     return
 
+def geolocate_ip(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('geolocate_ip() called')
+    if not success:
+        phantom.debug('Error in url reputation of PhishTank')
+        return
+    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
+    phantom.debug(results)
+    # collect data for 'geolocate_ip' call
+
+    parameters = []
+    
+    # build parameters list for 'geolocate_ip' call
+    parameters.append({
+        'ip': "146.112.251.231",
+    })
+
+    phantom.act("geolocate ip", parameters=parameters, assets=['maxmind'], callback=whois_domain_1, name="geolocate_ip", parent_action=action)
+
+    return
+
 def get_screenshot_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
     phantom.debug('get_screenshot_1() called')
     if not success:
@@ -122,26 +142,6 @@ def get_screenshot_1(action=None, success=None, container=None, results=None, ha
     })
 
     phantom.act("get screenshot", parameters=parameters, assets=['test ss'], callback=promote_to_case, name="get_screenshot_1", parent_action=action)
-
-    return
-
-def geolocate_ip(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
-    phantom.debug('geolocate_ip() called')
-    if not success:
-        phantom.debug('Error in url reputation of PhishTank')
-        return
-    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
-    phantom.debug(results)
-    # collect data for 'geolocate_ip' call
-
-    parameters = []
-    
-    # build parameters list for 'geolocate_ip' call
-    parameters.append({
-        'ip': "146.112.251.231",
-    })
-
-    phantom.act("geolocate ip", parameters=parameters, assets=['maxmind'], callback=whois_domain_1, name="geolocate_ip", parent_action=action)
 
     return
 
