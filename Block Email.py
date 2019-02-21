@@ -8,8 +8,8 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
     
-    # call 'whois_domain_1' block
-    whois_domain_1(container=container)
+    # call 'block_sender_1' block
+    block_sender_1(container=container)
 
     return
 
@@ -31,6 +31,29 @@ def whois_domain_1(action=None, success=None, container=None, results=None, hand
 
 def call_api_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
     phantom.debug('call_api_1() called')
+    phantom.debug(results)
+    return
+
+def block_sender_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('block_sender_1() called')
+
+    # collect data for 'block_sender_1' call
+
+    parameters = []
+    
+    # build parameters list for 'block_sender_1' call
+    parameters.append({
+        'id': "20180625001424.1.3D7FC1E792BF8A72@mxtoolbox.com",
+        'move_to_junk_folder': "",
+        'email': "",
+    })
+
+    phantom.act("block sender", parameters=parameters, assets=['qualys ingestion'], callback=call_api_2, name="block_sender_1")
+
+    return
+
+def call_api_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('call_api_2() called')
     phantom.debug(results)
     return
 
