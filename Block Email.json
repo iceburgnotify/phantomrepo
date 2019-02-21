@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "e4656098de5f98faa6f6344d5906e46e21394f78",
+            "hash": "22ac25e09853ff6113d8d9c54d9db074f8e63bf6",
             "joint": {
                 "cells": [
                     {
@@ -1707,7 +1707,7 @@
                         "connection_name": "",
                         "connection_type": "",
                         "custom_callback": "",
-                        "custom_code": "def block_sender_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('block_sender_1() called')\n\n    # collect data for 'block_sender_1' call\n\n    parameters = []\n    \n    # build parameters list for 'block_sender_1' call\n    parameters.append({\n        'id': \"VI1P175MB0191ABD0857E66DFE334698CBA7E0\",\n        'move_to_junk_folder': \"\",\n        'email': \"soartesting@outlook.com\",\n    })\n\n    phantom.act(\"block sender\", parameters=parameters, assets=['qualys ingestion'], callback=call_api_2, name=\"block_sender_1\")\n\n    return",
+                        "custom_code": "def block_sender_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('block_sender_1() called')\n\n    # collect data for 'block_sender_1' call\n\n    parameters = []\n    \n    # build parameters list for 'block_sender_1' call\n    parameters.append({\n        'id': \"<VI1P175MB0191ABD0857E66DFE334698CBA7E0>\",\n        'move_to_junk_folder': \"\",\n        'email': \"soartesting@outlook.com\",\n    })\n\n    phantom.act(\"block sender\", parameters=parameters, assets=['qualys ingestion'], callback=call_api_2, name=\"block_sender_1\")\n\n    return",
                         "custom_join": "",
                         "custom_name": "",
                         "delay": 0,
@@ -1804,7 +1804,7 @@
                         "title": "Contain",
                         "type": "coa.Action",
                         "warn": false,
-                        "z": 28
+                        "z": 29
                     }
                 ]
             },
@@ -1813,7 +1813,7 @@
         "schema": 3,
         "version": "3.5.200"
     },
-    "create_time": "2019-02-21T09:16:22.271220+00:00",
+    "create_time": "2019-02-21T09:16:54.670363+00:00",
     "draft_mode": false,
     "labels": [
         "*"
