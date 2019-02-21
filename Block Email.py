@@ -50,7 +50,7 @@ def block_sender_1(action=None, success=None, container=None, results=None, hand
     parameters.append({
         'id': "<VI1P175MB0191ABD0857E66DFE334698CBA7E0@VI1P175MB0191.EURP175.PROD.OUTLOOK.COM>",
         'move_to_junk_folder': "",
-        'email': "",
+        'email': "soartesting@outlook.com",
     })
 
     phantom.act("block sender", parameters=parameters, assets=['qualys ingestion'], callback=call_api_2, name="block_sender_1")
