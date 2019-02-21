@@ -22,8 +22,8 @@ def create_ticket(action=None, success=None, container=None, results=None, handl
     
     # build parameters list for 'create_ticket' call
     parameters.append({
-        'short_description': "Block URL",
-        'description': "Request to block url",
+        'short_description': "Block URL request",
+        'description': "Request to block url: https://paypal.account.myorder-manage.com/signin/",
         'table': "incident",
         'fields': "",
         'vault_id': "",
