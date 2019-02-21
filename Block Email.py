@@ -48,7 +48,7 @@ def block_sender_1(action=None, success=None, container=None, results=None, hand
     
     # build parameters list for 'block_sender_1' call
     parameters.append({
-        'id': "CAHCeai+--EBQfs+wfWRUJO_YNXW+D3VtXrmt6zMaLj8EOraBsQ@mail.gmail.com",
+        'id': "CAHCeai+--EBQfs+wfWRUJO_YNXW+D3VtXrmt6zMaLj8EOraBsQ",
         'move_to_junk_folder': "",
         'email': "",
     })
