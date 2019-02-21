@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "81a7fb89f0abb0cdf04d06000c31addd2acafcd1",
+            "hash": "5caa46bd467ab66c4128959760d5d566ec7b961c",
             "joint": {
                 "cells": [
                     {
@@ -1678,6 +1678,9 @@
                             ".title": {
                                 "text": "Investigate"
                             },
+                            "g.code image": {
+                                "xlink:href": "/inc/coa/img/block_icon_code_on.svg"
+                            },
                             "g.delete": {
                                 "display": "none"
                             },
@@ -1700,13 +1703,13 @@
                         "connection_name": "",
                         "connection_type": "",
                         "custom_callback": "",
-                        "custom_code": "",
+                        "custom_code": "def get_screenshot_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('get_screenshot_1() called')\n\n    # collect data for 'get_screenshot_1' call\n\n    parameters = []\n    \n    # build parameters list for 'get_screenshot_1' call\n    parameters.append({\n        'url': \"https://www.google.com\",\n        'size': \"\",\n    })\n\n    phantom.act(\"get screenshot\", parameters=parameters, assets=['test ss'], name=\"get_screenshot_1\")\n\n    return",
                         "custom_join": "",
                         "custom_name": "",
                         "delay": 0,
                         "description": "",
                         "has_custom": false,
-                        "has_custom_block": false,
+                        "has_custom_block": true,
                         "has_custom_callback": false,
                         "has_custom_join": false,
                         "id": "b91ce990-53b0-4b34-87fa-41ebc1b145df",
@@ -1796,8 +1799,8 @@
                         "status": "",
                         "title": "Investigate",
                         "type": "coa.Action",
-                        "warn": "",
-                        "z": 17
+                        "warn": false,
+                        "z": 18
                     }
                 ]
             },
@@ -1806,7 +1809,7 @@
         "schema": 3,
         "version": "3.5.200"
     },
-    "create_time": "2019-02-21T05:54:15.159386+00:00",
+    "create_time": "2019-02-21T05:55:26.381652+00:00",
     "draft_mode": false,
     "labels": [
         "*"
