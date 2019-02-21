@@ -8,8 +8,8 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
     
-    # call 'block_sender_1' block
-    block_sender_1(container=container)
+    # call 'delete_email_1' block
+    delete_email_1(container=container)
 
     return
 
@@ -30,7 +30,7 @@ def whois_domain_1(action=None, success=None, container=None, results=None, hand
         'domain': "paypal.account.myorder-manage.com",
     })
 
-    phantom.act("whois domain", parameters=parameters, assets=['passivetotal'], callback=call_api_1, name="whois_domain_1")
+    phantom.act("whois domain", parameters=parameters, assets=['passivetotal'], name="whois_domain_1")
 
     return
 
@@ -71,6 +71,23 @@ def get_screenshot_1(action=None, success=None, container=None, results=None, ha
     })
 
     phantom.act("get screenshot", parameters=parameters, assets=['test ss'], name="get_screenshot_1")
+
+    return
+
+def delete_email_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('delete_email_1() called')
+
+    # collect data for 'delete_email_1' call
+
+    parameters = []
+    
+    # build parameters list for 'delete_email_1' call
+    parameters.append({
+        'id': "<VI1P175MB0191ABD0857E66DFE334698CBA7E0@VI1P175MB0191.EURP175.PROD.OUTLOOK.COM>",
+        'email': "",
+    })
+
+    phantom.act("delete email", parameters=parameters, assets=['qualys ingestion'], callback=call_api_1, name="delete_email_1")
 
     return
 
