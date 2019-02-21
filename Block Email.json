@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "636a83c841cadd4a8eff00ae6925292c4b434a42",
+            "hash": "0dd26a1f54c00b904de442aef365d18aa55ae5d1",
             "joint": {
                 "cells": [
                     {
@@ -47,7 +47,7 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def on_start(container):\n    phantom.debug('on_start() called')\n    \n    # call 'delete_email_1' block\n    delete_email_1(container=container)\n\n    return",
+                        "block_code": "def on_start(container):\n    phantom.debug('on_start() called')\n    \n    # call 'block_sender_1' block\n    block_sender_1(container=container)\n\n    return",
                         "callback_code": "# read-only block view not available",
                         "callback_start": 1,
                         "callsback": false,
@@ -201,8 +201,8 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 107,
-                        "line_start": 94,
+                        "line_end": 131,
+                        "line_start": 118,
                         "name": "",
                         "notes": "",
                         "number": 0,
@@ -752,9 +752,6 @@
                             ".api": {
                                 "text": "call api"
                             },
-                            ".background": {
-                                "stroke": "#E6984E"
-                            },
                             ".inPorts>.port-in": {
                                 "ref": ".background",
                                 "ref-x": 0.5
@@ -789,7 +786,7 @@
                                 "display": "none"
                             },
                             "g.error": {
-                                "opacity": 1
+                                "opacity": 0
                             },
                             "g.error image": {
                                 "xlink:href": "/inc/coa/img/block_icon_warn.svg"
@@ -896,7 +893,7 @@
                             "width": 180
                         },
                         "state": "api",
-                        "status": "warn",
+                        "status": "",
                         "title": "API",
                         "type": "coa.API",
                         "warn": false,
@@ -942,6 +939,665 @@
                         },
                         "type": "link",
                         "z": 13
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#6C7A89",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#6a6c8a",
+                                "stroke": "#6a6c8a"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "d534a6b4-d52c-41af-bfda-5dc498c48dca",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "fe94a46a-7683-412d-9c73-8b7db6a14f00",
+                            "port": null,
+                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "3050c973-fe3f-4838-83ac-0f072e925cd6",
+                            "port": null,
+                            "selector": "g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 34
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "api": "call api",
+                        "attrs": {
+                            ".api": {
+                                "text": "call api"
+                            },
+                            ".background": {
+                                "stroke": "#E6984E"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "API"
+                            },
+                            "g.code image": {
+                                "xlink:href": "/inc/coa/img/block_icon_code_on.svg"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 1
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "# read-only block view not available",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "color": "",
+                        "configured": [],
+                        "connected_to_start": true,
+                        "connection_name": "delete email",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "def call_api_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('call_api_1() called')\n    phantom.debug(results)\n    return",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "description": "",
+                        "has_custom": true,
+                        "has_custom_block": true,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "3050c973-fe3f-4838-83ac-0f072e925cd6",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 21,
+                        "line_start": 16,
+                        "message": "Configuring now",
+                        "name": "call api",
+                        "notes": "",
+                        "number": 1,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 680,
+                            "y": 420
+                        },
+                        "previous_function": "",
+                        "previous_name": "call_api_1",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "api",
+                        "status": "warn",
+                        "title": "API",
+                        "type": "coa.API",
+                        "warn": false,
+                        "z": 35
+                    },
+                    {
+                        "action": "run query",
+                        "action_type": "investigate",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {
+                            "body": "",
+                            "email": "iceburgnotify@gmail.com",
+                            "folder": "Inbox",
+                            "ignore_subfolders": "",
+                            "internet_message_id": "",
+                            "query": "",
+                            "range": "0-10",
+                            "sender": "",
+                            "subject": ""
+                        },
+                        "angle": 0,
+                        "app": "EWS for Office 365",
+                        "approver": "",
+                        "assets": [
+                            {
+                                "action": "run query",
+                                "active": true,
+                                "app_name": "EWS for Office 365",
+                                "app_version": "1.0.87",
+                                "config_type": "app",
+                                "fields": {
+                                    "body": "",
+                                    "email": "iceburgnotify@gmail.com",
+                                    "folder": "Inbox",
+                                    "ignore_subfolders": "",
+                                    "internet_message_id": "",
+                                    "query": "",
+                                    "range": "0-10",
+                                    "sender": "",
+                                    "subject": ""
+                                },
+                                "has_app": true,
+                                "id": 97,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "EWS for Office 365",
+                                "output": [
+                                    {
+                                        "data_path": "action_result.status",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.body",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "contains": [
+                                            "email"
+                                        ],
+                                        "data_path": "action_result.parameter.email",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "contains": [
+                                            "mail folder",
+                                            "mail folder path"
+                                        ],
+                                        "data_path": "action_result.parameter.folder",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.ignore_subfolders",
+                                        "data_type": "boolean"
+                                    },
+                                    {
+                                        "contains": [
+                                            "internet message id"
+                                        ],
+                                        "data_path": "action_result.parameter.internet_message_id",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.query",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.range",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "contains": [
+                                            "email"
+                                        ],
+                                        "data_path": "action_result.parameter.sender",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.subject",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Folder",
+                                        "column_order": 3,
+                                        "contains": [
+                                            "mail folder"
+                                        ],
+                                        "data_path": "action_result.data.*.folder",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Folder Path",
+                                        "column_order": 4,
+                                        "contains": [
+                                            "mail folder path"
+                                        ],
+                                        "data_path": "action_result.data.*.folder_path",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Received Time",
+                                        "column_order": 2,
+                                        "data_path": "action_result.data.*.t_DateTimeReceived",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "contains": [
+                                            "email"
+                                        ],
+                                        "data_path": "action_result.data.*.t_From.t_Mailbox.t_EmailAddress",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.t_From.t_Mailbox.t_MailboxType",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.t_From.t_Mailbox.t_Name",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.t_From.t_Mailbox.t_RoutingType",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Internet Message ID",
+                                        "column_order": 5,
+                                        "contains": [
+                                            "internet message id"
+                                        ],
+                                        "data_path": "action_result.data.*.t_InternetMessageId",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.t_ItemId.@ChangeKey",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Message ID",
+                                        "column_order": 6,
+                                        "contains": [
+                                            "office 365 email id"
+                                        ],
+                                        "data_path": "action_result.data.*.t_ItemId.@Id",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "contains": [
+                                            "email"
+                                        ],
+                                        "data_path": "action_result.data.*.t_Sender.t_Mailbox.t_EmailAddress",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.t_Sender.t_Mailbox.t_MailboxType",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Sender",
+                                        "column_order": 1,
+                                        "data_path": "action_result.data.*.t_Sender.t_Mailbox.t_Name",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.t_Sender.t_Mailbox.t_RoutingType",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Subject",
+                                        "column_order": 0,
+                                        "data_path": "action_result.data.*.t_Subject",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.summary.emails_matched",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "action_result.message",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects_successful",
+                                        "data_type": "numeric"
+                                    }
+                                ],
+                                "parameters": {
+                                    "body": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Substring to search in Body",
+                                        "key": "body",
+                                        "order": 4,
+                                        "primary": false,
+                                        "required": false
+                                    },
+                                    "email": {
+                                        "contains": [
+                                            "email"
+                                        ],
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "User's Email (Mailbox to search in)",
+                                        "key": "email",
+                                        "order": 0,
+                                        "primary": true,
+                                        "required": true
+                                    },
+                                    "folder": {
+                                        "contains": [
+                                            "mail folder",
+                                            "mail folder path"
+                                        ],
+                                        "data_type": "string",
+                                        "default": "Inbox",
+                                        "description": "Folder Name/Path (to search in)",
+                                        "key": "folder",
+                                        "order": 1,
+                                        "required": false
+                                    },
+                                    "ignore_subfolders": {
+                                        "data_type": "boolean",
+                                        "default": null,
+                                        "description": "Ignore subfolders",
+                                        "key": "ignore_subfolders",
+                                        "order": 7,
+                                        "required": false
+                                    },
+                                    "internet_message_id": {
+                                        "contains": [
+                                            "internet message id"
+                                        ],
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Internet Message ID",
+                                        "key": "internet_message_id",
+                                        "order": 5,
+                                        "primary": false,
+                                        "required": false
+                                    },
+                                    "query": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "AQS string",
+                                        "key": "query",
+                                        "order": 5,
+                                        "primary": true,
+                                        "required": false
+                                    },
+                                    "range": {
+                                        "data_type": "string",
+                                        "default": "0-10",
+                                        "description": "Email range to return (min_offset-max_offset)",
+                                        "key": "range",
+                                        "order": 6,
+                                        "required": false
+                                    },
+                                    "sender": {
+                                        "contains": [
+                                            "email"
+                                        ],
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Sender Email address to match",
+                                        "key": "sender",
+                                        "order": 3,
+                                        "primary": true,
+                                        "required": false
+                                    },
+                                    "subject": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Substring to search in Subject",
+                                        "key": "subject",
+                                        "order": 2,
+                                        "required": false
+                                    }
+                                },
+                                "product_name": "Office 365",
+                                "product_vendor": "Microsoft",
+                                "type": ""
+                            }
+                        ],
+                        "attrs": {
+                            ".action": {
+                                "text": "run query"
+                            },
+                            ".background": {
+                                "stroke": "#E6984E"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "Investigate"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 1
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_investigate.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def run_query_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('run_query_1() called')\n\n    # collect data for 'run_query_1' call\n\n    parameters = []\n    \n    # build parameters list for 'run_query_1' call\n    parameters.append({\n        'email': \"iceburgnotify@gmail.com\",\n        'folder': \"Inbox\",\n        'subject': \"\",\n        'sender': \"\",\n        'body': \"\",\n        'internet_message_id': \"\",\n        'query': \"\",\n        'range': \"0-10\",\n        'ignore_subfolders': \"\",\n    })\n\n    phantom.act(\"run query\", parameters=parameters, app={ \"name\": 'EWS for Office 365' }, name=\"run_query_1\")\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "delay": 0,
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "ac8d01ae-1091-42cc-ab05-bc5336621715",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 118,
+                        "line_start": 94,
+                        "message": "Configuring now",
+                        "name": "run query",
+                        "notes": "",
+                        "number": 1,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 1200,
+                            "y": 100
+                        },
+                        "previous_function": "",
+                        "previous_name": "run_query_1",
+                        "required_params": {
+                            "email": true
+                        },
+                        "reviewer": "",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "app_action_config",
+                        "status": "warn",
+                        "title": "Investigate",
+                        "type": "coa.Action",
+                        "warn": "",
+                        "z": 37
                     },
                     {
                         "action": "get screenshot",
@@ -1157,7 +1813,7 @@
                         "callback_start": 1,
                         "callsback": true,
                         "color": "",
-                        "connected_to_start": true,
+                        "connected_to_start": false,
                         "connection_name": "",
                         "connection_type": "",
                         "custom_callback": "",
@@ -1258,7 +1914,313 @@
                         "title": "Investigate",
                         "type": "coa.Action",
                         "warn": false,
-                        "z": 20
+                        "z": 38
+                    },
+                    {
+                        "action": "delete email",
+                        "action_type": "contain",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {
+                            "email": "",
+                            "id": "<VI1P175MB0191ABD0857E66DFE334698CBA7E0@VI1P175MB0191.EURP175.PROD.OUTLOOK.COM>"
+                        },
+                        "angle": 0,
+                        "app": "EWS for Office 365",
+                        "approver": "",
+                        "assets": [
+                            {
+                                "action": "delete email",
+                                "active": true,
+                                "app_name": "EWS for Office 365",
+                                "app_version": "1.0.87",
+                                "asset_name": "qualys ingestion",
+                                "config_type": "asset",
+                                "count": 0,
+                                "fields": {
+                                    "email": "",
+                                    "id": "<VI1P175MB0191ABD0857E66DFE334698CBA7E0@VI1P175MB0191.EURP175.PROD.OUTLOOK.COM>"
+                                },
+                                "has_app": true,
+                                "id": 97,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "qualys ingestion",
+                                "output": [
+                                    {
+                                        "data_path": "action_result.status",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "contains": [
+                                            "email"
+                                        ],
+                                        "data_path": "action_result.parameter.email",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Message ID",
+                                        "column_order": 0,
+                                        "contains": [
+                                            "office 365 email id"
+                                        ],
+                                        "data_path": "action_result.parameter.id",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.summary",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Status Message",
+                                        "column_order": 1,
+                                        "data_path": "action_result.message",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects_successful",
+                                        "data_type": "numeric"
+                                    }
+                                ],
+                                "parameters": {
+                                    "email": {
+                                        "contains": [
+                                            "email"
+                                        ],
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Email of the mailbox owner (used during impersonation)",
+                                        "key": "email",
+                                        "order": 1,
+                                        "primary": false,
+                                        "required": false
+                                    },
+                                    "id": {
+                                        "allow_list": true,
+                                        "contains": [
+                                            "office 365 email id"
+                                        ],
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Message IDs to delete (comma separated values supported)",
+                                        "key": "id",
+                                        "order": 0,
+                                        "primary": true,
+                                        "required": true
+                                    }
+                                },
+                                "product_name": "Office 365",
+                                "product_vendor": "Microsoft",
+                                "targets": "84",
+                                "type": ""
+                            }
+                        ],
+                        "attrs": {
+                            ".action": {
+                                "text": "delete email"
+                            },
+                            ".background": {
+                                "stroke": "#E6984E"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "Contain"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 1
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_contain.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def delete_email_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('delete_email_1() called')\n\n    # collect data for 'delete_email_1' call\n\n    parameters = []\n    \n    # build parameters list for 'delete_email_1' call\n    parameters.append({\n        'id': \"<VI1P175MB0191ABD0857E66DFE334698CBA7E0@VI1P175MB0191.EURP175.PROD.OUTLOOK.COM>\",\n        'email': \"\",\n    })\n\n    phantom.act(\"delete email\", parameters=parameters, assets=['qualys ingestion'], callback=call_api_1, name=\"delete_email_1\")\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "color": "",
+                        "connected_to_start": false,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "delay": 0,
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "fe94a46a-7683-412d-9c73-8b7db6a14f00",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 94,
+                        "line_start": 77,
+                        "message": "Configuring now",
+                        "name": "delete email",
+                        "notes": "",
+                        "number": 1,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 900,
+                            "y": 240
+                        },
+                        "previous_function": "",
+                        "previous_name": "delete_email_1",
+                        "required_params": {
+                            "id": true
+                        },
+                        "reviewer": "",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "app_action_assets",
+                        "status": "warn",
+                        "title": "Contain",
+                        "type": "coa.Action",
+                        "warn": "",
+                        "z": 39
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#6C7A89",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#6a6c8a",
+                                "stroke": "#6a6c8a"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "0b72b567-e96b-4149-8e2f-b7a0a9c79e11",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "fccef927-3404-42bc-ae37-99f6c141531a",
+                            "port": null,
+                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "b99959e8-7935-4637-9302-06074ee6e239",
+                            "port": null,
+                            "selector": "g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 40
                     },
                     {
                         "action": "block sender",
@@ -1416,9 +2378,6 @@
                             ".action": {
                                 "text": "block sender"
                             },
-                            ".background": {
-                                "stroke": "#E6984E"
-                            },
                             ".inPorts>.port-in": {
                                 "ref": ".background",
                                 "ref-x": 0.5
@@ -1453,7 +2412,7 @@
                                 "display": "none"
                             },
                             "g.error": {
-                                "opacity": 1
+                                "opacity": 0
                             },
                             "g.error image": {
                                 "xlink:href": "/inc/coa/img/block_icon_warn.svg"
@@ -1474,7 +2433,7 @@
                         "connection_name": "",
                         "connection_type": "",
                         "custom_callback": "",
-                        "custom_code": "def block_sender_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('block_sender_1() called')\n\n    # collect data for 'block_sender_1' call\n\n    parameters = []\n    \n    # build parameters list for 'block_sender_1' call\n    parameters.append({\n        'id': \"<VI1P175MB0191ABD0857E66DFE334698CBA7E0>\",\n        'move_to_junk_folder': \"\",\n        'email': \"soartesting@outlook.com\",\n    })\n\n    phantom.act(\"block sender\", parameters=parameters, assets=['qualys ingestion'], callback=call_api_2, name=\"block_sender_1\")\n\n    return",
+                        "custom_code": "def block_sender_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('block_sender_1() called')\n\n    # collect data for 'block_sender_1' call\n\n    parameters = []\n    \n    # build parameters list for 'block_sender_1' call\n    parameters.append({\n        'id': \"<VI1P175MB0191ABD0857E66DFE334698CBA7E0@VI1P175MB0191.EURP175.PROD.OUTLOOK.COM>\",\n        'move_to_junk_folder': \"\",\n        'email': \"soartesting@outlook.com\",\n    })\n\n    phantom.act(\"block sender\", parameters=parameters, assets=['qualys ingestion'], callback=call_api_2, name=\"block_sender_1\")\n\n    return",
                         "custom_join": "",
                         "custom_name": "",
                         "delay": 0,
@@ -1567,510 +2526,11 @@
                             "width": 180
                         },
                         "state": "app_action_assets",
-                        "status": "warn",
-                        "title": "Contain",
-                        "type": "coa.Action",
-                        "warn": false,
-                        "z": 29
-                    },
-                    {
-                        "action": "delete email",
-                        "action_type": "contain",
-                        "active": false,
-                        "active_keys": {},
-                        "active_values": {
-                            "email": "",
-                            "id": "<VI1P175MB0191ABD0857E66DFE334698CBA7E0@VI1P175MB0191.EURP175.PROD.OUTLOOK.COM>"
-                        },
-                        "angle": 0,
-                        "app": "EWS for Office 365",
-                        "approver": "",
-                        "assets": [
-                            {
-                                "action": "delete email",
-                                "active": true,
-                                "app_name": "EWS for Office 365",
-                                "app_version": "1.0.87",
-                                "asset_name": "qualys ingestion",
-                                "config_type": "asset",
-                                "count": 0,
-                                "fields": {
-                                    "email": "",
-                                    "id": "<VI1P175MB0191ABD0857E66DFE334698CBA7E0@VI1P175MB0191.EURP175.PROD.OUTLOOK.COM>"
-                                },
-                                "has_app": true,
-                                "id": 97,
-                                "loaded": false,
-                                "missing": false,
-                                "name": "qualys ingestion",
-                                "output": [
-                                    {
-                                        "data_path": "action_result.status",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "contains": [
-                                            "email"
-                                        ],
-                                        "data_path": "action_result.parameter.email",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "Message ID",
-                                        "column_order": 0,
-                                        "contains": [
-                                            "office 365 email id"
-                                        ],
-                                        "data_path": "action_result.parameter.id",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.data",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.summary",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "Status Message",
-                                        "column_order": 1,
-                                        "data_path": "action_result.message",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects",
-                                        "data_type": "numeric"
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects_successful",
-                                        "data_type": "numeric"
-                                    }
-                                ],
-                                "parameters": {
-                                    "email": {
-                                        "contains": [
-                                            "email"
-                                        ],
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "Email of the mailbox owner (used during impersonation)",
-                                        "key": "email",
-                                        "order": 1,
-                                        "primary": false,
-                                        "required": false
-                                    },
-                                    "id": {
-                                        "allow_list": true,
-                                        "contains": [
-                                            "office 365 email id"
-                                        ],
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "Message IDs to delete (comma separated values supported)",
-                                        "key": "id",
-                                        "order": 0,
-                                        "primary": true,
-                                        "required": true
-                                    }
-                                },
-                                "product_name": "Office 365",
-                                "product_vendor": "Microsoft",
-                                "targets": "84",
-                                "type": ""
-                            }
-                        ],
-                        "attrs": {
-                            ".action": {
-                                "text": "delete email"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "Contain"
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.icon image": {
-                                "xlink:href": "/inc/coa/img/block_icon_contain.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            }
-                        },
-                        "block_code": "def delete_email_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('delete_email_1() called')\n\n    # collect data for 'delete_email_1' call\n\n    parameters = []\n    \n    # build parameters list for 'delete_email_1' call\n    parameters.append({\n        'id': \"<VI1P175MB0191ABD0857E66DFE334698CBA7E0@VI1P175MB0191.EURP175.PROD.OUTLOOK.COM>\",\n        'email': \"\",\n    })\n\n    phantom.act(\"delete email\", parameters=parameters, assets=['qualys ingestion'], callback=call_api_1, name=\"delete_email_1\")\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": true,
-                        "color": "",
-                        "connected_to_start": true,
-                        "connection_name": "",
-                        "connection_type": "",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "delay": 0,
-                        "description": "",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "fe94a46a-7683-412d-9c73-8b7db6a14f00",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 94,
-                        "line_start": 77,
-                        "message": "Configuring now",
-                        "name": "delete email",
-                        "notes": "",
-                        "number": 1,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 900,
-                            "y": 240
-                        },
-                        "previous_function": "",
-                        "previous_name": "delete_email_1",
-                        "required_params": {
-                            "id": true
-                        },
-                        "reviewer": "",
-                        "show_number": false,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "app_action_assets",
                         "status": "",
                         "title": "Contain",
                         "type": "coa.Action",
-                        "warn": "",
-                        "z": 32
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#6C7A89",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#6a6c8a",
-                                "stroke": "#6a6c8a"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "33c4a146-44aa-4b46-9731-900c87f7fa09",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "fccef927-3404-42bc-ae37-99f6c141531a",
-                            "port": null,
-                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "fe94a46a-7683-412d-9c73-8b7db6a14f00",
-                            "port": null,
-                            "selector": "g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "type": "link",
-                        "z": 33
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#6C7A89",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#6a6c8a",
-                                "stroke": "#6a6c8a"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "d534a6b4-d52c-41af-bfda-5dc498c48dca",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "fe94a46a-7683-412d-9c73-8b7db6a14f00",
-                            "port": null,
-                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "3050c973-fe3f-4838-83ac-0f072e925cd6",
-                            "port": null,
-                            "selector": "g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "type": "link",
-                        "z": 34
-                    },
-                    {
-                        "active": false,
-                        "angle": 0,
-                        "api": "call api",
-                        "attrs": {
-                            ".api": {
-                                "text": "call api"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "API"
-                            },
-                            "g.code image": {
-                                "xlink:href": "/inc/coa/img/block_icon_code_on.svg"
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            }
-                        },
-                        "block_code": "# read-only block view not available",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "color": "",
-                        "configured": [],
-                        "connected_to_start": true,
-                        "connection_name": "delete email",
-                        "connection_type": "action",
-                        "custom_callback": "",
-                        "custom_code": "def call_api_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('call_api_1() called')\n    phantom.debug(results)\n    return",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "description": "",
-                        "has_custom": true,
-                        "has_custom_block": true,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "3050c973-fe3f-4838-83ac-0f072e925cd6",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 21,
-                        "line_start": 16,
-                        "message": "Configuring now",
-                        "name": "call api",
-                        "notes": "",
-                        "number": 1,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 680,
-                            "y": 420
-                        },
-                        "previous_function": "",
-                        "previous_name": "call_api_1",
-                        "show_number": false,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "api",
-                        "status": "",
-                        "title": "API",
-                        "type": "coa.API",
                         "warn": false,
-                        "z": 35
+                        "z": 41
                     }
                 ]
             },
@@ -2079,7 +2539,7 @@
         "schema": 3,
         "version": "3.5.200"
     },
-    "create_time": "2019-02-21T09:21:08.535395+00:00",
+    "create_time": "2019-02-21T09:44:35.260860+00:00",
     "draft_mode": false,
     "labels": [
         "*"

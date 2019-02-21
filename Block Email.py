@@ -8,8 +8,8 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
     
-    # call 'delete_email_1' block
-    delete_email_1(container=container)
+    # call 'block_sender_1' block
+    block_sender_1(container=container)
 
     return
 
@@ -48,7 +48,7 @@ def block_sender_1(action=None, success=None, container=None, results=None, hand
     
     # build parameters list for 'block_sender_1' call
     parameters.append({
-        'id': "<VI1P175MB0191ABD0857E66DFE334698CBA7E0>",
+        'id': "<VI1P175MB0191ABD0857E66DFE334698CBA7E0@VI1P175MB0191.EURP175.PROD.OUTLOOK.COM>",
         'move_to_junk_folder': "",
         'email': "soartesting@outlook.com",
     })
@@ -88,6 +88,30 @@ def delete_email_1(action=None, success=None, container=None, results=None, hand
     })
 
     phantom.act("delete email", parameters=parameters, assets=['qualys ingestion'], callback=call_api_1, name="delete_email_1")
+
+    return
+
+def run_query_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('run_query_1() called')
+
+    # collect data for 'run_query_1' call
+
+    parameters = []
+    
+    # build parameters list for 'run_query_1' call
+    parameters.append({
+        'email': "iceburgnotify@gmail.com",
+        'folder': "Inbox",
+        'subject': "",
+        'sender': "",
+        'body': "",
+        'internet_message_id': "",
+        'query': "",
+        'range': "0-10",
+        'ignore_subfolders': "",
+    })
+
+    phantom.act("run query", parameters=parameters, app={ "name": 'EWS for Office 365' }, name="run_query_1")
 
     return
 
