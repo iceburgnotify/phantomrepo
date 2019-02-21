@@ -43,7 +43,7 @@ def block_sender_1(action=None, success=None, container=None, results=None, hand
     
     # build parameters list for 'block_sender_1' call
     parameters.append({
-        'id': "20180625001424.1.3D7FC1E792BF8A72@mxtoolbox.com",
+        'id': "<20180625001424.1.3D7FC1E792BF8A72@mxtoolbox.com>",
         'move_to_junk_folder': "",
         'email': "",
     })
