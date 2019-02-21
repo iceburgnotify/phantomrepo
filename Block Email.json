@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "5caa46bd467ab66c4128959760d5d566ec7b961c",
+            "hash": "695eb7ef826b7ff20490b875dbb01d4ba032157f",
             "joint": {
                 "cells": [
                     {
@@ -1703,7 +1703,7 @@
                         "connection_name": "",
                         "connection_type": "",
                         "custom_callback": "",
-                        "custom_code": "def get_screenshot_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('get_screenshot_1() called')\n\n    # collect data for 'get_screenshot_1' call\n\n    parameters = []\n    \n    # build parameters list for 'get_screenshot_1' call\n    parameters.append({\n        'url': \"https://www.google.com\",\n        'size': \"\",\n    })\n\n    phantom.act(\"get screenshot\", parameters=parameters, assets=['test ss'], name=\"get_screenshot_1\")\n\n    return",
+                        "custom_code": "def get_screenshot_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('get_screenshot_1() called')\n\n    # collect data for 'get_screenshot_1' call\n\n    parameters = []\n    \n    # build parameters list for 'get_screenshot_1' call\n    parameters.append({\n        'url': \"https://paypal.account.myorder-manage.com\",\n        'size': \"\",\n    })\n\n    phantom.act(\"get screenshot\", parameters=parameters, assets=['test ss'], name=\"get_screenshot_1\")\n\n    return",
                         "custom_join": "",
                         "custom_name": "",
                         "delay": 0,
@@ -1800,7 +1800,7 @@
                         "title": "Investigate",
                         "type": "coa.Action",
                         "warn": false,
-                        "z": 18
+                        "z": 19
                     }
                 ]
             },
@@ -1809,7 +1809,7 @@
         "schema": 3,
         "version": "3.5.200"
     },
-    "create_time": "2019-02-21T05:55:26.381652+00:00",
+    "create_time": "2019-02-21T05:58:48.230949+00:00",
     "draft_mode": false,
     "labels": [
         "*"
