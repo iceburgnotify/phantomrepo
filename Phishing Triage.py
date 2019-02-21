@@ -42,6 +42,40 @@ def geolocate_ip(action=None, success=None, container=None, results=None, handle
 
     return
 
+def whois_domain_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('whois_domain_1() called')
+    if not success:
+        phantom.debug('Error in geolocate ip of MaxMind')
+        return
+    # collect data for 'whois_domain_1' call
+    phantom.debug(results)
+    parameters = []
+    
+    # build parameters list for 'whois_domain_1' call
+    parameters.append({
+        'domain': domain,
+    })
+
+    phantom.act("whois domain", parameters=parameters, assets=['whois'], callback=get_screenshot_1, name="whois_domain_1", parent_action=action)
+
+    return
+
+def vt_url_reputation(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('vt_url_reputation() called')
+    
+    # collect data for 'vt_url_reputation' call
+
+    parameters = []
+    
+    # build parameters list for 'vt_url_reputation' call
+    parameters.append({
+        'url': url
+    })
+
+    phantom.act("url reputation", parameters=parameters, assets=['virustest'], callback=pt_url_reputation, name="vt_url_reputation")
+
+    return
+
 def pt_url_reputation(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
     phantom.debug('pt_url_reputation() called')
     if not success:
@@ -62,19 +96,13 @@ def pt_url_reputation(action=None, success=None, container=None, results=None, h
 
     return
 
-def vt_url_reputation(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
-    phantom.debug('vt_url_reputation() called')
-    
-    # collect data for 'vt_url_reputation' call
-
-    parameters = []
-    
-    # build parameters list for 'vt_url_reputation' call
-    parameters.append({
-        'url': url
-    })
-
-    phantom.act("url reputation", parameters=parameters, assets=['virustest'], callback=pt_url_reputation, name="vt_url_reputation")
+def promote_to_case(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('promote_to_case() called')
+    vt_result = phantom.collect2(container=container,datapath=['vt_url_reputation:action_result.data.*.positives'],action_results=results)
+    if vt_result:
+        positive = vt_result[0][0]
+        if positive>0:
+            phantom.promote(container=container, template="Phishing")
 
     return
 
@@ -96,34 +124,6 @@ def get_screenshot_1(action=None, success=None, container=None, results=None, ha
     })
 
     phantom.act("get screenshot", parameters=parameters, assets=['test ss'], callback=promote_to_case, name="get_screenshot_1", parent_action=action)
-
-    return
-
-def whois_domain_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
-    phantom.debug('whois_domain_1() called')
-    if not success:
-        phantom.debug('Error in geolocate ip of MaxMind')
-        return
-    # collect data for 'whois_domain_1' call
-    phantom.debug(results)
-    parameters = []
-    
-    # build parameters list for 'whois_domain_1' call
-    parameters.append({
-        'domain': domain,
-    })
-
-    phantom.act("whois domain", parameters=parameters, assets=['whois'], callback=get_screenshot_1, name="whois_domain_1", parent_action=action)
-
-    return
-
-def promote_to_case(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
-    phantom.debug('promote_to_case() called')
-    vt_result = phantom.collect2(container=container,datapath=['vt_url_reputation:action_result.data.*.positives'],action_results=results)
-    if vt_result:
-        positive = vt_result[0][0]
-        if positive>0:
-            phantom.promote(container=container, template="Incident Response Template")
 
     return
 
