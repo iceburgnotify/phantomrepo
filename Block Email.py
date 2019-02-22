@@ -83,6 +83,7 @@ def get_screenshot_1(action=None, success=None, container=None, results=None, ha
 def delete_email_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
     phantom.debug('delete_email_1() called')
     msid = results[0]['action_results'][0]['summary']['email_id']
+    phantom.debug(results)
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
     # collect data for 'delete_email_1' call
