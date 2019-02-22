@@ -82,7 +82,10 @@ def get_screenshot_1(action=None, success=None, container=None, results=None, ha
 
 def delete_email_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
     phantom.debug('delete_email_1() called')
-
+    phantom.debug(results['message'])
+    return
+    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
+    
     # collect data for 'delete_email_1' call
 
     parameters = []
@@ -93,7 +96,7 @@ def delete_email_1(action=None, success=None, container=None, results=None, hand
         'email': "",
     })
 
-    phantom.act("delete email", parameters=parameters, assets=['qualys ingestion'], callback=call_api_1, name="delete_email_1")
+    phantom.act("delete email", parameters=parameters, assets=['qualys ingestion'], callback=call_api_1, name="delete_email_1", parent_action=action)
 
     return
 
@@ -136,7 +139,7 @@ def get_email_1(action=None, success=None, container=None, results=None, handle=
         'email': "",
     })
 
-    phantom.act("get email", parameters=parameters, assets=['office365'], callback=call_api_3, name="get_email_1")
+    phantom.act("get email", parameters=parameters, assets=['office365'], callback=delete_email_1, name="get_email_1")
 
     return
 
