@@ -184,8 +184,8 @@ def run_query_2(action=None, success=None, container=None, results=None, handle=
     parameters.append({
         'email': "soartesting2019@outlook.com",
         'folder': "Inbox",
-        'subject': "",
-        'sender': "test delete",
+        'subject': "test delete",
+        'sender': "",
         'body': "",
         'internet_message_id': "",
         'query': "",

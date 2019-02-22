@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "8adb65e57e7eaba7f75ec755f921a1147589ae0f",
+            "hash": "425095d84c63177c066b4f16fa4b42d299288716",
             "joint": {
                 "cells": [
                     {
@@ -1687,7 +1687,7 @@
                                 "xlink:href": "/inc/coa/img/block_icon_code_on.svg"
                             },
                             "g.delete": {
-                                "display": "block"
+                                "display": "none"
                             },
                             "g.error": {
                                 "opacity": 1
@@ -3874,8 +3874,8 @@
                             "internet_message_id": "",
                             "query": "",
                             "range": "0-10",
-                            "sender": "test delete",
-                            "subject": ""
+                            "sender": "",
+                            "subject": "test delete"
                         },
                         "angle": 0,
                         "app": "EWS for Office 365",
@@ -3897,8 +3897,8 @@
                                     "internet_message_id": "",
                                     "query": "",
                                     "range": "0-10",
-                                    "sender": "test delete",
-                                    "subject": ""
+                                    "sender": "",
+                                    "subject": "test delete"
                                 },
                                 "has_app": true,
                                 "id": 97,
@@ -4210,7 +4210,7 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def run_query_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('run_query_2() called')\n\n    # collect data for 'run_query_2' call\n\n    parameters = []\n    \n    # build parameters list for 'run_query_2' call\n    parameters.append({\n        'email': \"soartesting2019@outlook.com\",\n        'folder': \"Inbox\",\n        'subject': \"\",\n        'sender': \"test delete\",\n        'body': \"\",\n        'internet_message_id': \"\",\n        'query': \"\",\n        'range': \"0-10\",\n        'ignore_subfolders': \"\",\n    })\n\n    phantom.act(\"run query\", parameters=parameters, assets=['office365'], callback=call_api_3, name=\"run_query_2\")\n\n    return",
+                        "block_code": "def run_query_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('run_query_2() called')\n\n    # collect data for 'run_query_2' call\n\n    parameters = []\n    \n    # build parameters list for 'run_query_2' call\n    parameters.append({\n        'email': \"soartesting2019@outlook.com\",\n        'folder': \"Inbox\",\n        'subject': \"test delete\",\n        'sender': \"\",\n        'body': \"\",\n        'internet_message_id': \"\",\n        'query': \"\",\n        'range': \"0-10\",\n        'ignore_subfolders': \"\",\n    })\n\n    phantom.act(\"run query\", parameters=parameters, assets=['office365'], callback=call_api_3, name=\"run_query_2\")\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
@@ -4297,8 +4297,8 @@
                             }
                         },
                         "position": {
-                            "x": 840,
-                            "y": 560
+                            "x": 820,
+                            "y": 580
                         },
                         "previous_function": "",
                         "previous_name": "run_query_2",
@@ -4316,7 +4316,7 @@
                         "title": "Investigate",
                         "type": "coa.Action",
                         "warn": "",
-                        "z": 87
+                        "z": 89
                     }
                 ]
             },
@@ -4325,7 +4325,7 @@
         "schema": 3,
         "version": "3.5.200"
     },
-    "create_time": "2019-02-22T09:12:50.400675+00:00",
+    "create_time": "2019-02-22T09:13:48.419803+00:00",
     "draft_mode": false,
     "labels": [
         "*"
