@@ -8,8 +8,8 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
     
-    # call 'get_email_1' block
-    get_email_1(container=container)
+    # call 'send_email_1' block
+    send_email_1(container=container)
 
     return
 
@@ -115,6 +115,11 @@ def block_sender_1(action=None, success=None, container=None, results=None, hand
 
     return
 
+def call_api_3(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('call_api_3() called')
+    phantom.debug(results)
+    return
+
 def get_email_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
     phantom.debug('get_email_1() called')
 
@@ -124,20 +129,35 @@ def get_email_1(action=None, success=None, container=None, results=None, handle=
     
     # build parameters list for 'get_email_1' call
     parameters.append({
-        'id': "",
-        'email': "",
+        'ingest_email': "",
         'container_id': 1733,
         'vault_id': "",
-        'ingest_email': "",
+        'id': "",
+        'email': "",
     })
 
     phantom.act("get email", parameters=parameters, assets=['office365'], callback=call_api_3, name="get_email_1")
 
     return
 
-def call_api_3(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
-    phantom.debug('call_api_3() called')
-    phantom.debug(results)
+def send_email_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('send_email_1() called')
+
+    # collect data for 'send_email_1' call
+
+    parameters = []
+    
+    # build parameters list for 'send_email_1' call
+    parameters.append({
+        'from': "gonnastopus@outlook.com",
+        'to': "soartesting2019@outlook.com",
+        'subject': "test delete",
+        'body': "this is testing",
+        'attachments': "",
+    })
+
+    phantom.act("send email", parameters=parameters, assets=['smtp'], name="send_email_1")
+
     return
 
 def on_finish(container, summary):
