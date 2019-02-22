@@ -8,14 +8,9 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
     
-    # call 'block_sender_1' block
-    block_sender_1(container=container)
+    # call 'get_email_1' block
+    get_email_1(container=container)
 
-    return
-
-def call_api_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
-    phantom.debug('call_api_1() called')
-    phantom.debug(results)
     return
 
 def whois_domain_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
@@ -39,21 +34,32 @@ def call_api_2(action=None, success=None, container=None, results=None, handle=N
     phantom.debug(results)
     return
 
-def block_sender_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
-    phantom.debug('block_sender_1() called')
+def call_api_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('call_api_1() called')
+    phantom.debug(results)
+    return
 
-    # collect data for 'block_sender_1' call
+def run_query_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('run_query_1() called')
+
+    # collect data for 'run_query_1' call
 
     parameters = []
     
-    # build parameters list for 'block_sender_1' call
+    # build parameters list for 'run_query_1' call
     parameters.append({
-        'id': "<VI1P175MB0191ABD0857E66DFE334698CBA7E0@VI1P175MB0191.EURP175.PROD.OUTLOOK.COM>",
-        'move_to_junk_folder': "",
-        'email': "soartesting@outlook.com",
+        'body': "",
+        'internet_message_id': "",
+        'sender': "",
+        'ignore_subfolders': "",
+        'range': "0-10",
+        'query': "",
+        'folder': "Inbox",
+        'email': "iceburgnotify@gmail.com",
+        'subject': "",
     })
 
-    phantom.act("block sender", parameters=parameters, assets=['qualys ingestion'], callback=call_api_2, name="block_sender_1")
+    phantom.act("run query", parameters=parameters, app={ "name": 'EWS for Office 365' }, name="run_query_1")
 
     return
 
@@ -91,28 +97,47 @@ def delete_email_1(action=None, success=None, container=None, results=None, hand
 
     return
 
-def run_query_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
-    phantom.debug('run_query_1() called')
+def block_sender_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('block_sender_1() called')
 
-    # collect data for 'run_query_1' call
+    # collect data for 'block_sender_1' call
 
     parameters = []
     
-    # build parameters list for 'run_query_1' call
+    # build parameters list for 'block_sender_1' call
     parameters.append({
-        'email': "iceburgnotify@gmail.com",
-        'folder': "Inbox",
-        'subject': "",
-        'sender': "",
-        'body': "",
-        'internet_message_id': "",
-        'query': "",
-        'range': "0-10",
-        'ignore_subfolders': "",
+        'id': "<VI1P175MB0191ABD0857E66DFE334698CBA7E0@VI1P175MB0191.EURP175.PROD.OUTLOOK.COM>",
+        'move_to_junk_folder': "",
+        'email': "soartesting@outlook.com",
     })
 
-    phantom.act("run query", parameters=parameters, app={ "name": 'EWS for Office 365' }, name="run_query_1")
+    phantom.act("block sender", parameters=parameters, assets=['qualys ingestion'], callback=call_api_2, name="block_sender_1")
 
+    return
+
+def get_email_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('get_email_1() called')
+
+    # collect data for 'get_email_1' call
+
+    parameters = []
+    
+    # build parameters list for 'get_email_1' call
+    parameters.append({
+        'id': "",
+        'email': "",
+        'container_id': 1727,
+        'vault_id': "",
+        'ingest_email': "",
+    })
+
+    phantom.act("get email", parameters=parameters, assets=['office365'], callback=call_api_3, name="get_email_1")
+
+    return
+
+def call_api_3(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('call_api_3() called')
+    phantom.debug(results)
     return
 
 def on_finish(container, summary):
