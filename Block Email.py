@@ -8,8 +8,8 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
     
-    # call 'run_query_2' block
-    run_query_2(container=container)
+    # call 'get_email_1' block
+    get_email_1(container=container)
 
     return
 
