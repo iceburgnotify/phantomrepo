@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "f42d7abefad484e50a75630b955dd608d7512088",
+            "hash": "f63513756e6019b483ff2dce9c8c8837d11f3c72",
             "joint": {
                 "cells": [
                     {
@@ -2313,6 +2313,466 @@
                         "z": 69
                     },
                     {
+                        "action": "run query",
+                        "action_type": "investigate",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {
+                            "body": "",
+                            "email": "iceburgnotify@gmail.com",
+                            "folder": "Inbox",
+                            "ignore_subfolders": "",
+                            "internet_message_id": "",
+                            "query": "",
+                            "range": "0-10",
+                            "sender": "",
+                            "subject": ""
+                        },
+                        "angle": 0,
+                        "app": "EWS for Office 365",
+                        "approver": "",
+                        "assets": [
+                            {
+                                "action": "run query",
+                                "active": true,
+                                "app_name": "EWS for Office 365",
+                                "app_version": "1.0.87",
+                                "config_type": "app",
+                                "fields": {
+                                    "body": "",
+                                    "email": "iceburgnotify@gmail.com",
+                                    "folder": "Inbox",
+                                    "ignore_subfolders": "",
+                                    "internet_message_id": "",
+                                    "query": "",
+                                    "range": "0-10",
+                                    "sender": "",
+                                    "subject": ""
+                                },
+                                "has_app": true,
+                                "id": 97,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "EWS for Office 365",
+                                "output": [
+                                    {
+                                        "data_path": "action_result.status",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.body",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "contains": [
+                                            "email"
+                                        ],
+                                        "data_path": "action_result.parameter.email",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "contains": [
+                                            "mail folder",
+                                            "mail folder path"
+                                        ],
+                                        "data_path": "action_result.parameter.folder",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.ignore_subfolders",
+                                        "data_type": "boolean"
+                                    },
+                                    {
+                                        "contains": [
+                                            "internet message id"
+                                        ],
+                                        "data_path": "action_result.parameter.internet_message_id",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.query",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.range",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "contains": [
+                                            "email"
+                                        ],
+                                        "data_path": "action_result.parameter.sender",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.subject",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Folder",
+                                        "column_order": 3,
+                                        "contains": [
+                                            "mail folder"
+                                        ],
+                                        "data_path": "action_result.data.*.folder",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Folder Path",
+                                        "column_order": 4,
+                                        "contains": [
+                                            "mail folder path"
+                                        ],
+                                        "data_path": "action_result.data.*.folder_path",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Received Time",
+                                        "column_order": 2,
+                                        "data_path": "action_result.data.*.t_DateTimeReceived",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "contains": [
+                                            "email"
+                                        ],
+                                        "data_path": "action_result.data.*.t_From.t_Mailbox.t_EmailAddress",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.t_From.t_Mailbox.t_MailboxType",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.t_From.t_Mailbox.t_Name",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.t_From.t_Mailbox.t_RoutingType",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Internet Message ID",
+                                        "column_order": 5,
+                                        "contains": [
+                                            "internet message id"
+                                        ],
+                                        "data_path": "action_result.data.*.t_InternetMessageId",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.t_ItemId.@ChangeKey",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Message ID",
+                                        "column_order": 6,
+                                        "contains": [
+                                            "office 365 email id"
+                                        ],
+                                        "data_path": "action_result.data.*.t_ItemId.@Id",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "contains": [
+                                            "email"
+                                        ],
+                                        "data_path": "action_result.data.*.t_Sender.t_Mailbox.t_EmailAddress",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.t_Sender.t_Mailbox.t_MailboxType",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Sender",
+                                        "column_order": 1,
+                                        "data_path": "action_result.data.*.t_Sender.t_Mailbox.t_Name",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.t_Sender.t_Mailbox.t_RoutingType",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Subject",
+                                        "column_order": 0,
+                                        "data_path": "action_result.data.*.t_Subject",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.summary.emails_matched",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "action_result.message",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects_successful",
+                                        "data_type": "numeric"
+                                    }
+                                ],
+                                "parameters": {
+                                    "body": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Substring to search in Body",
+                                        "key": "body",
+                                        "order": 4,
+                                        "primary": false,
+                                        "required": false
+                                    },
+                                    "email": {
+                                        "contains": [
+                                            "email"
+                                        ],
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "User's Email (Mailbox to search in)",
+                                        "key": "email",
+                                        "order": 0,
+                                        "primary": true,
+                                        "required": true
+                                    },
+                                    "folder": {
+                                        "contains": [
+                                            "mail folder",
+                                            "mail folder path"
+                                        ],
+                                        "data_type": "string",
+                                        "default": "Inbox",
+                                        "description": "Folder Name/Path (to search in)",
+                                        "key": "folder",
+                                        "order": 1,
+                                        "required": false
+                                    },
+                                    "ignore_subfolders": {
+                                        "data_type": "boolean",
+                                        "default": null,
+                                        "description": "Ignore subfolders",
+                                        "key": "ignore_subfolders",
+                                        "order": 7,
+                                        "required": false
+                                    },
+                                    "internet_message_id": {
+                                        "contains": [
+                                            "internet message id"
+                                        ],
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Internet Message ID",
+                                        "key": "internet_message_id",
+                                        "order": 5,
+                                        "primary": false,
+                                        "required": false
+                                    },
+                                    "query": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "AQS string",
+                                        "key": "query",
+                                        "order": 5,
+                                        "primary": true,
+                                        "required": false
+                                    },
+                                    "range": {
+                                        "data_type": "string",
+                                        "default": "0-10",
+                                        "description": "Email range to return (min_offset-max_offset)",
+                                        "key": "range",
+                                        "order": 6,
+                                        "required": false
+                                    },
+                                    "sender": {
+                                        "contains": [
+                                            "email"
+                                        ],
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Sender Email address to match",
+                                        "key": "sender",
+                                        "order": 3,
+                                        "primary": true,
+                                        "required": false
+                                    },
+                                    "subject": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Substring to search in Subject",
+                                        "key": "subject",
+                                        "order": 2,
+                                        "required": false
+                                    }
+                                },
+                                "product_name": "Office 365",
+                                "product_vendor": "Microsoft",
+                                "type": ""
+                            }
+                        ],
+                        "attrs": {
+                            ".action": {
+                                "text": "run query"
+                            },
+                            ".background": {
+                                "stroke": "#E6984E"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "Investigate"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 1
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_investigate.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def run_query_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('run_query_1() called')\n\n    # collect data for 'run_query_1' call\n\n    parameters = []\n    \n    # build parameters list for 'run_query_1' call\n    parameters.append({\n        'body': \"\",\n        'internet_message_id': \"\",\n        'sender': \"\",\n        'ignore_subfolders': \"\",\n        'range': \"0-10\",\n        'query': \"\",\n        'folder': \"Inbox\",\n        'email': \"iceburgnotify@gmail.com\",\n        'subject': \"\",\n    })\n\n    phantom.act(\"run query\", parameters=parameters, app={ \"name\": 'EWS for Office 365' }, name=\"run_query_1\")\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "color": "",
+                        "connected_to_start": false,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "delay": 0,
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "ac8d01ae-1091-42cc-ab05-bc5336621715",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 66,
+                        "line_start": 42,
+                        "message": "Configuring now",
+                        "name": "run query",
+                        "notes": "",
+                        "number": 1,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 1200,
+                            "y": 100
+                        },
+                        "previous_function": "",
+                        "previous_name": "run_query_1",
+                        "required_params": {
+                            "email": true
+                        },
+                        "reviewer": "",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "app_action_config",
+                        "status": "warn",
+                        "title": "Investigate",
+                        "type": "coa.Action",
+                        "warn": false,
+                        "z": 73
+                    },
+                    {
                         "action": "get email",
                         "action_type": "investigate",
                         "active": false,
@@ -2920,467 +3380,7 @@
                         "title": "Investigate",
                         "type": "coa.Action",
                         "warn": "",
-                        "z": 70
-                    },
-                    {
-                        "action": "run query",
-                        "action_type": "investigate",
-                        "active": false,
-                        "active_keys": {},
-                        "active_values": {
-                            "body": "",
-                            "email": "iceburgnotify@gmail.com",
-                            "folder": "Inbox",
-                            "ignore_subfolders": "",
-                            "internet_message_id": "",
-                            "query": "",
-                            "range": "0-10",
-                            "sender": "",
-                            "subject": ""
-                        },
-                        "angle": 0,
-                        "app": "EWS for Office 365",
-                        "approver": "",
-                        "assets": [
-                            {
-                                "action": "run query",
-                                "active": true,
-                                "app_name": "EWS for Office 365",
-                                "app_version": "1.0.87",
-                                "config_type": "app",
-                                "fields": {
-                                    "body": "",
-                                    "email": "iceburgnotify@gmail.com",
-                                    "folder": "Inbox",
-                                    "ignore_subfolders": "",
-                                    "internet_message_id": "",
-                                    "query": "",
-                                    "range": "0-10",
-                                    "sender": "",
-                                    "subject": ""
-                                },
-                                "has_app": true,
-                                "id": 97,
-                                "loaded": false,
-                                "missing": false,
-                                "name": "EWS for Office 365",
-                                "output": [
-                                    {
-                                        "data_path": "action_result.status",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.body",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "contains": [
-                                            "email"
-                                        ],
-                                        "data_path": "action_result.parameter.email",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "contains": [
-                                            "mail folder",
-                                            "mail folder path"
-                                        ],
-                                        "data_path": "action_result.parameter.folder",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.ignore_subfolders",
-                                        "data_type": "boolean"
-                                    },
-                                    {
-                                        "contains": [
-                                            "internet message id"
-                                        ],
-                                        "data_path": "action_result.parameter.internet_message_id",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.query",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.range",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "contains": [
-                                            "email"
-                                        ],
-                                        "data_path": "action_result.parameter.sender",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.subject",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "Folder",
-                                        "column_order": 3,
-                                        "contains": [
-                                            "mail folder"
-                                        ],
-                                        "data_path": "action_result.data.*.folder",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "Folder Path",
-                                        "column_order": 4,
-                                        "contains": [
-                                            "mail folder path"
-                                        ],
-                                        "data_path": "action_result.data.*.folder_path",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "Received Time",
-                                        "column_order": 2,
-                                        "data_path": "action_result.data.*.t_DateTimeReceived",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "contains": [
-                                            "email"
-                                        ],
-                                        "data_path": "action_result.data.*.t_From.t_Mailbox.t_EmailAddress",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.t_From.t_Mailbox.t_MailboxType",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.t_From.t_Mailbox.t_Name",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.t_From.t_Mailbox.t_RoutingType",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "Internet Message ID",
-                                        "column_order": 5,
-                                        "contains": [
-                                            "internet message id"
-                                        ],
-                                        "data_path": "action_result.data.*.t_InternetMessageId",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.t_ItemId.@ChangeKey",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "Message ID",
-                                        "column_order": 6,
-                                        "contains": [
-                                            "office 365 email id"
-                                        ],
-                                        "data_path": "action_result.data.*.t_ItemId.@Id",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "contains": [
-                                            "email"
-                                        ],
-                                        "data_path": "action_result.data.*.t_Sender.t_Mailbox.t_EmailAddress",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.t_Sender.t_Mailbox.t_MailboxType",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "Sender",
-                                        "column_order": 1,
-                                        "data_path": "action_result.data.*.t_Sender.t_Mailbox.t_Name",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.t_Sender.t_Mailbox.t_RoutingType",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "Subject",
-                                        "column_order": 0,
-                                        "data_path": "action_result.data.*.t_Subject",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.summary.emails_matched",
-                                        "data_type": "numeric"
-                                    },
-                                    {
-                                        "data_path": "action_result.message",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects",
-                                        "data_type": "numeric"
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects_successful",
-                                        "data_type": "numeric"
-                                    }
-                                ],
-                                "parameters": {
-                                    "body": {
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "Substring to search in Body",
-                                        "key": "body",
-                                        "order": 4,
-                                        "primary": false,
-                                        "required": false
-                                    },
-                                    "email": {
-                                        "contains": [
-                                            "email"
-                                        ],
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "User's Email (Mailbox to search in)",
-                                        "key": "email",
-                                        "order": 0,
-                                        "primary": true,
-                                        "required": true
-                                    },
-                                    "folder": {
-                                        "contains": [
-                                            "mail folder",
-                                            "mail folder path"
-                                        ],
-                                        "data_type": "string",
-                                        "default": "Inbox",
-                                        "description": "Folder Name/Path (to search in)",
-                                        "key": "folder",
-                                        "order": 1,
-                                        "required": false
-                                    },
-                                    "ignore_subfolders": {
-                                        "data_type": "boolean",
-                                        "default": null,
-                                        "description": "Ignore subfolders",
-                                        "key": "ignore_subfolders",
-                                        "order": 7,
-                                        "required": false
-                                    },
-                                    "internet_message_id": {
-                                        "contains": [
-                                            "internet message id"
-                                        ],
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "Internet Message ID",
-                                        "key": "internet_message_id",
-                                        "order": 5,
-                                        "primary": false,
-                                        "required": false
-                                    },
-                                    "query": {
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "AQS string",
-                                        "key": "query",
-                                        "order": 5,
-                                        "primary": true,
-                                        "required": false
-                                    },
-                                    "range": {
-                                        "data_type": "string",
-                                        "default": "0-10",
-                                        "description": "Email range to return (min_offset-max_offset)",
-                                        "key": "range",
-                                        "order": 6,
-                                        "required": false
-                                    },
-                                    "sender": {
-                                        "contains": [
-                                            "email"
-                                        ],
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "Sender Email address to match",
-                                        "key": "sender",
-                                        "order": 3,
-                                        "primary": true,
-                                        "required": false
-                                    },
-                                    "subject": {
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "Substring to search in Subject",
-                                        "key": "subject",
-                                        "order": 2,
-                                        "required": false
-                                    }
-                                },
-                                "product_name": "Office 365",
-                                "product_vendor": "Microsoft",
-                                "type": ""
-                            }
-                        ],
-                        "attrs": {
-                            ".action": {
-                                "text": "run query"
-                            },
-                            ".background": {
-                                "stroke": "#E6984E"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "Investigate"
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 1
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.icon image": {
-                                "xlink:href": "/inc/coa/img/block_icon_investigate.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            }
-                        },
-                        "block_code": "def run_query_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('run_query_1() called')\n\n    # collect data for 'run_query_1' call\n\n    parameters = []\n    \n    # build parameters list for 'run_query_1' call\n    parameters.append({\n        'body': \"\",\n        'internet_message_id': \"\",\n        'sender': \"\",\n        'ignore_subfolders': \"\",\n        'range': \"0-10\",\n        'query': \"\",\n        'folder': \"Inbox\",\n        'email': \"iceburgnotify@gmail.com\",\n        'subject': \"\",\n    })\n\n    phantom.act(\"run query\", parameters=parameters, app={ \"name\": 'EWS for Office 365' }, name=\"run_query_1\")\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": true,
-                        "color": "",
-                        "connected_to_start": false,
-                        "connection_name": "",
-                        "connection_type": "",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "delay": 0,
-                        "description": "",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "ac8d01ae-1091-42cc-ab05-bc5336621715",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 66,
-                        "line_start": 42,
-                        "message": "Configuring now",
-                        "name": "run query",
-                        "notes": "",
-                        "number": 1,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 1200,
-                            "y": 100
-                        },
-                        "previous_function": "",
-                        "previous_name": "run_query_1",
-                        "required_params": {
-                            "email": true
-                        },
-                        "reviewer": "",
-                        "show_number": false,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "app_action_config",
-                        "status": "warn",
-                        "title": "Investigate",
-                        "type": "coa.Action",
-                        "warn": false,
-                        "z": 73
+                        "z": 76
                     },
                     {
                         "action": "delete email",
@@ -3548,7 +3548,7 @@
                         "connection_name": "get email",
                         "connection_type": "action",
                         "custom_callback": "",
-                        "custom_code": "def delete_email_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('delete_email_1() called')\n    msid = results[0]['action_results'][0]['summary']['email_id']\n    phantom.debug(results)\n    phantom.debug(msid)\n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'delete_email_1' call\n\n    parameters = []\n    \n    # build parameters list for 'delete_email_1' call\n    parameters.append({\n        'id': 'af773c25-f902-469b-cc9c-08d69882d58d',\n        'email': \"\",\n    })\n\n    phantom.act(\"delete email\", parameters=parameters, assets=['qualys ingestion'], callback=call_api_1, name=\"delete_email_1\", parent_action=action)\n\n    return",
+                        "custom_code": "def delete_email_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('delete_email_1() called')\n    msid = results[0]['action_results'][0]['summary']['email_id']\n    phantom.debug(results)\n    phantom.debug(msid)\n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'delete_email_1' call\n\n    parameters = []\n    \n    # build parameters list for 'delete_email_1' call\n    parameters.append({\n        'id': 'AQMkADAwATM3ZmYAZS0xZTcwLTYxZGQALTAwAi0wMAoARgAAA8sbs2bgxWhOm/D/136MLx0HAHgHnxYkWTlOk6pq0IWFAMxLAAACAQwAAAB4B58WJFk5TpOqatCFhQDMSwAAAAyVhDwAAAA=',\n        'email': \"\",\n    })\n\n    phantom.act(\"delete email\", parameters=parameters, assets=['qualys ingestion'], callback=call_api_1, name=\"delete_email_1\", parent_action=action)\n\n    return",
                         "custom_join": "",
                         "custom_name": "",
                         "delay": 0,
@@ -3645,7 +3645,7 @@
                         "title": "Contain",
                         "type": "coa.Action",
                         "warn": false,
-                        "z": 75
+                        "z": 77
                     }
                 ]
             },
@@ -3654,7 +3654,7 @@
         "schema": 3,
         "version": "3.5.200"
     },
-    "create_time": "2019-02-22T05:27:30.564388+00:00",
+    "create_time": "2019-02-22T05:29:58.679463+00:00",
     "draft_mode": false,
     "labels": [
         "*"
