@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "59981ff58cb39f91699c6e89b80e747647d8b62c",
+            "hash": "9c3266fd5f86f2571b009e59c1ba521a6d71cb0b",
             "joint": {
                 "cells": [
                     {
@@ -47,7 +47,7 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def on_start(container):\n    phantom.debug('on_start() called')\n    \n    # call 'block_sender_1' block\n    block_sender_1(container=container)\n\n    return",
+                        "block_code": "def on_start(container):\n    phantom.debug('on_start() called')\n    \n    # call 'get_email_1' block\n    get_email_1(container=container)\n\n    return",
                         "callback_code": "# read-only block view not available",
                         "callback_start": 1,
                         "callsback": false,
@@ -752,6 +752,9 @@
                             ".api": {
                                 "text": "call api"
                             },
+                            ".background": {
+                                "stroke": "#E6984E"
+                            },
                             ".inPorts>.port-in": {
                                 "ref": ".background",
                                 "ref-x": 0.5
@@ -786,7 +789,7 @@
                                 "display": "none"
                             },
                             "g.error": {
-                                "opacity": 0
+                                "opacity": 1
                             },
                             "g.error image": {
                                 "xlink:href": "/inc/coa/img/block_icon_warn.svg"
@@ -893,7 +896,7 @@
                             "width": 180
                         },
                         "state": "api",
-                        "status": "",
+                        "status": "warn",
                         "title": "API",
                         "type": "coa.API",
                         "warn": false,
@@ -1808,9 +1811,6 @@
                             ".api": {
                                 "text": "call api"
                             },
-                            ".background": {
-                                "stroke": "#E6984E"
-                            },
                             ".inPorts>.port-in": {
                                 "ref": ".background",
                                 "ref-x": 0.5
@@ -1845,7 +1845,7 @@
                                 "display": "none"
                             },
                             "g.error": {
-                                "opacity": 1
+                                "opacity": 0
                             },
                             "g.error image": {
                                 "xlink:href": "/inc/coa/img/block_icon_warn.svg"
@@ -1952,7 +1952,7 @@
                             "width": 180
                         },
                         "state": "api",
-                        "status": "warn",
+                        "status": "",
                         "title": "API",
                         "type": "coa.API",
                         "warn": false,
@@ -2879,9 +2879,6 @@
                             ".action": {
                                 "text": "get email"
                             },
-                            ".background": {
-                                "stroke": "#E6984E"
-                            },
                             ".inPorts>.port-in": {
                                 "ref": ".background",
                                 "ref-x": 0.5
@@ -2913,7 +2910,7 @@
                                 "display": "none"
                             },
                             "g.error": {
-                                "opacity": 1
+                                "opacity": 0
                             },
                             "g.error image": {
                                 "xlink:href": "/inc/coa/img/block_icon_warn.svg"
@@ -3025,7 +3022,7 @@
                             "width": 180
                         },
                         "state": "app_action_assets",
-                        "status": "warn",
+                        "status": "",
                         "title": "Investigate",
                         "type": "coa.Action",
                         "warn": "",
@@ -3142,9 +3139,6 @@
                             ".action": {
                                 "text": "delete email"
                             },
-                            ".background": {
-                                "stroke": "#E6984E"
-                            },
                             ".inPorts>.port-in": {
                                 "ref": ".background",
                                 "ref-x": 0.5
@@ -3179,7 +3173,7 @@
                                 "display": "none"
                             },
                             "g.error": {
-                                "opacity": 1
+                                "opacity": 0
                             },
                             "g.error image": {
                                 "xlink:href": "/inc/coa/img/block_icon_warn.svg"
@@ -3293,52 +3287,11 @@
                             "width": 180
                         },
                         "state": "app_action_assets",
-                        "status": "warn",
+                        "status": "",
                         "title": "Contain",
                         "type": "coa.Action",
                         "warn": false,
                         "z": 77
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#6C7A89",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#6a6c8a",
-                                "stroke": "#6a6c8a"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "2b21fe4f-c8fa-4b6a-9215-d3a3dfea46cc",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "fccef927-3404-42bc-ae37-99f6c141531a",
-                            "port": null,
-                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "b99959e8-7935-4637-9302-06074ee6e239",
-                            "port": null,
-                            "selector": "g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "type": "link",
-                        "z": 78
                     },
                     {
                         "action": "block sender",
@@ -3496,6 +3449,9 @@
                             ".action": {
                                 "text": "block sender"
                             },
+                            ".background": {
+                                "stroke": "#E6984E"
+                            },
                             ".inPorts>.port-in": {
                                 "ref": ".background",
                                 "ref-x": 0.5
@@ -3530,7 +3486,7 @@
                                 "display": "none"
                             },
                             "g.error": {
-                                "opacity": 0
+                                "opacity": 1
                             },
                             "g.error image": {
                                 "xlink:href": "/inc/coa/img/block_icon_warn.svg"
@@ -3644,11 +3600,52 @@
                             "width": 180
                         },
                         "state": "app_action_assets",
-                        "status": "",
+                        "status": "warn",
                         "title": "Contain",
                         "type": "coa.Action",
                         "warn": false,
                         "z": 79
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#6C7A89",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#6a6c8a",
+                                "stroke": "#6a6c8a"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "e2129acd-dfeb-44e9-8f66-c0144b2069a6",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "fccef927-3404-42bc-ae37-99f6c141531a",
+                            "port": null,
+                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "e5e4ffbf-a952-4a94-910c-0d91def5576b",
+                            "port": null,
+                            "selector": "g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 80
                     }
                 ]
             },
@@ -3657,7 +3654,7 @@
         "schema": 3,
         "version": "3.5.200"
     },
-    "create_time": "2019-02-22T05:30:55.309381+00:00",
+    "create_time": "2019-02-22T05:37:24.002425+00:00",
     "draft_mode": false,
     "labels": [
         "*"
