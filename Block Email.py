@@ -8,8 +8,8 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
     
-    # call 'run_query_2' block
-    run_query_2(container=container)
+    # call 'block_sender_1' block
+    block_sender_1(container=container)
 
     return
 
@@ -29,9 +29,9 @@ def whois_domain_1(action=None, success=None, container=None, results=None, hand
 
     return
 
-def call_api_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+def Block_Email_Result(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
     phantom.debug('call_api_2() called')
-    phantom.debug(results)
+    phantom.debug("Successfully blocked the email")
     return
 
 def get_screenshot_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
@@ -155,10 +155,10 @@ def block_sender_1(action=None, success=None, container=None, results=None, hand
     parameters.append({
         'id': "AQMkADAwATM3ZmYAZS0xZTcwLTYxZGQALTAwAi0wMAoARgAAA8sbs2bgxWhOm/D/136MLx0HAHgHnxYkWTlOk6pq0IWFAMxLAAACAQwAAAB4B58WJFk5TpOqatCFhQDMSwAAAAyVhDwAAAA=",
         'move_to_junk_folder': "",
-        'email': "soartesting@outlook.com",
+        'email': "",
     })
 
-    phantom.act("block sender", parameters=parameters, assets=['qualys ingestion'], callback=call_api_2, name="block_sender_1")
+    phantom.act("block sender", parameters=parameters, assets=['qualys ingestion'], callback=Block_Email_Result, name="block_sender_1")
 
     return
 
