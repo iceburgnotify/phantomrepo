@@ -8,8 +8,8 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
     
-    # call 'get_email_1' block
-    get_email_1(container=container)
+    # call 'run_query_2' block
+    run_query_2(container=container)
 
     return
 
@@ -32,6 +32,48 @@ def whois_domain_1(action=None, success=None, container=None, results=None, hand
 def call_api_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
     phantom.debug('call_api_2() called')
     phantom.debug(results)
+    return
+
+def get_screenshot_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('get_screenshot_1() called')
+
+    # collect data for 'get_screenshot_1' call
+
+    parameters = []
+    
+    # build parameters list for 'get_screenshot_1' call
+    parameters.append({
+        'url': "https://paypal.account.myorder-manage.com",
+        'size': "",
+    })
+
+    phantom.act("get screenshot", parameters=parameters, assets=['test ss'], name="get_screenshot_1")
+
+    return
+
+def call_api_3(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('call_api_3() called')
+    phantom.debug(results)
+    return
+
+def send_email_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('send_email_1() called')
+
+    # collect data for 'send_email_1' call
+
+    parameters = []
+    
+    # build parameters list for 'send_email_1' call
+    parameters.append({
+        'body': "this is testing",
+        'to': "soartesting2019@outlook.com",
+        'from': "gonnastopus@outlook.com",
+        'attachments': "",
+        'subject': "test delete",
+    })
+
+    phantom.act("send email", parameters=parameters, assets=['smtp'], name="send_email_1")
+
     return
 
 def call_api_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
@@ -63,20 +105,23 @@ def run_query_1(action=None, success=None, container=None, results=None, handle=
 
     return
 
-def get_screenshot_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
-    phantom.debug('get_screenshot_1() called')
+def get_email_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('get_email_1() called')
 
-    # collect data for 'get_screenshot_1' call
+    # collect data for 'get_email_1' call
 
     parameters = []
     
-    # build parameters list for 'get_screenshot_1' call
+    # build parameters list for 'get_email_1' call
     parameters.append({
-        'url': "https://paypal.account.myorder-manage.com",
-        'size': "",
+        'ingest_email': "",
+        'container_id': 1734,
+        'vault_id': "",
+        'id': "",
+        'email': "",
     })
 
-    phantom.act("get screenshot", parameters=parameters, assets=['test ss'], name="get_screenshot_1")
+    phantom.act("get email", parameters=parameters, assets=['office365'], callback=delete_email_1, name="get_email_1")
 
     return
 
@@ -119,48 +164,36 @@ def block_sender_1(action=None, success=None, container=None, results=None, hand
 
     return
 
-def call_api_3(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
-    phantom.debug('call_api_3() called')
-    phantom.debug(results)
-    return
-
-def get_email_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
-    phantom.debug('get_email_1() called')
-
-    # collect data for 'get_email_1' call
+def delete_email_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('delete_email_2() called')
 
     parameters = []
-    
-    # build parameters list for 'get_email_1' call
-    parameters.append({
-        'ingest_email': "",
-        'container_id': 1734,
-        'vault_id': "",
-        'id': "",
-        'email': "",
-    })
 
-    phantom.act("get email", parameters=parameters, assets=['office365'], callback=delete_email_1, name="get_email_1")
+    phantom.act("delete email", parameters=parameters, app={ "name": 'EWS for Office 365 Debug' }, name="delete_email_2")
 
     return
 
-def send_email_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
-    phantom.debug('send_email_1() called')
+def run_query_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('run_query_2() called')
 
-    # collect data for 'send_email_1' call
+    # collect data for 'run_query_2' call
 
     parameters = []
     
-    # build parameters list for 'send_email_1' call
+    # build parameters list for 'run_query_2' call
     parameters.append({
-        'from': "gonnastopus@outlook.com",
-        'to': "soartesting2019@outlook.com",
-        'subject': "test delete",
-        'body': "this is testing",
-        'attachments': "",
+        'email': "soartesting2019@outlook.com",
+        'folder': "Inbox",
+        'subject': "",
+        'sender': "",
+        'body': "",
+        'internet_message_id': "",
+        'query': "",
+        'range': "0-10",
+        'ignore_subfolders': "",
     })
 
-    phantom.act("send email", parameters=parameters, assets=['smtp'], name="send_email_1")
+    phantom.act("run query", parameters=parameters, assets=['office365'], callback=call_api_3, name="run_query_2")
 
     return
 
