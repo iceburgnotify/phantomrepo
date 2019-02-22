@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "9ceb27c124c6b57fb87adb7bd2483dfd0237db52",
+            "hash": "ddaf354554b78ea25caf3a9bc354ca29b18349e4",
             "joint": {
                 "cells": [
                     {
@@ -201,8 +201,8 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 179,
-                        "line_start": 166,
+                        "line_end": 178,
+                        "line_start": 165,
                         "name": "",
                         "notes": "",
                         "number": 0,
@@ -985,161 +985,6 @@
                         "z": 34
                     },
                     {
-                        "active": false,
-                        "angle": 0,
-                        "api": "call api",
-                        "attrs": {
-                            ".api": {
-                                "text": "call api"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "API"
-                            },
-                            "g.code image": {
-                                "xlink:href": "/inc/coa/img/block_icon_code_on.svg"
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            }
-                        },
-                        "block_code": "# read-only block view not available",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "color": "",
-                        "configured": [],
-                        "connected_to_start": true,
-                        "connection_name": "delete email",
-                        "connection_type": "action",
-                        "custom_callback": "",
-                        "custom_code": "def call_api_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('call_api_1() called')\n    phantom.debug(results)\n    return",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "description": "",
-                        "has_custom": true,
-                        "has_custom_block": true,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "3050c973-fe3f-4838-83ac-0f072e925cd6",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 42,
-                        "line_start": 37,
-                        "message": "Configuring now",
-                        "name": "call api",
-                        "notes": "",
-                        "number": 1,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 680,
-                            "y": 420
-                        },
-                        "previous_function": "",
-                        "previous_name": "call_api_1",
-                        "show_number": false,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "api",
-                        "status": "",
-                        "title": "API",
-                        "type": "coa.API",
-                        "warn": false,
-                        "z": 35
-                    },
-                    {
                         "action": "get screenshot",
                         "action_type": "investigate",
                         "active": false,
@@ -1686,8 +1531,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 121,
-                        "line_start": 103,
+                        "line_end": 120,
+                        "line_start": 102,
                         "message": "Configuring now",
                         "name": "block sender",
                         "notes": "",
@@ -1848,8 +1693,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 126,
-                        "line_start": 121,
+                        "line_end": 125,
+                        "line_start": 120,
                         "message": "Configuring now",
                         "name": "call api",
                         "notes": "",
@@ -2146,8 +1991,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 166,
-                        "line_start": 146,
+                        "line_end": 165,
+                        "line_start": 145,
                         "message": "Configuring now",
                         "name": "send email",
                         "notes": "",
@@ -2841,8 +2686,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 146,
-                        "line_start": 126,
+                        "line_end": 145,
+                        "line_start": 125,
                         "message": "Configuring now",
                         "name": "get email",
                         "notes": "",
@@ -3548,7 +3393,7 @@
                         "connection_name": "get email",
                         "connection_type": "action",
                         "custom_callback": "",
-                        "custom_code": "def delete_email_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('delete_email_1() called')\n    phantom.debug(results[0]['action_results'][0]['summary']['email_id'])\n    return\n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'delete_email_1' call\n\n    parameters = []\n    \n    # build parameters list for 'delete_email_1' call\n    parameters.append({\n        'id': \"<VI1P175MB0191ABD0857E66DFE334698CBA7E0@VI1P175MB0191.EURP175.PROD.OUTLOOK.COM>\",\n        'email': \"\",\n    })\n\n    phantom.act(\"delete email\", parameters=parameters, assets=['qualys ingestion'], callback=call_api_1, name=\"delete_email_1\", parent_action=action)\n\n    return",
+                        "custom_code": "def delete_email_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('delete_email_1() called')\n    msid = results[0]['action_results'][0]['summary']['email_id']\n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'delete_email_1' call\n\n    parameters = []\n    \n    # build parameters list for 'delete_email_1' call\n    parameters.append({\n        'id': msid,\n        'email': \"\",\n    })\n\n    phantom.act(\"delete email\", parameters=parameters, assets=['qualys ingestion'], callback=call_api_1, name=\"delete_email_1\", parent_action=action)\n\n    return",
                         "custom_join": "",
                         "custom_name": "",
                         "delay": 0,
@@ -3564,7 +3409,7 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 103,
+                        "line_end": 102,
                         "line_start": 83,
                         "message": "Configuring now",
                         "name": "delete email",
@@ -3645,7 +3490,162 @@
                         "title": "Contain",
                         "type": "coa.Action",
                         "warn": false,
-                        "z": 67
+                        "z": 68
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "api": "call api",
+                        "attrs": {
+                            ".api": {
+                                "text": "call api"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "API"
+                            },
+                            "g.code image": {
+                                "xlink:href": "/inc/coa/img/block_icon_code_on.svg"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "# read-only block view not available",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "color": "",
+                        "configured": [],
+                        "connected_to_start": true,
+                        "connection_name": "delete email",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "def call_api_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('call_api_1() called')\n    phantom.debug(results)\n    return",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "description": "",
+                        "has_custom": true,
+                        "has_custom_block": true,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "3050c973-fe3f-4838-83ac-0f072e925cd6",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 42,
+                        "line_start": 37,
+                        "message": "Configuring now",
+                        "name": "call api",
+                        "notes": "",
+                        "number": 1,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 1340,
+                            "y": 420
+                        },
+                        "previous_function": "",
+                        "previous_name": "call_api_1",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "api",
+                        "status": "",
+                        "title": "API",
+                        "type": "coa.API",
+                        "warn": false,
+                        "z": 69
                     }
                 ]
             },
@@ -3654,7 +3654,7 @@
         "schema": 3,
         "version": "3.5.200"
     },
-    "create_time": "2019-02-22T05:19:13.385020+00:00",
+    "create_time": "2019-02-22T05:21:59.591394+00:00",
     "draft_mode": false,
     "labels": [
         "*"

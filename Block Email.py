@@ -82,8 +82,7 @@ def get_screenshot_1(action=None, success=None, container=None, results=None, ha
 
 def delete_email_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
     phantom.debug('delete_email_1() called')
-    phantom.debug(results[0]['action_results'][0]['summary']['email_id'])
-    return
+    msid = results[0]['action_results'][0]['summary']['email_id']
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
     # collect data for 'delete_email_1' call
@@ -92,7 +91,7 @@ def delete_email_1(action=None, success=None, container=None, results=None, hand
     
     # build parameters list for 'delete_email_1' call
     parameters.append({
-        'id': "<VI1P175MB0191ABD0857E66DFE334698CBA7E0@VI1P175MB0191.EURP175.PROD.OUTLOOK.COM>",
+        'id': msid,
         'email': "",
     })
 
