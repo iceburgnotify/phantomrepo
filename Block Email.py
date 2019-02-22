@@ -84,6 +84,7 @@ def delete_email_1(action=None, success=None, container=None, results=None, hand
     phantom.debug('delete_email_1() called')
     msid = results[0]['action_results'][0]['summary']['email_id']
     phantom.debug(results)
+    phantom.debug(msid)
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
     # collect data for 'delete_email_1' call
@@ -92,7 +93,7 @@ def delete_email_1(action=None, success=None, container=None, results=None, hand
     
     # build parameters list for 'delete_email_1' call
     parameters.append({
-        'id': msid,
+        'id': 'af773c25-f902-469b-cc9c-08d69882d58d',
         'email': "",
     })
 
