@@ -82,7 +82,7 @@ def get_screenshot_1(action=None, success=None, container=None, results=None, ha
 
 def delete_email_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
     phantom.debug('delete_email_1() called')
-    phantom.debug(results['message'])
+    phantom.debug(results)
     return
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
