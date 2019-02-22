@@ -158,7 +158,7 @@ def block_sender_1(action=None, success=None, container=None, results=None, hand
         'email': "",
     })
 
-    phantom.act("block sender", parameters=parameters, assets=['qualys ingestion'], callback=Block_Email_Result, name="block_sender_1")
+    phantom.act("block sender", parameters=parameters, assets=['office365'], callback=Block_Email_Result, name="block_sender_1")
 
     return
 

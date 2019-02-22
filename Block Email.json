@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "bbebb58688a8cd49dc8402d6086a2c19d6a48556",
+            "hash": "0aa02c3321801c996b4f3f58cee4c44838cdaad0",
             "joint": {
                 "cells": [
                     {
@@ -3814,313 +3814,6 @@
                         "z": 107
                     },
                     {
-                        "action": "block sender",
-                        "action_type": "contain",
-                        "active": false,
-                        "active_keys": {},
-                        "active_values": {
-                            "email": "",
-                            "id": "AQMkADAwATM3ZmYAZS0xZTcwLTYxZGQALTAwAi0wMAoARgAAA8sbs2bgxWhOm/D/136MLx0HAHgHnxYkWTlOk6pq0IWFAMxLAAACAQwAAAB4B58WJFk5TpOqatCFhQDMSwAAAAyVhDwAAAA=",
-                            "move_to_junk_folder": ""
-                        },
-                        "angle": 0,
-                        "app": "EWS for Office 365",
-                        "approver": "",
-                        "assets": [
-                            {
-                                "action": "block sender",
-                                "active": true,
-                                "app_name": "EWS for Office 365",
-                                "app_version": "1.0.87",
-                                "asset_name": "qualys ingestion",
-                                "config_type": "asset",
-                                "count": 0,
-                                "fields": {
-                                    "email": "",
-                                    "id": "AQMkADAwATM3ZmYAZS0xZTcwLTYxZGQALTAwAi0wMAoARgAAA8sbs2bgxWhOm/D/136MLx0HAHgHnxYkWTlOk6pq0IWFAMxLAAACAQwAAAB4B58WJFk5TpOqatCFhQDMSwAAAAyVhDwAAAA=",
-                                    "move_to_junk_folder": ""
-                                },
-                                "has_app": true,
-                                "id": 97,
-                                "loaded": false,
-                                "missing": false,
-                                "name": "qualys ingestion",
-                                "output": [
-                                    {
-                                        "data_path": "action_result.status",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "success"
-                                        ]
-                                    },
-                                    {
-                                        "contains": [
-                                            "email"
-                                        ],
-                                        "data_path": "action_result.parameter.email",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "foo@bar.onmicrosoft.com"
-                                        ]
-                                    },
-                                    {
-                                        "column_name": "Input Email ID",
-                                        "column_order": 0,
-                                        "contains": [
-                                            "office 365 email id"
-                                        ],
-                                        "data_path": "action_result.parameter.id",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "AAMkADVjNTI3MTYxLTYyZDMtNGViYy04MTFhLWZjYjQxYzNmNmI2YwBGAAAAAACJMZRks2m2Qp8kJOYtQ/E0BwC63sxpeq+QSJSiCN540EaIAAAAAAEMAAC63sxpeq+QSJSiCN540EaIAAHWGo0OAAA="
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.move_to_junk_folder",
-                                        "data_type": "boolean",
-                                        "example_values": [
-                                            true,
-                                            false
-                                        ]
-                                    },
-                                    {
-                                        "column_name": "New Email ID",
-                                        "column_order": 1,
-                                        "contains": [
-                                            "office 365 email id"
-                                        ],
-                                        "data_path": "action_result.data.*.new_email_id",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "AAMkADVjNTI3MTYxLTYyZDMtNGViYy04MTFhLWZjYjQxYzNmNmI2YwBGAAAAAACJMZRks2m2Qp8kJOYtQ/E0BwC63sxpeq+QSJSiCN540EaIAAAAAAEbAAC63sxpeq+QSJSiCN540EaIAAHWGokmAAA="
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.summary.new_email_id",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "AAMkADVjNTI3MTYxLTYyZDMtNGViYy04MTFhLWZjYjQxYzNmNmI2YwBGAAAAAACJMZRks2m2Qp8kJOYtQ/E0BwC63sxpeq+QSJSiCN540EaIAAAAAAEbAAC63sxpeq+QSJSiCN540EaIAAHWGokmAAA="
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.message",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "Sender Blocked. Message moved to Junk Folder"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            1
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects_successful",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            1
-                                        ]
-                                    }
-                                ],
-                                "parameters": {
-                                    "email": {
-                                        "contains": [
-                                            "email"
-                                        ],
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "Email of the mailbox owner (used during impersonation)",
-                                        "key": "email",
-                                        "order": 2,
-                                        "primary": false,
-                                        "required": false
-                                    },
-                                    "id": {
-                                        "contains": [
-                                            "office 365 email id"
-                                        ],
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "Message ID to pick the sender of",
-                                        "key": "id",
-                                        "order": 0,
-                                        "primary": true,
-                                        "required": true
-                                    },
-                                    "move_to_junk_folder": {
-                                        "data_type": "boolean",
-                                        "default": null,
-                                        "description": "Should the email be moved to the junk folder",
-                                        "key": "move_to_junk_folder",
-                                        "order": 2,
-                                        "primary": false,
-                                        "required": false
-                                    }
-                                },
-                                "product_name": "Office 365",
-                                "product_vendor": "Microsoft",
-                                "targets": "84",
-                                "type": ""
-                            }
-                        ],
-                        "attrs": {
-                            ".action": {
-                                "text": "block sender"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "Contain"
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.icon image": {
-                                "xlink:href": "/inc/coa/img/block_icon_contain.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            }
-                        },
-                        "block_code": "def block_sender_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('block_sender_1() called')\n\n    # collect data for 'block_sender_1' call\n\n    parameters = []\n    \n    # build parameters list for 'block_sender_1' call\n    parameters.append({\n        'id': \"AQMkADAwATM3ZmYAZS0xZTcwLTYxZGQALTAwAi0wMAoARgAAA8sbs2bgxWhOm/D/136MLx0HAHgHnxYkWTlOk6pq0IWFAMxLAAACAQwAAAB4B58WJFk5TpOqatCFhQDMSwAAAAyVhDwAAAA=\",\n        'move_to_junk_folder': \"\",\n        'email': \"\",\n    })\n\n    phantom.act(\"block sender\", parameters=parameters, assets=['qualys ingestion'], callback=Block_Email_Result, name=\"block_sender_1\")\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": true,
-                        "color": "",
-                        "connected_to_start": false,
-                        "connection_name": "",
-                        "connection_type": "",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "delay": 0,
-                        "description": "",
-                        "has_custom": true,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "b99959e8-7935-4637-9302-06074ee6e239",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 165,
-                        "line_start": 147,
-                        "message": "Configuring now",
-                        "name": "block sender",
-                        "notes": "",
-                        "number": 1,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 280,
-                            "y": 100
-                        },
-                        "previous_function": "",
-                        "previous_name": "block_sender_1",
-                        "required_params": {
-                            "id": true
-                        },
-                        "reviewer": "",
-                        "show_number": false,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "app_action_assets",
-                        "status": "",
-                        "title": "Contain",
-                        "type": "coa.Action",
-                        "warn": "",
-                        "z": 110
-                    },
-                    {
                         "attrs": {
                             ".connection": {
                                 "stroke": "#6C7A89",
@@ -4315,6 +4008,313 @@
                         "type": "coa.API",
                         "warn": false,
                         "z": 114
+                    },
+                    {
+                        "action": "block sender",
+                        "action_type": "contain",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {
+                            "email": "",
+                            "id": "AQMkADAwATM3ZmYAZS0xZTcwLTYxZGQALTAwAi0wMAoARgAAA8sbs2bgxWhOm/D/136MLx0HAHgHnxYkWTlOk6pq0IWFAMxLAAACAQwAAAB4B58WJFk5TpOqatCFhQDMSwAAAAyVhDwAAAA=",
+                            "move_to_junk_folder": ""
+                        },
+                        "angle": 0,
+                        "app": "EWS for Office 365",
+                        "approver": "",
+                        "assets": [
+                            {
+                                "action": "block sender",
+                                "active": true,
+                                "app_name": "EWS for Office 365",
+                                "app_version": "1.0.87",
+                                "asset_name": "office365",
+                                "config_type": "asset",
+                                "count": 0,
+                                "fields": {
+                                    "email": "",
+                                    "id": "AQMkADAwATM3ZmYAZS0xZTcwLTYxZGQALTAwAi0wMAoARgAAA8sbs2bgxWhOm/D/136MLx0HAHgHnxYkWTlOk6pq0IWFAMxLAAACAQwAAAB4B58WJFk5TpOqatCFhQDMSwAAAAyVhDwAAAA=",
+                                    "move_to_junk_folder": ""
+                                },
+                                "has_app": true,
+                                "id": 97,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "office365",
+                                "output": [
+                                    {
+                                        "data_path": "action_result.status",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "success"
+                                        ]
+                                    },
+                                    {
+                                        "contains": [
+                                            "email"
+                                        ],
+                                        "data_path": "action_result.parameter.email",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "foo@bar.onmicrosoft.com"
+                                        ]
+                                    },
+                                    {
+                                        "column_name": "Input Email ID",
+                                        "column_order": 0,
+                                        "contains": [
+                                            "office 365 email id"
+                                        ],
+                                        "data_path": "action_result.parameter.id",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "AAMkADVjNTI3MTYxLTYyZDMtNGViYy04MTFhLWZjYjQxYzNmNmI2YwBGAAAAAACJMZRks2m2Qp8kJOYtQ/E0BwC63sxpeq+QSJSiCN540EaIAAAAAAEMAAC63sxpeq+QSJSiCN540EaIAAHWGo0OAAA="
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.move_to_junk_folder",
+                                        "data_type": "boolean",
+                                        "example_values": [
+                                            true,
+                                            false
+                                        ]
+                                    },
+                                    {
+                                        "column_name": "New Email ID",
+                                        "column_order": 1,
+                                        "contains": [
+                                            "office 365 email id"
+                                        ],
+                                        "data_path": "action_result.data.*.new_email_id",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "AAMkADVjNTI3MTYxLTYyZDMtNGViYy04MTFhLWZjYjQxYzNmNmI2YwBGAAAAAACJMZRks2m2Qp8kJOYtQ/E0BwC63sxpeq+QSJSiCN540EaIAAAAAAEbAAC63sxpeq+QSJSiCN540EaIAAHWGokmAAA="
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.summary.new_email_id",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "AAMkADVjNTI3MTYxLTYyZDMtNGViYy04MTFhLWZjYjQxYzNmNmI2YwBGAAAAAACJMZRks2m2Qp8kJOYtQ/E0BwC63sxpeq+QSJSiCN540EaIAAAAAAEbAAC63sxpeq+QSJSiCN540EaIAAHWGokmAAA="
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.message",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "Sender Blocked. Message moved to Junk Folder"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects_successful",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    }
+                                ],
+                                "parameters": {
+                                    "email": {
+                                        "contains": [
+                                            "email"
+                                        ],
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Email of the mailbox owner (used during impersonation)",
+                                        "key": "email",
+                                        "order": 2,
+                                        "primary": false,
+                                        "required": false
+                                    },
+                                    "id": {
+                                        "contains": [
+                                            "office 365 email id"
+                                        ],
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Message ID to pick the sender of",
+                                        "key": "id",
+                                        "order": 0,
+                                        "primary": true,
+                                        "required": true
+                                    },
+                                    "move_to_junk_folder": {
+                                        "data_type": "boolean",
+                                        "default": null,
+                                        "description": "Should the email be moved to the junk folder",
+                                        "key": "move_to_junk_folder",
+                                        "order": 2,
+                                        "primary": false,
+                                        "required": false
+                                    }
+                                },
+                                "product_name": "Office 365",
+                                "product_vendor": "Microsoft",
+                                "targets": "51",
+                                "type": ""
+                            }
+                        ],
+                        "attrs": {
+                            ".action": {
+                                "text": "block sender"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "Contain"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_contain.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def block_sender_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('block_sender_1() called')\n\n    # collect data for 'block_sender_1' call\n\n    parameters = []\n    \n    # build parameters list for 'block_sender_1' call\n    parameters.append({\n        'id': \"AQMkADAwATM3ZmYAZS0xZTcwLTYxZGQALTAwAi0wMAoARgAAA8sbs2bgxWhOm/D/136MLx0HAHgHnxYkWTlOk6pq0IWFAMxLAAACAQwAAAB4B58WJFk5TpOqatCFhQDMSwAAAAyVhDwAAAA=\",\n        'move_to_junk_folder': \"\",\n        'email': \"\",\n    })\n\n    phantom.act(\"block sender\", parameters=parameters, assets=['office365'], callback=Block_Email_Result, name=\"block_sender_1\")\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "delay": 0,
+                        "description": "",
+                        "has_custom": true,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "b99959e8-7935-4637-9302-06074ee6e239",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 165,
+                        "line_start": 147,
+                        "message": "Configuring now",
+                        "name": "block sender",
+                        "notes": "",
+                        "number": 1,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 280,
+                            "y": 100
+                        },
+                        "previous_function": "",
+                        "previous_name": "block_sender_1",
+                        "required_params": {
+                            "id": true
+                        },
+                        "reviewer": "",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "app_action_assets",
+                        "status": "",
+                        "title": "Contain",
+                        "type": "coa.Action",
+                        "warn": "",
+                        "z": 117
                     }
                 ]
             },
@@ -4323,7 +4323,7 @@
         "schema": 3,
         "version": "3.5.200"
     },
-    "create_time": "2019-02-22T09:34:23.879929+00:00",
+    "create_time": "2019-02-22T09:38:51.960265+00:00",
     "draft_mode": false,
     "labels": [
         "*"
