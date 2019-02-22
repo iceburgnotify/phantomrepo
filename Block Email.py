@@ -7,6 +7,9 @@ from datetime import datetime, timedelta
 
 def on_start(container):
     phantom.debug('on_start() called')
+    
+    # call 'get_email_1' block
+    get_email_1(container=container)
 
     return
 

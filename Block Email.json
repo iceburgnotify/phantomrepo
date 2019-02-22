@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "c9ddc71e655ddfe2ca9c10f13d650af6838df7f4",
+            "hash": "90487cff34cf4a187a2c88d96a0c9703f2e3070f",
             "joint": {
                 "cells": [
                     {
@@ -47,7 +47,7 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def on_start(container):\n    phantom.debug('on_start() called')\n\n    return",
+                        "block_code": "def on_start(container):\n    phantom.debug('on_start() called')\n    \n    # call 'get_email_1' block\n    get_email_1(container=container)\n\n    return",
                         "callback_code": "# read-only block view not available",
                         "callback_start": 1,
                         "callsback": false,
@@ -68,7 +68,7 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 13,
+                        "line_end": 16,
                         "line_start": 8,
                         "name": "",
                         "notes": "",
@@ -201,8 +201,8 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 173,
-                        "line_start": 160,
+                        "line_end": 176,
+                        "line_start": 163,
                         "name": "",
                         "notes": "",
                         "number": 0,
@@ -621,8 +621,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 29,
-                        "line_start": 13,
+                        "line_end": 32,
+                        "line_start": 16,
                         "message": "Configuring now",
                         "name": "whois domain",
                         "notes": "",
@@ -823,8 +823,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 34,
-                        "line_start": 29,
+                        "line_end": 37,
+                        "line_start": 32,
                         "message": "Configuring now",
                         "name": "call api",
                         "notes": "",
@@ -1063,8 +1063,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 39,
-                        "line_start": 34,
+                        "line_end": 42,
+                        "line_start": 37,
                         "message": "Configuring now",
                         "name": "call api",
                         "notes": "",
@@ -1519,8 +1519,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 63,
-                        "line_start": 39,
+                        "line_end": 66,
+                        "line_start": 42,
                         "message": "Configuring now",
                         "name": "run query",
                         "notes": "",
@@ -1836,8 +1836,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 80,
-                        "line_start": 63,
+                        "line_end": 83,
+                        "line_start": 66,
                         "message": "Configuring now",
                         "name": "get screenshot",
                         "notes": "",
@@ -2101,8 +2101,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 97,
-                        "line_start": 80,
+                        "line_end": 100,
+                        "line_start": 83,
                         "message": "Configuring now",
                         "name": "delete email",
                         "notes": "",
@@ -2414,8 +2414,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 115,
-                        "line_start": 97,
+                        "line_end": 118,
+                        "line_start": 100,
                         "message": "Configuring now",
                         "name": "block sender",
                         "notes": "",
@@ -2545,9 +2545,6 @@
                             ".api": {
                                 "text": "call api"
                             },
-                            ".background": {
-                                "stroke": "#E6984E"
-                            },
                             ".inPorts>.port-in": {
                                 "ref": ".background",
                                 "ref-x": 0.5
@@ -2582,7 +2579,7 @@
                                 "display": "none"
                             },
                             "g.error": {
-                                "opacity": 1
+                                "opacity": 0
                             },
                             "g.error image": {
                                 "xlink:href": "/inc/coa/img/block_icon_warn.svg"
@@ -2616,8 +2613,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 120,
-                        "line_start": 115,
+                        "line_end": 123,
+                        "line_start": 118,
                         "message": "Configuring now",
                         "name": "call api",
                         "notes": "",
@@ -2689,7 +2686,7 @@
                             "width": 180
                         },
                         "state": "api",
-                        "status": "warn",
+                        "status": "",
                         "title": "API",
                         "type": "coa.API",
                         "warn": false,
@@ -2914,8 +2911,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 160,
-                        "line_start": 140,
+                        "line_end": 163,
+                        "line_start": 143,
                         "message": "Configuring now",
                         "name": "send email",
                         "notes": "",
@@ -3459,9 +3456,6 @@
                             ".action": {
                                 "text": "get email"
                             },
-                            ".background": {
-                                "stroke": "#E6984E"
-                            },
                             ".inPorts>.port-in": {
                                 "ref": ".background",
                                 "ref-x": 0.5
@@ -3493,7 +3487,7 @@
                                 "display": "none"
                             },
                             "g.error": {
-                                "opacity": 1
+                                "opacity": 0
                             },
                             "g.error image": {
                                 "xlink:href": "/inc/coa/img/block_icon_warn.svg"
@@ -3530,8 +3524,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 140,
-                        "line_start": 120,
+                        "line_end": 143,
+                        "line_start": 123,
                         "message": "Configuring now",
                         "name": "get email",
                         "notes": "",
@@ -3605,11 +3599,52 @@
                             "width": 180
                         },
                         "state": "app_action_assets",
-                        "status": "warn",
+                        "status": "",
                         "title": "Investigate",
                         "type": "coa.Action",
                         "warn": "",
                         "z": 55
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#6C7A89",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#6a6c8a",
+                                "stroke": "#6a6c8a"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "e7e402e1-0143-4658-a766-847059d23083",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "fccef927-3404-42bc-ae37-99f6c141531a",
+                            "port": null,
+                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "e5e4ffbf-a952-4a94-910c-0d91def5576b",
+                            "port": null,
+                            "selector": "g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 56
                     }
                 ]
             },
@@ -3618,7 +3653,7 @@
         "schema": 3,
         "version": "3.5.200"
     },
-    "create_time": "2019-02-22T05:02:39.849685+00:00",
+    "create_time": "2019-02-22T05:02:58.829794+00:00",
     "draft_mode": false,
     "labels": [
         "*"
