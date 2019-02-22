@@ -7,9 +7,6 @@ from datetime import datetime, timedelta
 
 def on_start(container):
     phantom.debug('on_start() called')
-    
-    # call 'send_email_1' block
-    send_email_1(container=container)
 
     return
 
@@ -130,7 +127,7 @@ def get_email_1(action=None, success=None, container=None, results=None, handle=
     # build parameters list for 'get_email_1' call
     parameters.append({
         'ingest_email': "",
-        'container_id': 1733,
+        'container_id': 1734,
         'vault_id': "",
         'id': "",
         'email': "",
