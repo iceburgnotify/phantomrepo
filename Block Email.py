@@ -140,7 +140,7 @@ def delete_email_1(action=None, success=None, container=None, results=None, hand
         'email': "",
     })
 
-    phantom.act("delete email", parameters=parameters, assets=['qualys ingestion'], callback=call_api_1, name="delete_email_1", parent_action=action)
+    phantom.act("delete email", parameters=parameters, assets=['office365'], callback=call_api_1, name="delete_email_1", parent_action=action)
 
     return
 
