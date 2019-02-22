@@ -8,8 +8,8 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
     
-    # call 'get_email_1' block
-    get_email_1(container=container)
+    # call 'block_sender_1' block
+    block_sender_1(container=container)
 
     return
 
@@ -110,7 +110,7 @@ def block_sender_1(action=None, success=None, container=None, results=None, hand
     
     # build parameters list for 'block_sender_1' call
     parameters.append({
-        'id': "<VI1P175MB0191ABD0857E66DFE334698CBA7E0@VI1P175MB0191.EURP175.PROD.OUTLOOK.COM>",
+        'id': "AQMkADAwATM3ZmYAZS0xZTcwLTYxZGQALTAwAi0wMAoARgAAA8sbs2bgxWhOm/D/136MLx0HAHgHnxYkWTlOk6pq0IWFAMxLAAACAQwAAAB4B58WJFk5TpOqatCFhQDMSwAAAAyVhDwAAAA=",
         'move_to_junk_folder': "",
         'email': "soartesting@outlook.com",
     })
