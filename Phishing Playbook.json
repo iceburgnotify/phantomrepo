@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "542097a09e627f7d30909a9028ad1d3984974732",
+            "hash": "13b2dc17a10bfe91c21591a8547e22fef50ff293",
             "joint": {
                 "cells": [
                     {
@@ -139,7 +139,6 @@
                             "height": 54,
                             "width": 80
                         },
-                        "state": "start",
                         "status": "",
                         "title": "START",
                         "type": "coa.StartEnd",
@@ -271,7 +270,6 @@
                             "height": 54,
                             "width": 80
                         },
-                        "state": "end",
                         "status": "",
                         "title": "END",
                         "type": "coa.StartEnd",
@@ -1021,7 +1019,7 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def create_ticket(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('create_ticket() called')\n\n    # collect data for 'create_ticket' call\n\n    parameters = []\n    \n    # build parameters list for 'create_ticket' call\n    parameters.append({\n        'short_description': \"Block URL request\",\n        'description': \"Request to block url: https://paypal.account.myorder-manage.com/signin/\",\n        'table': \"incident\",\n        'fields': \"\",\n        'vault_id': \"\",\n    })\n\n    phantom.act(\"create ticket\", parameters=parameters, assets=['servicenow'], callback=details, name=\"create_ticket\")\n\n    return",
+                        "block_code": "def create_ticket(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('create_ticket() called')\n\n    # collect data for 'create_ticket' call\n\n    parameters = []\n    \n    # build parameters list for 'create_ticket' call\n    parameters.append({\n        'short_description': \"Block URL request\",\n        'table': \"incident\",\n        'vault_id': \"\",\n        'description': \"Request to block url: https://paypal.account.myorder-manage.com/signin/\",\n        'fields': \"\",\n    })\n\n    phantom.act(\"create ticket\", parameters=parameters, assets=['servicenow'], callback=details, name=\"create_ticket\")\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
@@ -1124,7 +1122,7 @@
                         "status": "",
                         "title": "Generic",
                         "type": "coa.Action",
-                        "warn": "",
+                        "warn": false,
                         "z": 11
                     },
                     {
@@ -1189,7 +1187,7 @@
                         "custom_join": "",
                         "custom_name": "details",
                         "description": "",
-                        "has_custom": false,
+                        "has_custom": true,
                         "has_custom_block": true,
                         "has_custom_callback": false,
                         "has_custom_join": false,
@@ -1286,7 +1284,7 @@
         "schema": 3,
         "version": "3.5.200"
     },
-    "create_time": "2019-02-21T07:22:57.387964+00:00",
+    "create_time": "2019-04-30T10:46:07.388815+00:00",
     "draft_mode": false,
     "labels": [
         "*"
